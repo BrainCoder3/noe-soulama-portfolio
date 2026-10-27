@@ -121,3 +121,19 @@ class ContactTests(TestCase):
         codes = [self.post(self.valid).status_code for _ in range(7)]
         self.assertEqual(codes[:5], [201] * 5)
         self.assertEqual(codes[5], 429)
+
+
+class SnapshotTests(SeededTestCase):
+    def test_snapshot_matches_the_api(self):
+        import tempfile
+        from pathlib import Path
+
+        with tempfile.TemporaryDirectory() as folder:
+            target = Path(folder) / "snapshot.json"
+            call_command("export_snapshot", output=str(target), verbosity=0)
+            snapshot = json.loads(target.read_text(encoding="utf-8"))
+
+        api_projects = self.client.get(f"{API}/projects/").json()
+        self.assertEqual(snapshot["projects"], api_projects)
+        self.assertEqual(snapshot["profile"], self.client.get(f"{API}/profile/").json())
+        self.assertEqual(set(snapshot), {"profile", "projects", "experience", "achievements", "skills"})
