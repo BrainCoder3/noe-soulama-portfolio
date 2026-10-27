@@ -1,0 +1,64 @@
+[
+  {
+    "kind": "academic",
+    "title": {"en": "Ranked 1st of 49 students", "fr": "Classé 1er sur 49 étudiants"},
+    "rank": "1st",
+    "event": {"en": "ENSA Tétouan, Big Data and AI engineering, 2025-2026", "fr": "ENSA Tétouan, ingénieur Big Data et IA, 2025-2026"},
+    "year": 2026,
+    "detail": {
+      "en": "Annual average of 16.935/20, after 15.2 and 15.424 in the two preparatory years. Certified by a ranking attestation from the school.",
+      "fr": "Moyenne annuelle de 16,935/20, après 15,2 et 15,424 pendant les deux années préparatoires. Attesté par une attestation de classement de l'école."
+    }
+  },
+  {
+    "kind": "award",
+    "title": {"en": "Coding and AI Challenge", "fr": "Challenge Codage et IA"},
+    "rank": "1st",
+    "event": {"en": "LearnCraft, AEBM x ASEGUIM, Tétouan", "fr": "LearnCraft, AEBM x ASEGUIM, Tétouan"},
+    "year": 2026,
+    "detail": {"en": "", "fr": ""}
+  },
+  {
+    "kind": "award",
+    "title": {"en": "Project contest", "fr": "Concours de projet"},
+    "rank": "1st",
+    "event": {"en": "16th African Week, CESAM", "fr": "16e Semaine africaine, CESAM"},
+    "year": 2026,
+    "detail": {"en": "", "fr": ""}
+  },
+  {
+    "kind": "award",
+    "title": {"en": "Hackathon", "fr": "Hackathon"},
+    "rank": "2nd",
+    "event": {"en": "16th African Week, CESAM", "fr": "16e Semaine africaine, CESAM"},
+    "year": 2026,
+    "detail": {"en": "", "fr": ""}
+  },
+  {
+    "kind": "academic",
+    "title": {"en": "Top course results", "fr": "Meilleurs résultats par matière"},
+    "rank": "",
+    "event": {"en": "ENSA Tétouan", "fr": "ENSA Tétouan"},
+    "year": 2026,
+    "detail": {
+      "en": "Machine Learning 18.75/20, Numerical linear algebra 18/20, Databases 17.84/20, Big Data 17.5/20, Advanced algorithmics 17.39/20.",
+      "fr": "Machine Learning 18,75/20, Algèbre linéaire numérique 18/20, Bases de données 17,84/20, Big Data 17,5/20, Algorithmique avancée 17,39/20."
+    }
+  },
+  {
+    "kind": "academic",
+    "title": {"en": "Baccalauréat, series C (mathematics and physical sciences)", "fr": "Baccalauréat série C (mathématiques et sciences physiques)"},
+    "rank": "",
+    "event": {"en": "Burkina Faso, with honours (Bien)", "fr": "Burkina Faso, mention Bien"},
+    "year": 2023,
+    "detail": {"en": "", "fr": ""}
+  },
+  {
+    "kind": "certificate",
+    "title": {"en": "Saber's English Training, intensive course", "fr": "Saber's English Training, formation intensive"},
+    "rank": "",
+    "event": {"en": "English language certificate", "fr": "Certificat de langue anglaise"},
+    "year": 2025,
+    "detail": {"en": "", "fr": ""}
+  }
+]

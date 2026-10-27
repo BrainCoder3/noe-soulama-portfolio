@@ -1,0 +1,759 @@
+[
+  {
+    "slug": "robustclip-lite",
+    "title": "RobustCLIP-Lite",
+    "kind": "research",
+    "status": "study",
+    "priority": 1,
+    "featured": true,
+    "year": 2026,
+    "summary": {
+      "en": "A small CLIP-style image-text model trained on Flickr8k to study how well it keeps matching images and captions when the images are corrupted, and whether training with corrupted images helps. It includes contrastive learning in both directions, a shared latent space, temperature scaling and corruption tests.",
+      "fr": "Un petit modèle image-texte de type CLIP, entraîné sur Flickr8k, pour étudier s'il continue d'associer images et légendes quand les images sont dégradées, et si l'entraînement avec des images dégradées aide. Il comprend l'apprentissage contrastif dans les deux sens, un espace latent partagé, une température apprise et des tests de corruption."
+    },
+    "result": {
+      "en": "Under strong noise (sigma 0.20), recall@10 rises from 3.9 % to 8.9 % for image-to-text and from 6.0 % to 10.2 % for text-to-image, as means over three independent seeds. The price is about one point on clean images.",
+      "fr": "Sous fort bruit (sigma 0,20), le rappel@10 passe de 3,9 % à 8,9 % pour image vers texte et de 6,0 % à 10,2 % pour texte vers image, en moyenne sur trois essais indépendants. Le prix est d'environ un point sur les images nettes."
+    },
+    "limit": {
+      "en": "Scores stay low in absolute terms: the model is small, trained on little data, and must find the right caption among 1,000. Nothing was selected on the test set: the protocol fixes 19 epochs and keeps the last state.",
+      "fr": "Les scores restent bas en valeur absolue : le modèle est petit, entraîné sur peu de données, et doit retrouver la bonne légende parmi 1 000. Rien n'a été sélectionné sur le jeu de test : le protocole fixe 19 époques et garde le dernier état."
+    },
+    "role": {
+      "en": "Personal research project, designed, coded and evaluated by me",
+      "fr": "Projet de recherche personnel, conçu, codé et évalué par moi"
+    },
+    "stack": [
+      "Python",
+      "PyTorch",
+      "Flickr8k",
+      "Jupyter"
+    ],
+    "metrics": [
+      {
+        "type": "pair",
+        "label_en": "Image to text, recall@10 (%)",
+        "label_fr": "Image vers texte, rappel@10 (%)",
+        "before": 3.9,
+        "after": 8.9,
+        "unit": "%",
+        "max": 15,
+        "before_label_en": "standard training",
+        "before_label_fr": "entraînement standard",
+        "after_label_en": "noise-robust training",
+        "after_label_fr": "entraînement robuste au bruit"
+      },
+      {
+        "type": "pair",
+        "label_en": "Text to image, recall@10 (%)",
+        "label_fr": "Texte vers image, rappel@10 (%)",
+        "before": 6.0,
+        "after": 10.2,
+        "unit": "%",
+        "max": 15,
+        "before_label_en": "standard training",
+        "before_label_fr": "entraînement standard",
+        "after_label_en": "noise-robust training",
+        "after_label_fr": "entraînement robuste au bruit"
+      }
+    ],
+    "repo_url": "https://github.com/BrainCoder3/robustclip-lite",
+    "demo_url": "",
+    "code_is_private": false
+  },
+  {
+    "slug": "whisper-robustness",
+    "title": "Whisper robustness to noise",
+    "kind": "research",
+    "status": "study",
+    "priority": 2,
+    "featured": true,
+    "year": 2026,
+    "summary": {
+      "en": "A reproducible pipeline that adds controlled Gaussian noise (set by signal-to-noise ratio) to French recordings and measures how Whisper-small transcribes them, with word and character error rates, text normalisation and an analysis of decoding failures.",
+      "fr": "Un pipeline reproductible qui ajoute un bruit gaussien contrôlé (fixé par le rapport signal sur bruit) à des enregistrements en français et mesure comment Whisper-small les transcrit, avec les taux d'erreur de mots et de caractères, la normalisation du texte et l'analyse des échecs de décodage."
+    },
+    "result": {
+      "en": "Word error rate is 12.9 % without noise, 13.9 % at 20 dB and 53.6 % at 10 dB. At strong noise the model sometimes repeats or invents words.",
+      "fr": "Le taux d'erreur de mots est de 12,9 % sans bruit, 13,9 % à 20 dB et 53,6 % à 10 dB. Sous fort bruit, le modèle répète ou invente parfois des mots."
+    },
+    "limit": {
+      "en": "Five recordings from a single speaker. It points at a question worth testing properly; it does not settle it. It is also the starting point of my plan to measure speech recognition on Dioula.",
+      "fr": "Cinq enregistrements d'un seul locuteur. Cela pose une question qui mérite un vrai test, sans la trancher. C'est aussi le point de départ de mon projet de mesurer la reconnaissance de la parole sur le dioula."
+    },
+    "role": {
+      "en": "Personal research project",
+      "fr": "Projet de recherche personnel"
+    },
+    "stack": [
+      "Python",
+      "Whisper",
+      "JiWER",
+      "Jupyter"
+    ],
+    "metrics": [
+      {
+        "type": "series",
+        "label_en": "Whisper-small word error rate by noise level (%)",
+        "label_fr": "Taux d'erreur de mots de Whisper-small selon le bruit (%)",
+        "unit": "%",
+        "max": 60,
+        "points": [
+          {
+            "x_en": "No noise",
+            "x_fr": "Sans bruit",
+            "y": 12.9
+          },
+          {
+            "x_en": "20 dB",
+            "x_fr": "20 dB",
+            "y": 13.9
+          },
+          {
+            "x_en": "10 dB",
+            "x_fr": "10 dB",
+            "y": 53.6
+          }
+        ]
+      }
+    ],
+    "repo_url": "https://github.com/BrainCoder3/Whisper-Robustness-to-Synthetic-Noise",
+    "demo_url": "",
+    "code_is_private": false
+  },
+  {
+    "slug": "action-recognition-3dcnn",
+    "title": "3D CNN for human action recognition",
+    "kind": "research",
+    "status": "study",
+    "priority": 3,
+    "featured": true,
+    "year": 2026,
+    "summary": {
+      "en": "A 3D convolutional network trained from scratch on three classes of the KTH dataset (walking, running, boxing), with subjects strictly separated between training and test. The question: does giving the network explicit motion information help it generalise to people it has never seen?",
+      "fr": "Un réseau convolutif 3D entraîné de zéro sur trois classes du jeu KTH (marche, course, boxe), avec des sujets strictement séparés entre entraînement et test. La question : donner au réseau une information explicite sur le mouvement l'aide-t-il à généraliser à des personnes jamais vues ?"
+    },
+    "result": {
+      "en": "Adding temporal frame differences raises test accuracy from 70.5 % to 84.7 %, a gain of 14.2 points over the plain RGB baseline.",
+      "fr": "Ajouter les différences temporelles entre images fait passer la précision de test de 70,5 % à 84,7 %, soit un gain de 14,2 points par rapport à la base RGB."
+    },
+    "limit": {
+      "en": "Three classes and 431 test sequences: a controlled setting, not a general result about action recognition.",
+      "fr": "Trois classes et 431 séquences de test : un cadre contrôlé, pas un résultat général sur la reconnaissance d'actions."
+    },
+    "role": {
+      "en": "Personal research project",
+      "fr": "Projet de recherche personnel"
+    },
+    "stack": [
+      "Python",
+      "PyTorch",
+      "KTH",
+      "Jupyter"
+    ],
+    "metrics": [
+      {
+        "type": "pair",
+        "label_en": "Test accuracy (%)",
+        "label_fr": "Précision de test (%)",
+        "before": 70.5,
+        "after": 84.7,
+        "unit": "%",
+        "max": 100,
+        "before_label_en": "RGB baseline",
+        "before_label_fr": "base RGB",
+        "after_label_en": "with motion information",
+        "after_label_fr": "avec information de mouvement"
+      }
+    ],
+    "repo_url": "https://github.com/BrainCoder3/human-action-recognition-3dcnn",
+    "demo_url": "",
+    "code_is_private": false
+  },
+  {
+    "slug": "japanese-french-dubbing",
+    "title": "Japanese to French dubbing",
+    "kind": "research",
+    "status": "study",
+    "priority": 4,
+    "featured": true,
+    "year": 2026,
+    "summary": {
+      "en": "A dubbing pipeline (speech recognition, translation, duration fitting, synthesis, mixing) and the tools to measure it. The study compares five ways to make a translated line fit its time slot: none, speed-up, unlimited stretch, rewriting, and rewriting plus speed-up.",
+      "fr": "Un pipeline de doublage (reconnaissance vocale, traduction, ajustement de durée, synthèse, mixage) et les outils pour le mesurer. L'étude compare cinq façons de faire tenir une réplique traduite dans son créneau : aucune, accélération, étirement illimité, réécriture, et réécriture plus accélération."
+    },
+    "result": {
+      "en": "Rewriting plus a small speed-up (under 10 %) fits 90 to 100 % of the lines within 200 ms, at the cost of changing about half of the text (chrF about 0.5). Unlimited speed-up fits everything but needs +33 % to +67 %.",
+      "fr": "Réécrire puis accélérer un peu (moins de 10 %) fait tenir 90 à 100 % des répliques à 200 ms près, au prix de la modification d'environ la moitié du texte (chrF d'environ 0,5). L'accélération illimitée fait tout tenir mais demande +33 % à +67 %."
+    },
+    "limit": {
+      "en": "Small pilots: 20 sentences, synthetic time slots and synthetic speech, no human listening test. Whether the rewrites keep the meaning was not measured.",
+      "fr": "Petits pilotes : 20 phrases, créneaux et voix synthétiques, pas de test d'écoute humain. La conservation du sens par les réécritures n'a pas été mesurée."
+    },
+    "role": {
+      "en": "Pipeline and evaluation",
+      "fr": "Pipeline et évaluation"
+    },
+    "stack": [
+      "Python",
+      "Whisper",
+      "Ollama",
+      "edge-tts",
+      "ffmpeg"
+    ],
+    "metrics": [],
+    "repo_url": "https://github.com/BrainCoder3/anime-translator-ai",
+    "demo_url": "",
+    "code_is_private": false
+  },
+  {
+    "slug": "arc-platform",
+    "title": "Africa Research Center platform",
+    "kind": "system",
+    "status": "live",
+    "priority": 5,
+    "featured": true,
+    "year": 2026,
+    "summary": {
+      "en": "The official platform of the Africa Research Center, a pan-African community for applied research, education and innovation, with its summer and winter schools, ARC'athon and ARC Nexus programmes. Researchers present their work and follow trainings on it. It also helped the association present its activities and trainings to EPFL.",
+      "fr": "La plateforme officielle de l'Africa Research Center, une communauté panafricaine pour la recherche appliquée, l'éducation et l'innovation, avec ses écoles d'été et d'hiver, ARC'athon et ARC Nexus. Des chercheurs y présentent leurs travaux et suivent des formations. Elle a aussi aidé l'association à présenter ses activités et ses formations à l'EPFL."
+    },
+    "result": {
+      "en": "In use: about a hundred registered users, and the number keeps growing.",
+      "fr": "En service : environ une centaine d'inscrits, et le nombre continue d'augmenter."
+    },
+    "limit": {
+      "en": "About a hundred registered users, and the number keeps growing. I do not state figures beyond that.",
+      "fr": "Environ une centaine d'inscrits, et le nombre continue d'augmenter. Je n'avance pas de chiffres au-delà."
+    },
+    "role": {
+      "en": "Developer of the platform; volunteer technical lead of the association",
+      "fr": "Développeur de la plateforme ; responsable technique bénévole de l'association"
+    },
+    "stack": [
+      "TypeScript",
+      "Vercel"
+    ],
+    "metrics": [],
+    "repo_url": "",
+    "demo_url": "https://www.africa-arc.com/en",
+    "code_is_private": false
+  },
+  {
+    "slug": "schoolgo",
+    "title": "SchoolGo",
+    "kind": "system",
+    "status": "demo",
+    "priority": 6,
+    "featured": true,
+    "year": 2026,
+    "summary": {
+      "en": "A school management platform (SaaS) for directors, teachers and parents: digital student records with grades and attendance, a teacher portal for grades and timetables, automatic SMS notifications to parents, role-based access, tracking of school fees and payroll, and AI-assisted analysis to spot struggling students early. Built with my associates at UniTchad, and I worked on the platform.",
+      "fr": "Une plateforme de gestion scolaire (SaaS) pour les directeurs, les enseignants et les parents : dossiers numériques des élèves avec notes et présences, un portail enseignant pour les notes et les emplois du temps, des notifications SMS automatiques aux parents, des accès selon les rôles, le suivi des frais de scolarité et de la paie, et une analyse assistée par IA pour repérer tôt les élèves en difficulté. Construite avec mes associés d'UniTchad, et j'ai travaillé sur la plateforme."
+    },
+    "result": {
+      "en": "The product site is live, with sign-up and login, at schoolgo.unitchad.com.",
+      "fr": "Le site du produit est en ligne, avec inscription et connexion, à schoolgo.unitchad.com."
+    },
+    "limit": {
+      "en": "I do not claim a number of schools or users: the needs are still being discussed with schools in the field. The site is in French only.",
+      "fr": "Je n'affirme pas de nombre d'écoles ou d'utilisateurs : les besoins sont encore discutés avec des établissements sur le terrain. Le site est uniquement en français."
+    },
+    "role": {
+      "en": "Worked on the platform with the UniTchad team",
+      "fr": "J'ai travaillé sur la plateforme avec l'équipe d'UniTchad"
+    },
+    "stack": [
+      "Python",
+      "Django"
+    ],
+    "metrics": [],
+    "repo_url": "",
+    "demo_url": "https://schoolgo.unitchad.com/",
+    "code_is_private": false
+  },
+  {
+    "slug": "speakup",
+    "title": "SpeakUp",
+    "kind": "system",
+    "status": "built",
+    "priority": 7,
+    "featured": true,
+    "year": 2026,
+    "summary": {
+      "en": "A free speaking coach for English and Spanish that runs entirely on the user's own computer: no account, no API key. You speak into the microphone, a local model (Ollama) answers aloud, corrects mistakes and makes you repeat. Eight levels from A1 to C1, with progress locked until each test is passed.",
+      "fr": "Un coach de prise de parole gratuit pour l'anglais et l'espagnol, qui tourne entièrement sur l'ordinateur de l'utilisateur : ni compte, ni clé d'API. On parle au micro, un modèle local (Ollama) répond à voix haute, corrige les fautes et fait répéter. Huit niveaux de A1 à C1, avec une progression verrouillée tant que chaque épreuve n'est pas validée."
+    },
+    "result": {
+      "en": "About 5,200 lines of code in around 122 files. Includes listen-and-repeat scoring per word, listening comprehension with 12 accents, long monologues with required expressions, and a spaced-repetition bank of your own mistakes.",
+      "fr": "Environ 5 200 lignes de code réparties sur près de 122 fichiers. Comprend la notation de répétition mot à mot, la compréhension orale avec 12 accents, de longs monologues avec expressions imposées, et une banque d'erreurs à répétition espacée."
+    },
+    "limit": {
+      "en": "A personal tool that needs a computer with a graphics card to run the local model well. Not deployed as a hosted service.",
+      "fr": "Un outil personnel qui demande un ordinateur avec carte graphique pour bien faire tourner le modèle local. Pas déployé comme service hébergé."
+    },
+    "role": {
+      "en": "Designed and built alone",
+      "fr": "Conçu et construit seul"
+    },
+    "stack": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Ollama",
+      "Qwen3",
+      "Web Speech API"
+    ],
+    "metrics": [],
+    "repo_url": "https://github.com/BrainCoder3/speakup-ai-english-coach",
+    "demo_url": "",
+    "code_is_private": false
+  },
+  {
+    "slug": "rhimena",
+    "title": "Rhimena",
+    "kind": "system",
+    "status": "built",
+    "priority": 8,
+    "featured": false,
+    "year": 2026,
+    "summary": {
+      "en": "A bilingual (French and English) platform for an artist-management organisation, built for a client. A Django REST backend and a Next.js frontend cover a content management system, an artist directory, music, events, editorial content, live sessions, a CRM, a dashboard and search, with SEO foundations and request throttling against abuse.",
+      "fr": "Une plateforme bilingue (français et anglais) pour une organisation de gestion d'artistes, réalisée pour un client. Un backend Django REST et un frontend Next.js couvrent un système de gestion de contenu, un annuaire d'artistes, la musique, les événements, l'éditorial, les sessions en direct, un CRM, un tableau de bord et la recherche, avec des fondations SEO et une limitation des requêtes contre les abus."
+    },
+    "result": {
+      "en": "French is served at the site root and English under a prefix, with permanent URLs fixed before the many pages were built.",
+      "fr": "Le français est servi à la racine du site et l'anglais sous un préfixe, avec des URLs permanentes figées avant la construction des nombreuses pages."
+    },
+    "limit": {
+      "en": "Not in service on the client's side yet. The code is in a private repository.",
+      "fr": "Pas encore en service chez le client. Le code est dans un dépôt privé."
+    },
+    "role": {
+      "en": "Developer",
+      "fr": "Développeur"
+    },
+    "stack": [
+      "Python",
+      "Django",
+      "Django REST Framework",
+      "Next.js",
+      "React",
+      "TypeScript",
+      "PostgreSQL"
+    ],
+    "metrics": [],
+    "repo_url": "",
+    "demo_url": "",
+    "code_is_private": true
+  },
+  {
+    "slug": "chadpay",
+    "title": "ChadPay",
+    "kind": "system",
+    "status": "not_launched",
+    "priority": 9,
+    "featured": false,
+    "year": 2026,
+    "summary": {
+      "en": "A money transfer service between mobile operators, built for a client. My most demanding project, because it handles money: accounts are protected by a secret code that locks after five failed attempts, and sensitive actions use one-time codes with a short lifetime.",
+      "fr": "Un service de transfert d'argent entre opérateurs, réalisé pour un client. Mon projet le plus exigeant, parce qu'il manipule de l'argent : les comptes sont protégés par un code secret qui se bloque après cinq erreurs, et les actions sensibles utilisent des codes à usage unique de courte durée."
+    },
+    "result": {
+      "en": "Account lock after five wrong secret codes and one-time codes with a five-minute lifetime are implemented in the backend.",
+      "fr": "Le blocage du compte après cinq codes secrets erronés et les codes à usage unique de cinq minutes sont implémentés dans le backend."
+    },
+    "limit": {
+      "en": "Not in production at the client. It has not had an independent security audit, so it should not be called a production-ready financial system. This is exactly the gap I want to close by training in secure systems.",
+      "fr": "Pas en production chez le client. Il n'a pas eu d'audit de sécurité indépendant : il ne faut pas le présenter comme un système financier prêt pour la production. C'est précisément l'écart que je veux combler en me formant aux systèmes sûrs."
+    },
+    "role": {
+      "en": "Developer",
+      "fr": "Développeur"
+    },
+    "stack": [
+      "TypeScript",
+      "Node.js",
+      "REST API"
+    ],
+    "metrics": [],
+    "repo_url": "",
+    "demo_url": "",
+    "code_is_private": false
+  },
+  {
+    "slug": "hasil",
+    "title": "Hasil",
+    "kind": "system",
+    "status": "built",
+    "priority": 10,
+    "featured": false,
+    "year": 2026,
+    "summary": {
+      "en": "A booking platform for venues in N'Djamena (pitches, halls, pools, studios). The API is documented with an OpenAPI specification generated from the route code, uses short-lived access tokens with refresh, one-time codes by SMS, roles with per-resource ownership checks (an owner cannot touch another owner's venue), billing statements and an audit log.",
+      "fr": "Une plateforme de réservation de lieux à N'Djamena (terrains, salles, piscines, studios). L'API est documentée par une spécification OpenAPI générée à partir du code des routes, utilise des jetons d'accès de courte durée avec renouvellement, des codes à usage unique par SMS, des rôles avec vérification de propriété par ressource (un propriétaire ne peut pas toucher le lieu d'un autre), des relevés de facturation et un journal d'audit."
+    },
+    "result": {
+      "en": "Backend in TypeScript with Hono, Prisma and Supabase, plus a Flutter mobile app for players, gatekeepers and owners.",
+      "fr": "Backend en TypeScript avec Hono, Prisma et Supabase, plus une application mobile Flutter pour les joueurs, les vigiles et les propriétaires."
+    },
+    "limit": {
+      "en": "I do not state a public launch for it.",
+      "fr": "Je n'affirme pas de lancement public."
+    },
+    "role": {
+      "en": "Developer",
+      "fr": "Développeur"
+    },
+    "stack": [
+      "TypeScript",
+      "Hono",
+      "Prisma",
+      "Supabase",
+      "Flutter"
+    ],
+    "metrics": [],
+    "repo_url": "",
+    "demo_url": "",
+    "code_is_private": false
+  },
+  {
+    "slug": "dehere",
+    "title": "Dehere",
+    "kind": "system",
+    "status": "not_launched",
+    "priority": 11,
+    "featured": false,
+    "year": 2026,
+    "summary": {
+      "en": "A platform that lets students find supervisors easily, in several fields. Built at Axiane Agency in Flutter and Dart: interfaces, APIs, database and product features.",
+      "fr": "Une plateforme qui permet à des élèves de trouver facilement des encadrants, dans plusieurs domaines. Développée chez Axiane Agency en Flutter et Dart : interfaces, APIs, base de données et fonctionnalités produit."
+    },
+    "result": {
+      "en": "",
+      "fr": ""
+    },
+    "limit": {
+      "en": "Not launched yet: its security has to be reviewed first. The code belongs to the agency, so there is no repository to link.",
+      "fr": "Pas encore lancée : sa sécurité doit d'abord être revue. Le code appartient à l'agence, donc il n'y a pas de dépôt à lier."
+    },
+    "role": {
+      "en": "Full-stack developer at Axiane Agency",
+      "fr": "Développeur full-stack chez Axiane Agency"
+    },
+    "stack": [
+      "Flutter",
+      "Dart"
+    ],
+    "metrics": [],
+    "repo_url": "",
+    "demo_url": "",
+    "code_is_private": true
+  },
+  {
+    "slug": "taxigo-api",
+    "title": "TaxiGo API",
+    "kind": "system",
+    "status": "built",
+    "priority": 12,
+    "featured": false,
+    "year": 2026,
+    "summary": {
+      "en": "A REST API for taxi ride management, built as an end-of-training project. It manages passengers, drivers and their vehicles, ride requests, distance and price calculation, and finds the nearest available drivers.",
+      "fr": "Une API REST de gestion de courses de taxi, réalisée comme projet de fin de formation. Elle gère les passagers, les chauffeurs et leurs véhicules, les demandes de course, le calcul de distance et de prix, et trouve les chauffeurs disponibles les plus proches."
+    },
+    "result": {
+      "en": "Authentication with JWT stored in HttpOnly cookies, on Django REST Framework and SimpleJWT.",
+      "fr": "Authentification par JWT stockés dans des cookies HttpOnly, avec Django REST Framework et SimpleJWT."
+    },
+    "limit": {
+      "en": "A training project, run on SQLite for development.",
+      "fr": "Un projet de formation, exécuté sur SQLite en développement."
+    },
+    "role": {
+      "en": "Designed and built alone",
+      "fr": "Conçu et construit seul"
+    },
+    "stack": [
+      "Python",
+      "Django",
+      "Django REST Framework",
+      "SimpleJWT"
+    ],
+    "metrics": [],
+    "repo_url": "https://github.com/BrainCoder3/TaxiGo",
+    "demo_url": "",
+    "code_is_private": false
+  },
+  {
+    "slug": "tinygpt",
+    "title": "TinyGPT from scratch",
+    "kind": "learning",
+    "status": "study",
+    "priority": 13,
+    "featured": false,
+    "year": 2026,
+    "summary": {
+      "en": "A character-level Transformer written from scratch in PyTorch: embeddings, query/key/value projections, causal multi-head attention, residual connections, layer normalisation, feed-forward layers, cross-entropy training and autoregressive generation on Tiny Shakespeare.",
+      "fr": "Un Transformer au niveau caractère écrit de zéro en PyTorch : embeddings, projections requête/clé/valeur, attention causale multi-têtes, connexions résiduelles, normalisation de couche, couches feed-forward, entraînement par entropie croisée et génération autorégressive sur Tiny Shakespeare."
+    },
+    "result": {
+      "en": "",
+      "fr": ""
+    },
+    "limit": {
+      "en": "Built to understand the mechanics of language models, not to compete with real ones.",
+      "fr": "Construit pour comprendre le mécanisme des modèles de langage, pas pour rivaliser avec les vrais."
+    },
+    "role": {
+      "en": "Personal learning project",
+      "fr": "Projet d'apprentissage personnel"
+    },
+    "stack": [
+      "Python",
+      "PyTorch",
+      "Jupyter"
+    ],
+    "metrics": [],
+    "repo_url": "https://github.com/BrainCoder3/tinygpt-from-scratch",
+    "demo_url": "",
+    "code_is_private": false
+  },
+  {
+    "slug": "learncraft",
+    "title": "LearnCraft",
+    "kind": "system",
+    "status": "built",
+    "priority": 14,
+    "featured": false,
+    "year": 2026,
+    "summary": {
+      "en": "An interactive learning platform for practising code with AI guidance: course selection and enrolment, learning content with progress tracking, authentication and profiles, an interactive compiler view and a coding assistant chatbot.",
+      "fr": "Une plateforme d'apprentissage interactive pour pratiquer le code avec un guidage par IA : choix et inscription aux cours, contenu avec suivi de progression, authentification et profils, une vue de compilateur interactif et un chatbot d'aide au code."
+    },
+    "result": {
+      "en": "",
+      "fr": ""
+    },
+    "limit": {
+      "en": "A working prototype, not a hosted product.",
+      "fr": "Un prototype fonctionnel, pas un produit hébergé."
+    },
+    "role": {
+      "en": "Developer",
+      "fr": "Développeur"
+    },
+    "stack": [
+      "React",
+      "Vite",
+      "Express",
+      "Firebase"
+    ],
+    "metrics": [],
+    "repo_url": "https://github.com/BrainCoder3/learn_craft",
+    "demo_url": "",
+    "code_is_private": false
+  },
+  {
+    "slug": "campus-ai",
+    "title": "Campus AI",
+    "kind": "system",
+    "status": "demo",
+    "priority": 15,
+    "featured": false,
+    "year": 2026,
+    "summary": {
+      "en": "A set of web prototypes for an AI-assisted academic platform: a student-facing assistant, a teacher interface with AI, and an API for academic help.",
+      "fr": "Un ensemble de prototypes web pour une plateforme académique assistée par IA : un assistant pour les étudiants, une interface enseignant avec IA, et une API d'assistance académique."
+    },
+    "result": {
+      "en": "",
+      "fr": ""
+    },
+    "limit": {
+      "en": "Prototypes, not products in use.",
+      "fr": "Des prototypes, pas des produits en usage."
+    },
+    "role": {
+      "en": "Developer",
+      "fr": "Développeur"
+    },
+    "stack": [
+      "TypeScript",
+      "HTML",
+      "Vercel"
+    ],
+    "metrics": [],
+    "repo_url": "https://github.com/BrainCoder3/campus-prof",
+    "demo_url": "https://campus-ai-sigma.vercel.app",
+    "code_is_private": false
+  },
+  {
+    "slug": "siem-pipeline",
+    "title": "SIEM big data pipeline",
+    "kind": "learning",
+    "status": "built",
+    "priority": 16,
+    "featured": false,
+    "year": 2026,
+    "summary": {
+      "en": "A security-oriented data pipeline built around Apache Kafka and Docker: log producers (including one reading SSH events) and the transport of event streams.",
+      "fr": "Un pipeline de données orienté sécurité, construit autour d'Apache Kafka et de Docker : des producteurs de journaux (dont un lisant des événements SSH) et le transport de flux d'événements."
+    },
+    "result": {
+      "en": "",
+      "fr": ""
+    },
+    "limit": {
+      "en": "The public repository covers ingestion and transport. The analysis stage is not in it, and the repository has no README yet.",
+      "fr": "Le dépôt public couvre l'ingestion et le transport. L'étape d'analyse n'y figure pas, et le dépôt n'a pas encore de README."
+    },
+    "role": {
+      "en": "Course project",
+      "fr": "Projet de cours"
+    },
+    "stack": [
+      "Python",
+      "Apache Kafka",
+      "Docker"
+    ],
+    "metrics": [],
+    "repo_url": "https://github.com/BrainCoder3/projet-siem-bigdata",
+    "demo_url": "",
+    "code_is_private": false
+  },
+  {
+    "slug": "ai-job-market",
+    "title": "AI job market analysis",
+    "kind": "learning",
+    "status": "study",
+    "priority": 17,
+    "featured": false,
+    "year": 2026,
+    "summary": {
+      "en": "An analysis of more than 15,000 job postings in AI, data science and machine learning (2024-2025): salary trends, required skills, experience levels, remote work and industry patterns, with Python data analysis and visualisation.",
+      "fr": "Une analyse de plus de 15 000 offres d'emploi en IA, data science et machine learning (2024-2025) : évolution des salaires, compétences demandées, niveaux d'expérience, télétravail et tendances par secteur, avec analyse de données et visualisation en Python."
+    },
+    "result": {
+      "en": "",
+      "fr": ""
+    },
+    "limit": {
+      "en": "An exploratory analysis of a public dataset.",
+      "fr": "Une analyse exploratoire d'un jeu de données public."
+    },
+    "role": {
+      "en": "Personal project",
+      "fr": "Projet personnel"
+    },
+    "stack": [
+      "Python",
+      "pandas",
+      "Jupyter"
+    ],
+    "metrics": [],
+    "repo_url": "https://github.com/BrainCoder3/Vizualisation-Global-AI-Job-Market-Trends-Salary-Insights",
+    "demo_url": "",
+    "code_is_private": false
+  },
+  {
+    "slug": "deep-learning-basics",
+    "title": "Deep learning from a single neuron",
+    "kind": "learning",
+    "status": "study",
+    "priority": 18,
+    "featured": false,
+    "year": 2026,
+    "summary": {
+      "en": "Learning notes and code that build deep learning from the ground up: from a single neuron to a complete neural network.",
+      "fr": "Des notes et du code qui construisent le deep learning à partir de zéro : d'un seul neurone jusqu'à un réseau complet."
+    },
+    "result": {
+      "en": "",
+      "fr": ""
+    },
+    "limit": {
+      "en": "Learning material, not research.",
+      "fr": "Du matériel d'apprentissage, pas de la recherche."
+    },
+    "role": {
+      "en": "Personal learning project",
+      "fr": "Projet d'apprentissage personnel"
+    },
+    "stack": [
+      "Python"
+    ],
+    "metrics": [],
+    "repo_url": "https://github.com/BrainCoder3/DeepLearning-apprentissage",
+    "demo_url": "",
+    "code_is_private": false
+  },
+  {
+    "slug": "kaggle-notebooks",
+    "title": "Kaggle notebooks",
+    "kind": "learning",
+    "status": "study",
+    "priority": 19,
+    "featured": false,
+    "year": 2026,
+    "summary": {
+      "en": "Notebooks from Kaggle projects, including tabular classification and regression on the Porto Seguro and House Prices datasets with XGBoost, CatBoost, Gradient Boosting and LightGBM.",
+      "fr": "Des notebooks de projets Kaggle, dont la classification et la régression sur données tabulaires (Porto Seguro et House Prices) avec XGBoost, CatBoost, Gradient Boosting et LightGBM."
+    },
+    "result": {
+      "en": "",
+      "fr": ""
+    },
+    "limit": {
+      "en": "Competition practice and benchmarks, not original research.",
+      "fr": "De la pratique de compétition et des comparaisons, pas de la recherche originale."
+    },
+    "role": {
+      "en": "Personal projects",
+      "fr": "Projets personnels"
+    },
+    "stack": [
+      "Python",
+      "XGBoost",
+      "CatBoost",
+      "LightGBM"
+    ],
+    "metrics": [],
+    "repo_url": "https://github.com/BrainCoder3/kaggle_competition",
+    "demo_url": "",
+    "code_is_private": false
+  },
+  {
+    "slug": "new-boss-form",
+    "title": "New Boss Form",
+    "kind": "system",
+    "status": "demo",
+    "priority": 20,
+    "featured": false,
+    "year": 2026,
+    "summary": {
+      "en": "A web form for receiving and analysing the different projects submitted to an initiative.",
+      "fr": "Un formulaire web pour recevoir et analyser les différents projets soumis à une initiative."
+    },
+    "result": {
+      "en": "",
+      "fr": ""
+    },
+    "limit": {
+      "en": "The code is in a private repository.",
+      "fr": "Le code est dans un dépôt privé."
+    },
+    "role": {
+      "en": "Developer",
+      "fr": "Développeur"
+    },
+    "stack": [
+      "TypeScript",
+      "Vercel"
+    ],
+    "metrics": [],
+    "repo_url": "",
+    "demo_url": "https://new-boss-form.vercel.app",
+    "code_is_private": true
+  }
+]

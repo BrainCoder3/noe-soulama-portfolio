@@ -1,0 +1,38 @@
+[
+  {
+    "key": "ai",
+    "name": {"en": "AI and machine learning", "fr": "IA et apprentissage automatique"},
+    "items": ["Machine learning", "Deep learning", "Multimodal and contrastive learning", "Computer vision", "Speech recognition (ASR)", "PyTorch", "scikit-learn", "Hugging Face Transformers", "OpenCV"],
+    "proof": {"en": "RobustCLIP-Lite, the Whisper study, the 3D CNN, TinyGPT", "fr": "RobustCLIP-Lite, l'étude Whisper, le CNN 3D, TinyGPT"}
+  },
+  {
+    "key": "method",
+    "name": {"en": "Experimental method", "fr": "Méthode expérimentale"},
+    "items": ["Robustness tests under corruption and noise", "WER, CER, recall@K, chrF", "Multi-seed protocols", "Reproducible experiments", "Honest reporting of limits"],
+    "proof": {"en": "Three-seed protocol in RobustCLIP-Lite; limits stated for every study", "fr": "Protocole à trois essais dans RobustCLIP-Lite ; limites énoncées pour chaque étude"}
+  },
+  {
+    "key": "backend",
+    "name": {"en": "Backend and APIs", "fr": "Backend et APIs"},
+    "items": ["Python", "Django and Django REST Framework", "FastAPI", "Node.js and TypeScript", "Hono, Prisma", "SQL and PostgreSQL", "JWT authentication"],
+    "proof": {"en": "TaxiGo API, Rhimena, Hasil, ChadPay", "fr": "API TaxiGo, Rhimena, Hasil, ChadPay"}
+  },
+  {
+    "key": "frontend",
+    "name": {"en": "Frontend and mobile", "fr": "Frontend et mobile"},
+    "items": ["Next.js", "React", "TypeScript", "Flutter and Dart"],
+    "proof": {"en": "ARC platform, SpeakUp, Dehere, Rhimena", "fr": "Plateforme d'ARC, SpeakUp, Dehere, Rhimena"}
+  },
+  {
+    "key": "systems",
+    "name": {"en": "Systems and security", "fr": "Systèmes et sécurité"},
+    "items": ["Docker", "Apache Kafka", "Request throttling", "PIN and one-time-code authentication", "Role-based access control"],
+    "proof": {"en": "ChadPay, Hasil, Rhimena, the SIEM ingestion pipeline", "fr": "ChadPay, Hasil, Rhimena, le pipeline d'ingestion SIEM"}
+  },
+  {
+    "key": "tools",
+    "name": {"en": "Tools", "fr": "Outils"},
+    "items": ["Git and GitHub", "Ollama", "n8n", "JiWER"],
+    "proof": {"en": "Used across the projects above", "fr": "Utilisés dans l'ensemble des projets ci-dessus"}
+  }
+]
