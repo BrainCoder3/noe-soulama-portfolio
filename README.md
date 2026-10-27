@@ -91,7 +91,27 @@ Deploy the two folders separately (for example the frontend on Vercel and the ba
 
 Nothing is published here that cannot be checked: results come from the public repositories, statuses say "not launched" when a project is not, and private code is never linked. Keep it that way when you add projects.
 
-## Putting it online (frontend on Vercel, backend on Railway)
+## Putting it online for the long run (recommended): frontend only
+
+The frontend can run **without any backend**: when `API_URL` / `NEXT_PUBLIC_API_URL` are not set, it reads `frontend/data/snapshot.json`, a copy of the content generated from the Django API. Nothing paid has to keep running, so the site cannot go down because a server stopped.
+
+1. Push the repository to GitHub.
+2. Vercel: import the repository, *Root Directory* = `frontend`, set only `NEXT_PUBLIC_SITE_URL` to the public address. Do **not** set the API variables.
+3. The contact form then opens the visitor's mail app with the message ready (no server needed).
+
+Updating the content later:
+
+```bash
+cd backend
+.venv\Scripts\python manage.py seed_portfolio       # load backend/data/*.json
+.venv\Scripts\python manage.py export_snapshot      # rewrite frontend/data/snapshot.json
+```
+
+Then commit and push: Vercel rebuilds. A test checks that the snapshot is identical to what the API returns.
+
+To keep the site up for years: register the domain for several years, keep the repository on GitHub, and renew nothing else. The Django API stays in the repository as the editing tool and as proof of the backend work.
+
+## Alternative: also run the live API (frontend on Vercel, backend on Railway)
 
 1. Push this folder to a GitHub repository (the `backend/` and `frontend/` folders stay as they are).
 2. **Backend on Railway**: New project, Deploy from GitHub repo, set *Root Directory* to `backend`. Add a PostgreSQL database to the project and copy its `DATABASE_URL` reference into the backend service. Set the variables from `backend/.env.example`. The `Procfile` migrates, loads the content, collects static files and starts gunicorn. Generate a public domain for the service.

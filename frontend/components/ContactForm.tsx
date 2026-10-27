@@ -5,7 +5,15 @@ import { PUBLIC_API } from "@/lib/api";
 import { useLang } from "@/lib/i18n";
 import type { UiKey } from "@/lib/ui";
 
-type State = { kind: "idle" } | { kind: "sending" } | { kind: "done" } | { kind: "error"; key: UiKey };
+/** Where mail goes when no backend is configured. Public on the page anyway. */
+const MAIL_TO = "soulama0758@gmail.com";
+
+type State =
+  | { kind: "idle" }
+  | { kind: "sending" }
+  | { kind: "done" }
+  | { kind: "mail" }
+  | { kind: "error"; key: UiKey };
 
 export function ContactForm() {
   const { ui } = useLang();
@@ -15,6 +23,19 @@ export function ContactForm() {
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
+
+    if (!PUBLIC_API) {
+      // No backend configured: open the visitor's mail client with the message already written.
+      const name = String(data.get("name") ?? "");
+      const email = String(data.get("email") ?? "");
+      const message = String(data.get("message") ?? "");
+      const subject = encodeURIComponent(`Portfolio message from ${name}`);
+      const body = encodeURIComponent(`${message}\n\n${name}\n${email}`);
+      window.location.href = `mailto:${MAIL_TO}?subject=${subject}&body=${body}`;
+      setState({ kind: "mail" });
+      return;
+    }
+
     setState({ kind: "sending" });
     try {
       const response = await fetch(`${PUBLIC_API}/contact/`, {
@@ -68,6 +89,7 @@ export function ContactForm() {
       </button>
       <p className="form-status" role="status" aria-live="polite">
         {state.kind === "done" && ui("contact.sent")}
+        {state.kind === "mail" && ui("contact.mail")}
         {state.kind === "error" && ui(state.key)}
       </p>
     </form>
