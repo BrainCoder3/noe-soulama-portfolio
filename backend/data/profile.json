@@ -1,0 +1,40 @@
+{
+  "name": "Noé Soulama",
+  "full_name": "SOULAMA Doubie Judicael Noé",
+  "headline": {
+    "en": "I build AI that keeps working when the real world gets noisy.",
+    "fr": "Je construis des IA qui continuent de fonctionner quand le monde réel se brouille."
+  },
+  "tagline": {
+    "en": "Engineering student in Big Data and AI, ranked 1st of 49. I run small, honest experiments on how models fail, and I build the software around them.",
+    "fr": "Élève ingénieur en Big Data et IA, classé 1er sur 49. Je mène de petites expériences honnêtes sur la façon dont les modèles échouent, et je construis les logiciels qui les entourent."
+  },
+  "bio": {
+    "en": "I come from Burkina Faso and study at ENSA Tétouan in Morocco, where I ranked 1st of 49 in 2025-2026 with an annual average of 16.935/20.\n\nMy guiding question is simple: how do you build AI systems that stay reliable when data becomes noisy, scarce or different from what they trained on? I look for answers with small experiments on speech, vision and multimodal models, and I report what they do not show as clearly as what they do.\n\nBeside the lab work I build software for real users: a platform used by about a hundred registered people, applications for clients, and a company I co-founded. Building them taught me where my limits are. A demo is easy; a service that is secure, solid and actually used is the hard part. That is what I want to learn next, in the Informatics and Networks engineering degree at INSA Toulouse, to build the infrastructure that AI needs.",
+    "fr": "Je viens du Burkina Faso et j'étudie à l'ENSA de Tétouan, au Maroc, où j'ai été classé 1er sur 49 en 2025-2026 avec une moyenne annuelle de 16,935/20.\n\nMa question directrice est simple : comment construire des systèmes d'IA qui restent fiables quand les données deviennent bruitées, rares ou différentes de celles de l'entraînement ? Je cherche des réponses par de petites expériences sur la parole, la vision et les modèles multimodaux, et je dis ce qu'elles ne montrent pas aussi clairement que ce qu'elles montrent.\n\nEn parallèle du travail de laboratoire, je construis des logiciels pour de vrais utilisateurs : une plateforme utilisée par une centaine de personnes inscrites, des applications pour des clients, et une entreprise que j'ai cofondée. Les construire m'a appris où sont mes limites. Une démo est facile ; un service sûr, solide et réellement utilisé est la partie difficile. C'est ce que je veux apprendre ensuite, dans le diplôme d'ingénieur Informatique et Réseaux de l'INSA Toulouse, pour bâtir l'infrastructure dont l'IA a besoin."
+  },
+  "location": "Tétouan, Morocco",
+  "origin": "Burkina Faso",
+  "email": "soulama0758@gmail.com",
+  "github": "https://github.com/BrainCoder3",
+  "linkedin": "https://www.linkedin.com/in/no%C3%A9-soulma-32b1663b4/",
+  "stats": [
+    {"value": "1st / 49", "tone": "gold", "label_en": "ENSA Tétouan, 2025-2026", "label_fr": "ENSA Tétouan, 2025-2026"},
+    {"value": "16.935", "tone": "gold", "label_en": "annual average out of 20", "label_fr": "moyenne annuelle sur 20"},
+    {"value": "3 podiums", "tone": "gold", "label_en": "two 1st places, one 2nd, in 2026", "label_fr": "deux 1res places, une 2e, en 2026"},
+    {"value": "~100", "tone": "blue", "label_en": "registered users on the ARC platform I built", "label_fr": "inscrits sur la plateforme d'ARC que j'ai construite"}
+  ],
+  "interests": [
+    {"en": "Robust machine learning", "fr": "Apprentissage automatique robuste"},
+    {"en": "Multimodal and contrastive learning", "fr": "Apprentissage multimodal et contrastif"},
+    {"en": "Speech recognition", "fr": "Reconnaissance de la parole"},
+    {"en": "Computer vision", "fr": "Vision par ordinateur"},
+    {"en": "Distribution shift and low-data learning", "fr": "Changement de distribution et peu de données"},
+    {"en": "Reliable AI systems and the infrastructure behind them", "fr": "Systèmes d'IA fiables et infrastructure qui les porte"}
+  ],
+  "languages": [
+    {"name": "Français", "level_en": "native", "level_fr": "langue maternelle"},
+    {"name": "Bambara", "level_en": "fluent", "level_fr": "courant"},
+    {"name": "English", "level_en": "working proficiency, intensive training in 2025", "level_fr": "capacité de travail, formation intensive en 2025"}
+  ]
+}

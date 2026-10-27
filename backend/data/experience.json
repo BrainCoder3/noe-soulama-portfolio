@@ -1,0 +1,62 @@
+[
+  {
+    "org": "UniTchad SARL",
+    "kind": "company",
+    "role": {"en": "Co-founder and software / AI developer", "fr": "Cofondateur et développeur logiciel / IA"},
+    "place": "Chad",
+    "start": "2026",
+    "end": "",
+    "description": {
+      "en": "A company incorporated in Chad in 2026 with my associates, building digital solutions: web and mobile software, AI, cybersecurity and digital transformation. I take part in technical choices and in development. The ambition is to extend to the rest of Africa, including Burkina Faso.",
+      "fr": "Une société constituée au Tchad en 2026 avec mes associés, qui conçoit des solutions numériques : logiciels web et mobile, IA, cybersécurité et transformation digitale. Je participe aux choix techniques et au développement. L'ambition est de s'étendre au reste de l'Afrique, dont le Burkina Faso."
+    }
+  },
+  {
+    "org": "Axiane Agency",
+    "kind": "company",
+    "role": {"en": "Full-stack developer", "fr": "Développeur full-stack"},
+    "place": "Burkina Faso",
+    "start": "2026",
+    "end": "",
+    "description": {
+      "en": "I helped set up Dehere, a platform that lets students find supervisors in several fields: interfaces, APIs, database and product features, in Flutter/Dart. Dehere is not launched yet because its security has to be reviewed first.",
+      "fr": "J'ai aidé à mettre en place Dehere, une plateforme qui permet à des élèves de trouver des encadrants dans plusieurs domaines : interfaces, APIs, base de données et fonctionnalités produit, en Flutter/Dart. Dehere n'est pas encore lancée : sa sécurité doit d'abord être revue."
+    }
+  },
+  {
+    "org": "Africa Research Center",
+    "kind": "community",
+    "role": {"en": "Volunteer technical lead", "fr": "Responsable technique bénévole"},
+    "place": "",
+    "start": "Sept 2025",
+    "end": "",
+    "description": {
+      "en": "I scope needs, design digital solutions, coordinate technical tasks and support innovation initiatives. I developed the association's platform, where researchers present their work and follow trainings. About a hundred people are registered, and the number keeps growing.",
+      "fr": "Je cadre les besoins, conçois des solutions numériques, coordonne les tâches techniques et soutiens des initiatives d'innovation. J'ai développé la plateforme de l'association, où des chercheurs présentent leurs travaux et suivent des formations. Environ une centaine de personnes y sont inscrites, et le nombre continue d'augmenter."
+    }
+  },
+  {
+    "org": "Club des Étudiants Étrangers, ENSA Tétouan",
+    "kind": "leadership",
+    "role": {"en": "Events officer", "fr": "Chargé événementiel"},
+    "place": "Tétouan, Morocco",
+    "start": "2026",
+    "end": "",
+    "description": {
+      "en": "I help foreign students meet each other and find opportunities, and I organise events that make settling in easier. Being a foreign student myself in Morocco is why this matters to me.",
+      "fr": "J'aide les étudiants étrangers à se rencontrer et à trouver des opportunités, et j'organise des événements qui facilitent l'intégration. Être moi-même étudiant étranger au Maroc explique pourquoi cela compte pour moi."
+    }
+  },
+  {
+    "org": "ASEET",
+    "kind": "leadership",
+    "role": {"en": "Member of the control commission", "fr": "Membre de la Commission de contrôle"},
+    "place": "Tétouan, Morocco",
+    "start": "Apr 2026",
+    "end": "",
+    "description": {
+      "en": "A student association role. Before that, secretary general of its sports commission (2025-2026).",
+      "fr": "Un rôle au sein d'une association d'étudiants. Auparavant, secrétaire général de sa commission sportive (2025-2026)."
+    }
+  }
+]
