@@ -102,6 +102,26 @@
   {
     "kind": "academic",
     "title": {
+      "en": "Burkinabè State scholarship",
+      "fr": "Bourse de l'État burkinabè"
+    },
+    "rank": {
+      "en": "",
+      "fr": ""
+    },
+    "event": {
+      "en": "Throughout lycée, Burkina Faso",
+      "fr": "Pendant tout le lycée, Burkina Faso"
+    },
+    "year": null,
+    "detail": {
+      "en": "",
+      "fr": ""
+    }
+  },
+  {
+    "kind": "academic",
+    "title": {
       "en": "Baccalauréat, series C (mathematics and physical sciences)",
       "fr": "Baccalauréat série C (mathématiques et sciences physiques)"
     },
@@ -110,13 +130,13 @@
       "fr": ""
     },
     "event": {
-      "en": "Burkina Faso, with honours (Bien)",
-      "fr": "Burkina Faso, mention Bien"
+      "en": "Burkina Faso, 2023",
+      "fr": "Burkina Faso, 2023"
     },
     "year": 2023,
     "detail": {
-      "en": "",
-      "fr": ""
+      "en": "Average of 15.31/20 (398 out of 520), first session 2023, Lycée scientifique régional de Bobo-Dioulasso. Admitted at the first round.",
+      "fr": "Moyenne de 15,31/20 (398 sur 520), session normale 2023, Lycée scientifique régional de Bobo-Dioulasso. Admis au premier tour."
     }
   },
   {

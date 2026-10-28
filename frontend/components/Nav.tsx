@@ -9,6 +9,7 @@ import type { UiKey } from "@/lib/ui";
 const LINKS: { href: string; key: UiKey }[] = [
   { href: "/projects", key: "nav.projects" },
   { href: "/research", key: "nav.research" },
+  { href: "/articles", key: "nav.articles" },
   { href: "/experience", key: "nav.experience" },
   { href: "/achievements", key: "nav.achievements" },
   { href: "/about", key: "nav.about" },

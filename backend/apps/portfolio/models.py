@@ -80,6 +80,29 @@ class Project(models.Model):
         return self.title
 
 
+class Article(models.Model):
+    """A short technical report about one piece of research. The body is a list of typed blocks."""
+
+    slug = models.SlugField(unique=True)
+    project_slug = models.SlugField(blank=True, help_text="Project this article reports on")
+    priority = models.PositiveSmallIntegerField(help_text="1 = shown first")
+    date = models.CharField(max_length=7, help_text="YYYY-MM")
+    reading_minutes = models.PositiveSmallIntegerField(default=3)
+    repo_url = models.URLField(blank=True)
+    title_en = models.CharField(max_length=200)
+    title_fr = models.CharField(max_length=200)
+    subtitle_en = models.TextField()
+    subtitle_fr = models.TextField()
+    # [{"type": "p"|"h2"|"list"|"callout"|"table"|"figure", "<field>_en": ..., "<field>_fr": ...}]
+    blocks = models.JSONField(default=list)
+
+    class Meta:
+        ordering = ["priority", "-date"]
+
+    def __str__(self) -> str:
+        return self.title_en
+
+
 class Experience(models.Model):
     class Kind(models.TextChoices):
         COMPANY = "company", "Company"

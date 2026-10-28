@@ -85,4 +85,22 @@ export type Achievement = {
   detail: Bi;
 };
 
+export type Block =
+  | { type: "h2" | "p" | "callout"; text: Bi }
+  | { type: "list"; items: { en: string[]; fr: string[] } }
+  | { type: "table"; caption: Bi; headers: { en: string[]; fr: string[] }; rows: { en: string[][]; fr: string[][] } }
+  | { type: "figure"; src: string; alt: Bi; caption: Bi };
+
+export type Article = {
+  slug: string;
+  project_slug: string;
+  priority: number;
+  date: string;
+  reading_minutes: number;
+  repo_url: string;
+  title: Bi;
+  subtitle: Bi;
+  blocks: Block[];
+};
+
 export type SkillGroup = { key: string; name: Bi; items: string[]; proof: Bi };

@@ -91,8 +91,8 @@
       },
       {
         "name": "English",
-        "level_en": "working proficiency, intensive training in 2025",
-        "level_fr": "capacité de travail, formation intensive en 2025"
+        "level_en": "C1 (self-assessed), intensive training in 2025",
+        "level_fr": "C1 (auto-évaluation), formation intensive en 2025"
       }
     ],
     "headline": {
@@ -358,8 +358,8 @@
         "fr": "Un pipeline de doublage (reconnaissance vocale, traduction, ajustement de durée, synthèse, mixage) et les outils pour le mesurer. L'étude compare cinq façons de faire tenir une réplique traduite dans son créneau : aucune, accélération, étirement illimité, réécriture, et réécriture plus accélération."
       },
       "result": {
-        "en": "Rewriting plus a small speed-up (under 10 %) fits 90 to 100 % of the lines within 200 ms, at the cost of changing about half of the text (chrF about 0.5). Unlimited speed-up fits everything but needs +33 % to +67 %.",
-        "fr": "Réécrire puis accélérer un peu (moins de 10 %) fait tenir 90 à 100 % des répliques à 200 ms près, au prix de la modification d'environ la moitié du texte (chrF d'environ 0,5). L'accélération illimitée fait tout tenir mais demande +33 % à +67 %."
+        "en": "Rewriting plus a small speed-up (3 to 11 % on average) fits 90 to 100 % of the lines within 200 ms, at the cost of changing about half of the text (chrF about 0.5). Unlimited stretching fits everything but needs +11 % to +67 %.",
+        "fr": "Réécrire puis accélérer un peu (3 à 11 % en moyenne) fait tenir 90 à 100 % des répliques à 200 ms près, au prix de la modification d'environ la moitié du texte (chrF d'environ 0,5). L'étirement sans plafond fait tout tenir mais demande de +11 % à +67 %."
       },
       "limit": {
         "en": "Small pilots: 20 sentences, synthetic time slots and synthetic speech, no human listening test. Whether the rewrites keep the meaning was not measured.",
@@ -1021,6 +1021,1128 @@
       }
     }
   ],
+  "articles": [
+    {
+      "slug": "robustclip-noise-robustness",
+      "project_slug": "robustclip-lite",
+      "priority": 1,
+      "date": "2026-10",
+      "reading_minutes": 4,
+      "repo_url": "https://github.com/BrainCoder3/robustclip-lite",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": {
+            "en": "The question",
+            "fr": "La question"
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "Image-text models learn to match a picture with the caption that describes it. In a lab the pictures are clean. In real use they are blurred, dark or noisy. I wanted to measure how fast a small model falls apart when the images degrade, and whether training it with noisy images protects it.",
+            "fr": "Les modèles image-texte apprennent à associer une image à la légende qui la décrit. En laboratoire, les images sont nettes. En situation réelle, elles sont floues, sombres ou bruitées. Je voulais mesurer à quelle vitesse un petit modèle s'effondre quand les images se dégradent, et si l'entraîner avec des images bruitées le protège."
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "The setup",
+            "fr": "Le dispositif"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "Data: Flickr8k, 6,000 training images and 1,000 test images, with five captions per image. At test time only the first caption is used, which is a limit I come back to below.",
+              "Model: two encoders trained from scratch, a lightweight CNN for images and a small Transformer for text, projected into a shared space of 128 dimensions. The training objective is the symmetric contrastive loss of CLIP, with the other pairs of the batch as negatives.",
+              "Metric: Recall@K. For each image, the model must find its caption among the 1,000 test captions, and the other way round. Random retrieval would give about 1 % at R@10.",
+              "Training: AdamW, learning rate 3e-4, batch of 32, images resized to 224 × 224."
+            ],
+            "fr": [
+              "Données : Flickr8k, 6 000 images d'entraînement et 1 000 images de test, avec cinq légendes par image. Au test, seule la première légende est utilisée, ce qui est une limite dont je parle plus bas.",
+              "Modèle : deux encodeurs entraînés de zéro, un CNN léger pour les images et un petit Transformer pour le texte, projetés dans un espace commun de 128 dimensions. L'objectif d'entraînement est la perte contrastive symétrique de CLIP, avec les autres paires du lot comme exemples négatifs.",
+              "Mesure : le rappel@K. Pour chaque image, le modèle doit retrouver sa légende parmi les 1 000 légendes de test, et inversement. Un tirage au hasard donnerait environ 1 % au R@10.",
+              "Entraînement : AdamW, taux d'apprentissage 3e-4, lots de 32, images redimensionnées à 224 × 224."
+            ]
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "A clean model is fragile",
+            "fr": "Un modèle entraîné sur des images nettes est fragile"
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "The best clean model, chosen on validation loss, reaches 16.5 % for R@10 in both directions. That is modest, which is expected for a small model trained on 6,000 images. Then I added Gaussian noise to the test images. Retrieval collapses quickly.",
+            "fr": "Le meilleur modèle entraîné sur images nettes, choisi sur la perte de validation, atteint 16,5 % de R@10 dans les deux sens. C'est modeste, comme attendu pour un petit modèle entraîné sur 6 000 images. J'ai ensuite ajouté du bruit gaussien aux images de test. La recherche s'effondre vite."
+          }
+        },
+        {
+          "type": "table",
+          "caption": {
+            "en": "Clean model, R@10 (%) under Gaussian noise of standard deviation sigma.",
+            "fr": "Modèle entraîné sur images nettes, R@10 (%) sous bruit gaussien d'écart type sigma."
+          },
+          "headers": {
+            "en": [
+              "Noise (sigma)",
+              "Image to text",
+              "Text to image"
+            ],
+            "fr": [
+              "Bruit (sigma)",
+              "Image vers texte",
+              "Texte vers image"
+            ]
+          },
+          "rows": {
+            "en": [
+              [
+                "0.00",
+                "16.5",
+                "16.5"
+              ],
+              [
+                "0.05",
+                "12.4",
+                "14.4"
+              ],
+              [
+                "0.10",
+                "6.6",
+                "10.1"
+              ],
+              [
+                "0.20",
+                "2.6",
+                "4.7"
+              ]
+            ],
+            "fr": [
+              [
+                "0,00",
+                "16,5",
+                "16,5"
+              ],
+              [
+                "0,05",
+                "12,4",
+                "14,4"
+              ],
+              [
+                "0,10",
+                "6,6",
+                "10,1"
+              ],
+              [
+                "0,20",
+                "2,6",
+                "4,7"
+              ]
+            ]
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "Blur, brightness changes and masking part of the image also lower the scores, but noise is one of the most destructive corruptions I tried. I also checked how much the amount of training data matters: with 10 %, 25 %, 50 % and 100 % of the training set, image-to-text R@10 goes from 2.3 % to 4.4 %, 6.5 % and 9.4 %. The 100 % row is lower than the 16.5 % baseline only because those runs stopped early, after three epochs without improvement. The four rows are comparable with each other, not with the baseline.",
+            "fr": "Le flou, les changements de luminosité et le masquage d'une partie de l'image baissent aussi les scores, mais le bruit est l'une des corruptions les plus destructrices que j'aie essayées. J'ai aussi regardé le poids de la quantité de données : avec 10 %, 25 %, 50 % et 100 % du jeu d'entraînement, le R@10 image vers texte passe de 2,3 % à 4,4 %, 6,5 % et 9,4 %. La ligne à 100 % est plus basse que la référence à 16,5 % uniquement parce que ces essais se sont arrêtés tôt, après trois époques sans amélioration. Les quatre lignes se comparent entre elles, pas avec la référence."
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "Training with noise, and a comparison I had to redo",
+            "fr": "Entraîner avec du bruit, et une comparaison que j'ai dû refaire"
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "The idea is simple: during training, each image receives Gaussian noise (sigma 0.10) with probability one half. My first comparison looked spectacular, from 2.7 % to 10.2 % at sigma 0.20, but it was unfair. The clean model was taken at its last epoch while the noisy-training model was taken at its best validation checkpoint, and I had picked the noise level after looking at test results. That favoured the method I wanted to work.",
+            "fr": "L'idée est simple : pendant l'entraînement, chaque image reçoit du bruit gaussien (sigma 0,10) avec une probabilité de un sur deux. Ma première comparaison semblait spectaculaire, de 2,7 % à 10,2 % à sigma 0,20, mais elle n'était pas équitable. Le modèle sans bruit était pris à sa dernière époque, celui entraîné avec bruit à son meilleur point de validation, et j'avais choisi le niveau de bruit après avoir regardé les résultats de test. Cela favorisait la méthode que je voulais voir fonctionner."
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "So I redid it with a strict protocol: the same budget of 19 epochs for both, the last state kept, the noise level and probability fixed in advance, nothing selected on the test set, and three independent seeds (42, 43 and 44).",
+            "fr": "Je l'ai donc refaite avec un protocole strict : le même budget de 19 époques pour les deux, le dernier état conservé, le niveau et la probabilité du bruit fixés à l'avance, rien de sélectionné sur le jeu de test, et trois essais indépendants (graines 42, 43 et 44)."
+          }
+        },
+        {
+          "type": "table",
+          "caption": {
+            "en": "R@10 (%), mean ± standard deviation over three seeds.",
+            "fr": "R@10 (%), moyenne ± écart type sur trois essais."
+          },
+          "headers": {
+            "en": [
+              "Test noise (sigma)",
+              "Image to text, clean training",
+              "Image to text, noise-aware",
+              "Text to image, clean training",
+              "Text to image, noise-aware"
+            ],
+            "fr": [
+              "Bruit de test (sigma)",
+              "Image vers texte, entraînement net",
+              "Image vers texte, avec bruit",
+              "Texte vers image, entraînement net",
+              "Texte vers image, avec bruit"
+            ]
+          },
+          "rows": {
+            "en": [
+              [
+                "0.00",
+                "12.5 ± 0.7",
+                "12.1 ± 1.2",
+                "12.6 ± 1.0",
+                "11.6 ± 0.9"
+              ],
+              [
+                "0.05",
+                "10.2 ± 0.5",
+                "12.0 ± 0.9",
+                "11.7 ± 0.5",
+                "11.8 ± 1.0"
+              ],
+              [
+                "0.10",
+                "7.1 ± 0.7",
+                "11.6 ± 1.0",
+                "9.1 ± 0.9",
+                "11.4 ± 0.7"
+              ],
+              [
+                "0.20",
+                "3.9 ± 1.0",
+                "8.9 ± 1.4",
+                "6.0 ± 1.1",
+                "10.2 ± 0.7"
+              ]
+            ],
+            "fr": [
+              [
+                "0,00",
+                "12,5 ± 0,7",
+                "12,1 ± 1,2",
+                "12,6 ± 1,0",
+                "11,6 ± 0,9"
+              ],
+              [
+                "0,05",
+                "10,2 ± 0,5",
+                "12,0 ± 0,9",
+                "11,7 ± 0,5",
+                "11,8 ± 1,0"
+              ],
+              [
+                "0,10",
+                "7,1 ± 0,7",
+                "11,6 ± 1,0",
+                "9,1 ± 0,9",
+                "11,4 ± 0,7"
+              ],
+              [
+                "0,20",
+                "3,9 ± 1,0",
+                "8,9 ± 1,4",
+                "6,0 ± 1,1",
+                "10,2 ± 0,7"
+              ]
+            ]
+          }
+        },
+        {
+          "type": "callout",
+          "text": {
+            "en": "Under strong noise (sigma 0.20), image-to-text R@10 goes from 3.9 % to 8.9 % and text-to-image from 6.0 % to 10.2 %. The noise-aware model wins on each of the three seeds. On clean images it loses about 0.3 point and 1.0 point.",
+            "fr": "Sous fort bruit (sigma 0,20), le R@10 image vers texte passe de 3,9 % à 8,9 % et texte vers image de 6,0 % à 10,2 %. Le modèle entraîné avec bruit gagne sur chacun des trois essais. Sur images nettes, il perd environ 0,3 point et 1,0 point."
+          }
+        },
+        {
+          "type": "figure",
+          "src": "/articles/robustclip-multi-seed.webp",
+          "alt": {
+            "en": "Chart of recall@10 against test noise, for clean and noise-aware training, with error bars over three seeds.",
+            "fr": "Graphique du rappel@10 selon le bruit de test, pour l'entraînement sans bruit et avec bruit, avec barres d'erreur sur trois essais."
+          },
+          "caption": {
+            "en": "Mean and standard deviation over three seeds, same fixed training budget.",
+            "fr": "Moyenne et écart type sur trois essais, même budget d'entraînement fixé."
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "The gain is smaller than my first run suggested, and that is the number to trust. The multi-seed script that fixed the comparison was written with the help of an AI assistant; the model, the corruptions and the first experiments are my own work.",
+            "fr": "Le gain est plus petit que ne le suggérait mon premier essai, et c'est ce chiffre qu'il faut retenir. Le script multi-essais qui a corrigé la comparaison a été écrit avec l'aide d'un assistant IA ; le modèle, les corruptions et les premières expériences sont mon travail."
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "What this does not show",
+            "fr": "Ce que cela ne montre pas"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "Absolute scores are low. The model is small, trained from scratch on 6,000 images, and it must find the right caption among 1,000.",
+              "Evaluation uses a single caption per image, while Flickr8k has five valid ones. A fairer protocol would treat all five as correct.",
+              "Three seeds are few. The standard deviations are around one point, so small differences, such as the 0.3 point on clean images, should not be over-read.",
+              "Only Gaussian image noise was used for robust training. Blur, occlusion, brightness and text corruptions were measured but not trained against.",
+              "The simple word-level tokenizer turns typos into unknown words, so text robustness is probably underestimated."
+            ],
+            "fr": [
+              "Les scores absolus sont bas. Le modèle est petit, entraîné de zéro sur 6 000 images, et doit retrouver la bonne légende parmi 1 000.",
+              "L'évaluation utilise une seule légende par image, alors que Flickr8k en contient cinq valables. Un protocole plus juste les compterait toutes comme correctes.",
+              "Trois essais, c'est peu. Les écarts types sont d'environ un point : de petites différences, comme les 0,3 point sur images nettes, ne doivent pas être sur-interprétées.",
+              "Seul le bruit gaussien sur les images a servi à l'entraînement robuste. Le flou, le masquage, la luminosité et les corruptions du texte ont été mesurés, pas entraînés.",
+              "Le tokenizer simple au niveau des mots transforme les fautes de frappe en mots inconnus : la robustesse au texte est probablement sous-estimée."
+            ]
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "What I would do next",
+            "fr": "Ce que je ferais ensuite"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "Evaluate against all five captions and choose the training noise on a separate development split.",
+              "Train against blur and occlusion too, and test combinations of image and text corruptions.",
+              "Repeat with a pretrained backbone, to see whether the gain from noisy training survives when the model is much stronger."
+            ],
+            "fr": [
+              "Évaluer avec les cinq légendes et choisir le bruit d'entraînement sur un jeu de développement séparé.",
+              "Entraîner aussi contre le flou et le masquage, et tester des combinaisons de corruptions de l'image et du texte.",
+              "Refaire l'expérience avec un modèle pré-entraîné, pour voir si le gain de l'entraînement bruité survit quand le modèle est bien plus fort."
+            ]
+          }
+        }
+      ],
+      "title": {
+        "en": "What happens to an image-text model when the pictures get noisy?",
+        "fr": "Que devient un modèle image-texte quand les images deviennent bruitées ?"
+      },
+      "subtitle": {
+        "en": "A small CLIP-style model trained from scratch on Flickr8k, broken on purpose, and what training with noise changes.",
+        "fr": "Un petit modèle de type CLIP entraîné de zéro sur Flickr8k, mis en difficulté volontairement, et ce que change l'entraînement avec du bruit."
+      }
+    },
+    {
+      "slug": "whisper-under-noise",
+      "project_slug": "whisper-robustness",
+      "priority": 2,
+      "date": "2026-10",
+      "reading_minutes": 3,
+      "repo_url": "https://github.com/BrainCoder3/Whisper-Robustness-to-Synthetic-Noise",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": {
+            "en": "The question",
+            "fr": "La question"
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "Speech recognition systems work well on clean recordings. Real audio is rarely clean. I wanted a reproducible way to see how a pretrained model, Whisper-small, behaves when I add controlled noise to the same recordings, one level at a time.",
+            "fr": "Les systèmes de reconnaissance de la parole fonctionnent bien sur des enregistrements nets. L'audio réel l'est rarement. Je voulais une façon reproductible de voir comment un modèle pré-entraîné, Whisper-small, se comporte quand j'ajoute un bruit contrôlé aux mêmes enregistrements, un niveau après l'autre."
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "The setup",
+            "fr": "Le dispositif"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "Model: openai/whisper-small, with the decoding language fixed to French.",
+              "Data: five French recordings from one speaker. This is a pilot, not a benchmark.",
+              "Noise: synthetic Gaussian noise added at signal-to-noise ratios of 20, 10, 5 and 0 dB. For each recording the same noise is scaled to each level, with deterministic seeds, so levels are comparable.",
+              "Metrics: word error rate (WER) and character error rate (CER). WER can go above 1.0 when the model produces many extra words."
+            ],
+            "fr": [
+              "Modèle : openai/whisper-small, avec la langue de décodage fixée au français.",
+              "Données : cinq enregistrements en français d'un seul locuteur. C'est un pilote, pas un banc d'essai.",
+              "Bruit : bruit gaussien synthétique ajouté à des rapports signal sur bruit de 20, 10, 5 et 0 dB. Pour chaque enregistrement, le même bruit est mis à l'échelle de chaque niveau, avec des graines déterministes, donc les niveaux sont comparables.",
+              "Mesures : taux d'erreur de mots (WER) et de caractères (CER). Le WER peut dépasser 1,0 quand le modèle produit beaucoup de mots en trop."
+            ]
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "Results",
+            "fr": "Résultats"
+          }
+        },
+        {
+          "type": "table",
+          "caption": {
+            "en": "Mean and median error rates over the five recordings (a WER of 0.129 means about 13 wrong words in 100).",
+            "fr": "Taux d'erreur moyens et médians sur les cinq enregistrements (un WER de 0,129 signifie environ 13 mots faux sur 100)."
+          },
+          "headers": {
+            "en": [
+              "Condition",
+              "Mean WER",
+              "Median WER",
+              "Mean CER",
+              "Median CER"
+            ],
+            "fr": [
+              "Condition",
+              "WER moyen",
+              "WER médian",
+              "CER moyen",
+              "CER médian"
+            ]
+          },
+          "rows": {
+            "en": [
+              [
+                "Clean",
+                "0.129",
+                "0.091",
+                "0.067",
+                "0.039"
+              ],
+              [
+                "20 dB",
+                "0.139",
+                "0.091",
+                "0.088",
+                "0.125"
+              ],
+              [
+                "10 dB",
+                "0.536",
+                "0.500",
+                "0.339",
+                "0.325"
+              ],
+              [
+                "5 dB",
+                "3.337",
+                "0.917",
+                "2.586",
+                "0.538"
+              ],
+              [
+                "0 dB",
+                "10.099",
+                "1.417",
+                "6.272",
+                "0.701"
+              ]
+            ],
+            "fr": [
+              [
+                "Sans bruit",
+                "0,129",
+                "0,091",
+                "0,067",
+                "0,039"
+              ],
+              [
+                "20 dB",
+                "0,139",
+                "0,091",
+                "0,088",
+                "0,125"
+              ],
+              [
+                "10 dB",
+                "0,536",
+                "0,500",
+                "0,339",
+                "0,325"
+              ],
+              [
+                "5 dB",
+                "3,337",
+                "0,917",
+                "2,586",
+                "0,538"
+              ],
+              [
+                "0 dB",
+                "10,099",
+                "1,417",
+                "6,272",
+                "0,701"
+              ]
+            ]
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "At 20 dB the model barely moves, from 0.129 to 0.139. At 10 dB the error rate roughly quadruples, to 0.536. Below that, the picture changes: at 5 dB and 0 dB the mean WER explodes to 3.3 and 10.1, while the median stays at 0.9 and 1.4. The gap between mean and median is the signal. A few recordings trigger a decoding failure where the model repeats itself or writes a very long text, producing far more words than were spoken. Those extremes drag the average up.",
+            "fr": "À 20 dB, le modèle bouge à peine, de 0,129 à 0,139. À 10 dB, le taux d'erreur est à peu près multiplié par quatre, à 0,536. Au-delà, le tableau change : à 5 dB et 0 dB, le WER moyen explose à 3,3 et 10,1, alors que la médiane reste à 0,9 et 1,4. L'écart entre moyenne et médiane est le signal. Quelques enregistrements déclenchent un échec de décodage où le modèle se répète ou écrit un texte très long, avec bien plus de mots que ce qui a été dit. Ces extrêmes tirent la moyenne vers le haut."
+          }
+        },
+        {
+          "type": "callout",
+          "text": {
+            "en": "Under severe noise, the average hides two different things: ordinary recognition errors, and rare catastrophic failures. Reporting only the mean would have been misleading.",
+            "fr": "Sous bruit sévère, la moyenne cache deux choses différentes : des erreurs de reconnaissance ordinaires, et de rares échecs catastrophiques. Ne publier que la moyenne aurait été trompeur."
+          }
+        },
+        {
+          "type": "figure",
+          "src": "/articles/whisper-wer-vs-snr.webp",
+          "alt": {
+            "en": "Chart of Whisper-small mean word error rate against signal-to-noise ratio, rising sharply below 10 dB.",
+            "fr": "Graphique du taux d'erreur de mots moyen de Whisper-small selon le rapport signal sur bruit, en forte hausse sous 10 dB."
+          },
+          "caption": {
+            "en": "Mean word error rate (as a ratio) against SNR. The dashed line is the clean baseline.",
+            "fr": "Taux d'erreur de mots moyen (en ratio) selon le SNR. La ligne pointillée est la référence sans bruit."
+          }
+        },
+        {
+          "type": "figure",
+          "src": "/articles/whisper-cer-vs-snr.webp",
+          "alt": {
+            "en": "Chart of Whisper-small mean character error rate against signal-to-noise ratio.",
+            "fr": "Graphique du taux d'erreur de caractères moyen de Whisper-small selon le rapport signal sur bruit."
+          },
+          "caption": {
+            "en": "Mean character error rate against SNR.",
+            "fr": "Taux d'erreur de caractères moyen selon le SNR."
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "What this does not show",
+            "fr": "Ce que cela ne montre pas"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "Five recordings from one speaker are far too few to say anything general about Whisper. This is a question worth testing properly, not a result.",
+              "The noise is synthetic and Gaussian. Real environments have music, voices, reverberation and traffic, which behave differently.",
+              "Only French and only one model size were tested."
+            ],
+            "fr": [
+              "Cinq enregistrements d'un seul locuteur sont bien trop peu pour dire quoi que ce soit de général sur Whisper. C'est une question qui mérite un vrai test, pas un résultat.",
+              "Le bruit est synthétique et gaussien. Les vrais environnements ont de la musique, des voix, de la réverbération et de la circulation, qui se comportent autrement.",
+              "Seuls le français et une seule taille de modèle ont été testés."
+            ]
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "Why it matters to me",
+            "fr": "Pourquoi cela compte pour moi"
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "This pipeline is the starting point of a project I want to carry out for Burkina Faso: measuring how existing speech recognition tools handle Dioula, a language I speak. The plan, which is not done yet, is to look at what already exists, record about a hundred sentences with the consent of volunteers, measure the errors of existing tools, and publish a documented protocol and the results, with the same care about limits as here.",
+            "fr": "Ce pipeline est le point de départ d'un projet que je veux mener pour le Burkina Faso : mesurer comment les outils de reconnaissance vocale existants traitent le dioula, une langue que je parle. Le plan, pas encore réalisé, est d'examiner ce qui existe déjà, d'enregistrer une centaine de phrases avec le consentement de volontaires, de mesurer les erreurs des outils existants, et de publier un protocole documenté et les résultats, avec le même soin sur les limites qu'ici."
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "What I would do next",
+            "fr": "Ce que je ferais ensuite"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "Add several speakers and real-world noise, so the five-recording pilot becomes a small protocol.",
+              "Look at the failures one by one to separate repetition loops from ordinary substitutions, and test whether limiting the length of the output prevents them.",
+              "Run the same measurement on Dioula and report it the same way."
+            ],
+            "fr": [
+              "Ajouter plusieurs locuteurs et du bruit réel, pour que le pilote de cinq enregistrements devienne un petit protocole.",
+              "Examiner les échecs un par un pour séparer les boucles de répétition des substitutions ordinaires, et tester si limiter la longueur de sortie les évite.",
+              "Faire la même mesure sur le dioula et la présenter de la même manière."
+            ]
+          }
+        }
+      ],
+      "title": {
+        "en": "How much noise can Whisper take before it breaks?",
+        "fr": "Quel bruit Whisper supporte-t-il avant de se tromper ?"
+      },
+      "subtitle": {
+        "en": "A small pilot on French speech: stable at light noise, then a few spectacular failures that make the average misleading.",
+        "fr": "Un petit pilote sur de la parole en français : stable avec peu de bruit, puis quelques échecs spectaculaires qui rendent la moyenne trompeuse."
+      }
+    },
+    {
+      "slug": "action-recognition-motion",
+      "project_slug": "action-recognition-3dcnn",
+      "priority": 3,
+      "date": "2026-10",
+      "reading_minutes": 3,
+      "repo_url": "https://github.com/BrainCoder3/human-action-recognition-3dcnn",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": {
+            "en": "The question",
+            "fr": "La question"
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "I trained a small 3D convolutional network to recognise three actions in video: walking, running and boxing. The first version, fed with colour frames only, made a very readable mistake. I wanted to know whether making motion explicit would fix it, and whether the gain would hold on people the model had never seen.",
+            "fr": "J'ai entraîné un petit réseau convolutif 3D à reconnaître trois actions dans des vidéos : marcher, courir et boxer. La première version, alimentée uniquement avec des images en couleur, faisait une erreur très lisible. Je voulais savoir si rendre le mouvement explicite la corrigerait, et si le gain tiendrait sur des personnes que le modèle n'a jamais vues."
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "The setup",
+            "fr": "Le dispositif"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "Data: the KTH Human Actions dataset, three classes. Instead of treating each video file as one example, I used the official sequence annotations to cut individual action segments.",
+              "Evaluation on unseen people: I used the official split by subject, so no person appears in both training and test. The test set has 431 sequences.",
+              "Model: a small 3D CNN trained from random initialisation, with 3D convolutions, ReLU, 3D max pooling, adaptive average pooling and a linear classifier. No pretrained model."
+            ],
+            "fr": [
+              "Données : le jeu KTH Human Actions, trois classes. Au lieu de traiter chaque fichier vidéo comme un exemple, j'ai utilisé les annotations officielles des séquences pour découper les segments d'action.",
+              "Évaluation sur des personnes inconnues : j'ai utilisé la séparation officielle par sujet, donc aucune personne n'apparaît à la fois à l'entraînement et au test. Le jeu de test compte 431 séquences.",
+              "Modèle : un petit CNN 3D entraîné depuis une initialisation aléatoire, avec des convolutions 3D, ReLU, du max pooling 3D, un pooling moyen adaptatif et un classifieur linéaire. Aucun modèle pré-entraîné."
+            ]
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "Reading the first errors",
+            "fr": "Lire les premières erreurs"
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "The baseline, fed with RGB frames, reached 70.5 % on the test set. Its confusion matrix showed the problem: it kept mixing up walking and running. That makes sense. Both are a person moving across the frame, and the difference is mostly how fast the body moves from one frame to the next. A network that looks at colours has to rediscover this on its own, from little data.",
+            "fr": "La base, alimentée avec des images RVB, a atteint 70,5 % sur le jeu de test. Sa matrice de confusion montrait le problème : elle confondait sans cesse la marche et la course. C'est logique. Dans les deux cas, une personne traverse l'image, et la différence tient surtout à la vitesse à laquelle le corps change d'une image à l'autre. Un réseau qui regarde des couleurs doit redécouvrir cela seul, avec peu de données."
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "Making motion explicit",
+            "fr": "Rendre le mouvement explicite"
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "So I gave the network that information directly. I computed the difference between consecutive frames and added it as three extra channels, so the first 3D convolution receives six channels: three for colour, three for motion.",
+            "fr": "J'ai donc donné cette information directement au réseau. J'ai calculé la différence entre images consécutives et je l'ai ajoutée sous forme de trois canaux supplémentaires, si bien que la première convolution 3D reçoit six canaux : trois pour la couleur, trois pour le mouvement."
+          }
+        },
+        {
+          "type": "table",
+          "caption": {
+            "en": "Test accuracy on unseen subjects.",
+            "fr": "Précision de test sur des sujets inconnus."
+          },
+          "headers": {
+            "en": [
+              "Model",
+              "Test accuracy"
+            ],
+            "fr": [
+              "Modèle",
+              "Précision de test"
+            ]
+          },
+          "rows": {
+            "en": [
+              [
+                "RGB 3D CNN",
+                "70.5 %"
+              ],
+              [
+                "RGB + motion 3D CNN",
+                "84.7 %"
+              ]
+            ],
+            "fr": [
+              [
+                "CNN 3D RVB",
+                "70,5 %"
+              ],
+              [
+                "CNN 3D RVB + mouvement",
+                "84,7 %"
+              ]
+            ]
+          }
+        },
+        {
+          "type": "callout",
+          "text": {
+            "en": "Adding motion differences raises test accuracy from 70.5 % to 84.7 %, a gain of 14.2 points, on people not seen during training.",
+            "fr": "Ajouter les différences de mouvement fait passer la précision de test de 70,5 % à 84,7 %, soit un gain de 14,2 points, sur des personnes absentes de l'entraînement."
+          }
+        },
+        {
+          "type": "figure",
+          "src": "/articles/har-rgb-vs-motion.webp",
+          "alt": {
+            "en": "Bar chart of test accuracy: 70.5 percent for the RGB 3D CNN, 84.7 percent with motion features.",
+            "fr": "Diagramme de la précision de test : 70,5 % pour le CNN 3D RVB, 84,7 % avec l'information de mouvement."
+          },
+          "caption": {
+            "en": "Impact of the motion channels.",
+            "fr": "Effet des canaux de mouvement."
+          }
+        },
+        {
+          "type": "table",
+          "caption": {
+            "en": "Per-class accuracy of the motion-aware model.",
+            "fr": "Précision par classe du modèle avec mouvement."
+          },
+          "headers": {
+            "en": [
+              "Class",
+              "Accuracy"
+            ],
+            "fr": [
+              "Classe",
+              "Précision"
+            ]
+          },
+          "rows": {
+            "en": [
+              [
+                "Walking",
+                "85.4 %"
+              ],
+              [
+                "Running",
+                "68.8 %"
+              ],
+              [
+                "Boxing",
+                "100.0 %"
+              ]
+            ],
+            "fr": [
+              [
+                "Marche",
+                "85,4 %"
+              ],
+              [
+                "Course",
+                "68,8 %"
+              ],
+              [
+                "Boxe",
+                "100,0 %"
+              ]
+            ]
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "Boxing is easy, as it looks nothing like the other two. The remaining difficulty is still running against walking: running is the weakest class, at 68.8 %. Making motion explicit helped a lot, but it did not remove the confusion.",
+            "fr": "La boxe est facile, elle ne ressemble en rien aux deux autres. La difficulté restante est toujours la course contre la marche : la course est la classe la plus faible, à 68,8 %. Rendre le mouvement explicite a beaucoup aidé, sans supprimer la confusion."
+          }
+        },
+        {
+          "type": "figure",
+          "src": "/articles/har-confusion-matrix.webp",
+          "alt": {
+            "en": "Confusion matrix of the motion-aware model over walking, running and boxing.",
+            "fr": "Matrice de confusion du modèle avec mouvement sur la marche, la course et la boxe."
+          },
+          "caption": {
+            "en": "Confusion matrix of the motion-aware model.",
+            "fr": "Matrice de confusion du modèle avec mouvement."
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "What this does not show",
+            "fr": "Ce que cela ne montre pas"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "Three classes and 431 test sequences make a controlled setting, not a general statement about action recognition. KTH is also a simple dataset, filmed against plain backgrounds.",
+              "The repository reports one test accuracy per model. One test sequence is about 0.23 point, and I have not measured the variation between training runs, so the exact size of the gain has no error bar.",
+              "I did not compare with other ways of adding motion, such as optical flow, so I cannot say that frame differences are the best choice, only that they help."
+            ],
+            "fr": [
+              "Trois classes et 431 séquences de test forment un cadre contrôlé, pas une affirmation générale sur la reconnaissance d'actions. KTH est aussi un jeu simple, filmé sur des fonds unis.",
+              "Le dépôt donne une précision de test par modèle. Une séquence de test pèse environ 0,23 point, et je n'ai pas mesuré la variation entre entraînements : la taille exacte du gain n'a donc pas de barre d'erreur.",
+              "Je n'ai pas comparé avec d'autres façons d'ajouter le mouvement, comme le flux optique : je ne peux pas dire que les différences d'images sont le meilleur choix, seulement qu'elles aident."
+            ]
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "What I take from it",
+            "fr": "Ce que j'en retiens"
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "The lesson I keep is a method more than a number: look at the errors before changing the model. The confusion matrix told me exactly what information was missing, and the fix was small. It also taught me to think about generalisation to new people from the start, by splitting on subjects.",
+            "fr": "La leçon que je garde est une méthode plus qu'un chiffre : regarder les erreurs avant de modifier le modèle. La matrice de confusion m'a dit exactement quelle information manquait, et la correction était petite. Cela m'a aussi appris à penser dès le départ à la généralisation à de nouvelles personnes, en séparant les données par sujet."
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "What I would do next",
+            "fr": "Ce que je ferais ensuite"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "Repeat the training with several seeds to give the gain an error bar.",
+              "Compare frame differences with optical flow, and extend to the six KTH classes.",
+              "Test on a dataset with cluttered backgrounds, where the simplicity of KTH no longer helps."
+            ],
+            "fr": [
+              "Répéter l'entraînement avec plusieurs graines pour donner une barre d'erreur au gain.",
+              "Comparer les différences d'images avec le flux optique, et étendre aux six classes de KTH.",
+              "Tester sur un jeu avec des arrière-plans chargés, où la simplicité de KTH n'aide plus."
+            ]
+          }
+        }
+      ],
+      "title": {
+        "en": "Does a video model learn better when motion is made explicit?",
+        "fr": "Un modèle vidéo apprend-il mieux quand le mouvement est rendu explicite ?"
+      },
+      "subtitle": {
+        "en": "A 3D CNN trained from scratch on three actions, and what an error analysis taught me to change.",
+        "fr": "Un CNN 3D entraîné de zéro sur trois actions, et ce que l'analyse des erreurs m'a appris à changer."
+      }
+    },
+    {
+      "slug": "dubbing-duration-fitting",
+      "project_slug": "japanese-french-dubbing",
+      "priority": 4,
+      "date": "2026-10",
+      "reading_minutes": 4,
+      "repo_url": "https://github.com/BrainCoder3/anime-translator-ai",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": {
+            "en": "The question",
+            "fr": "La question"
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "Dubbing a video means that each translated line must fit in the time the original line was spoken. French is often longer than Japanese, so the dubbed line overruns. My pipeline transcribes the speech, translates it, fits each line to its slot, synthesises a French voice and mixes everything. I wanted to measure the fitting step instead of trusting my impression.",
+            "fr": "Doubler une vidéo oblige chaque réplique traduite à tenir dans le temps de la réplique d'origine. Le français est souvent plus long que le japonais, donc la réplique doublée déborde. Mon pipeline transcrit la parole, la traduit, ajuste chaque réplique à son créneau, synthétise une voix française et mixe l'ensemble. Je voulais mesurer l'étape d'ajustement plutôt que me fier à mon impression."
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "The code of this study was refactored and evaluated with the help of AI-assisted coding, starting from my original pipeline, as stated in the repository. All three studies are pilots: small samples, synthetic data, one language pair.",
+            "fr": "Le code de cette étude a été restructuré et évalué avec une aide au codage par IA, à partir de mon pipeline d'origine, comme l'indique le dépôt. Les trois études sont des pilotes : petits échantillons, données synthétiques, une seule paire de langues."
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "Pilot 1: how big is the problem?",
+            "fr": "Pilote 1 : quelle est l'ampleur du problème ?"
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "On one scene of 16 lines from the original pipeline, 13 lines overran their slot by more than the 200 ms tolerance, by 460 ms on average and up to 540 ms. Plotting dubbed duration against the slot showed something useful: for the main voice engine, the dubbed duration follows about 0.86 times the slot plus 0.77 seconds. That is a fixed offset, not a speaking-rate problem, which means simply speeding up the voice would not remove it.",
+            "fr": "Sur une scène de 16 répliques du pipeline d'origine, 13 répliques dépassaient leur créneau de plus que la tolérance de 200 ms, de 460 ms en moyenne et jusqu'à 540 ms. Tracer la durée doublée selon le créneau a montré quelque chose d'utile : pour le moteur de voix principal, la durée doublée suit environ 0,86 fois le créneau plus 0,77 seconde. C'est un décalage fixe, pas un problème de débit, ce qui veut dire que simplement accélérer la voix ne le supprimerait pas."
+          }
+        },
+        {
+          "type": "figure",
+          "src": "/articles/dubbing-timing-scatter.webp",
+          "alt": {
+            "en": "Scatter plot of dubbed duration against source slot for 16 segments.",
+            "fr": "Nuage de points de la durée doublée selon le créneau source pour 16 segments."
+          },
+          "caption": {
+            "en": "Dubbed duration against the source slot, one scene of 16 lines.",
+            "fr": "Durée doublée selon le créneau source, une scène de 16 répliques."
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "Pilot 2: five ways to fit a line",
+            "fr": "Pilote 2 : cinq façons d'ajuster une réplique"
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "I then compared five strategies on 20 sentences, with slots artificially shortened to 90 %, 75 % and 60 % of the natural duration. The strategies: do nothing; speed up the voice (capped); stretch without any cap; rewrite the sentence shorter with a small language model; and rewrite then speed up a little. The measure is the share of lines that fit within 200 ms.",
+            "fr": "J'ai ensuite comparé cinq stratégies sur 20 phrases, avec des créneaux volontairement raccourcis à 90 %, 75 % et 60 % de la durée naturelle. Les stratégies : ne rien faire ; accélérer la voix (avec plafond) ; étirer sans plafond ; réécrire la phrase plus courte avec un petit modèle de langage ; réécrire puis accélérer un peu. La mesure est la part des répliques qui tiennent à 200 ms près."
+          }
+        },
+        {
+          "type": "table",
+          "caption": {
+            "en": "Share of lines fitting within 200 ms (20 sentences per cell).",
+            "fr": "Part des répliques tenant à 200 ms près (20 phrases par cellule)."
+          },
+          "headers": {
+            "en": [
+              "Strategy",
+              "Slot 90 %",
+              "Slot 75 %",
+              "Slot 60 %",
+              "Text similarity (chrF)"
+            ],
+            "fr": [
+              "Stratégie",
+              "Créneau 90 %",
+              "Créneau 75 %",
+              "Créneau 60 %",
+              "Similarité du texte (chrF)"
+            ]
+          },
+          "rows": {
+            "en": [
+              [
+                "None",
+                "0.00",
+                "0.00",
+                "0.00",
+                "1.00"
+              ],
+              [
+                "Speed-up (capped)",
+                "1.00",
+                "0.90",
+                "0.00",
+                "1.00"
+              ],
+              [
+                "Stretch, no cap",
+                "1.00",
+                "1.00",
+                "1.00",
+                "1.00"
+              ],
+              [
+                "Rewrite",
+                "0.00",
+                "0.90",
+                "0.60",
+                "0.50 and 0.48"
+              ],
+              [
+                "Rewrite + speed-up",
+                "1.00",
+                "1.00",
+                "0.90",
+                "0.50 and 0.48"
+              ]
+            ],
+            "fr": [
+              [
+                "Aucune",
+                "0,00",
+                "0,00",
+                "0,00",
+                "1,00"
+              ],
+              [
+                "Accélération (plafonnée)",
+                "1,00",
+                "0,90",
+                "0,00",
+                "1,00"
+              ],
+              [
+                "Étirement sans plafond",
+                "1,00",
+                "1,00",
+                "1,00",
+                "1,00"
+              ],
+              [
+                "Réécriture",
+                "0,00",
+                "0,90",
+                "0,60",
+                "0,50 et 0,48"
+              ],
+              [
+                "Réécriture + accélération",
+                "1,00",
+                "1,00",
+                "0,90",
+                "0,50 et 0,48"
+              ]
+            ]
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "Stretching without a cap fits everything, but it needs a mean speed-up of 11 %, 33 % and 67 % at the three slots, which I would expect to sound unnatural. Capped speed-up fails when the slot is short. Rewriting plus a small speed-up fits 90 % to 100 % of the lines, with a mean speed-up of 11 %, 3 % and 9 % at the three slots. The cost is the text: when a sentence is rewritten, the similarity to the original is only about 0.5 on the chrF scale, so roughly half of the text changes.",
+            "fr": "Étirer sans plafond fait tout tenir, mais demande une accélération moyenne de 11 %, 33 % et 67 % aux trois créneaux, ce qui devrait sonner de façon peu naturelle. L'accélération plafonnée échoue quand le créneau est court. Réécrire puis accélérer un peu fait tenir 90 % à 100 % des répliques, avec une accélération moyenne de 11 %, 3 % et 9 % aux trois créneaux. Le prix est le texte : quand une phrase est réécrite, sa similarité avec l'originale n'est que d'environ 0,5 sur l'échelle chrF, donc environ la moitié du texte change."
+          }
+        },
+        {
+          "type": "figure",
+          "src": "/articles/dubbing-fit-share.webp",
+          "alt": {
+            "en": "Chart of the share of lines fitting within 200 ms for five strategies at three slot lengths.",
+            "fr": "Graphique de la part des répliques tenant à 200 ms près pour cinq stratégies à trois longueurs de créneau."
+          },
+          "caption": {
+            "en": "Share of lines fitting within 200 ms, by strategy and slot.",
+            "fr": "Part des répliques tenant à 200 ms près, par stratégie et par créneau."
+          }
+        },
+        {
+          "type": "callout",
+          "text": {
+            "en": "A hard limit is fragile. In one case the rewritten line needed exactly the 25 % speed-up limit: a synthesis of 2,780 ms was accepted, one of 2,790 ms was rejected. A 10 ms difference flipped the decision.",
+            "fr": "Une limite stricte est fragile. Dans un cas, la réplique réécrite demandait exactement la limite de 25 % d'accélération : une synthèse de 2 780 ms était acceptée, une de 2 790 ms refusée. Une différence de 10 ms a inversé la décision."
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "Pilot 3: speech recognition under noise",
+            "fr": "Pilote 3 : reconnaissance de la parole sous bruit"
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "The first step of the pipeline is transcription, so I also measured it on 16 synthetic clips with white noise, comparing two Whisper sizes. The small model stays around 3 % word error down to 10 dB, reaches 15.8 % at 0 dB and 51.5 % at minus 5 dB. The smaller base model goes above 100 % at minus 5 dB because it invents words. This echoes the failures I saw on real recordings in the Whisper study.",
+            "fr": "La première étape du pipeline est la transcription, je l'ai donc aussi mesurée sur 16 clips synthétiques avec du bruit blanc, en comparant deux tailles de Whisper. Le modèle small reste autour de 3 % d'erreur de mots jusqu'à 10 dB, atteint 15,8 % à 0 dB et 51,5 % à moins 5 dB. Le modèle base, plus petit, dépasse 100 % à moins 5 dB parce qu'il invente des mots. Cela rejoint les échecs vus sur de vrais enregistrements dans l'étude Whisper."
+          }
+        },
+        {
+          "type": "figure",
+          "src": "/articles/dubbing-asr-wer.webp",
+          "alt": {
+            "en": "Chart of word error rate against signal-to-noise ratio for two Whisper model sizes.",
+            "fr": "Graphique du taux d'erreur de mots selon le rapport signal sur bruit pour deux tailles de Whisper."
+          },
+          "caption": {
+            "en": "Word error rate against SNR on synthetic speech, with 95 % intervals.",
+            "fr": "Taux d'erreur de mots selon le SNR sur de la parole synthétique, avec intervalles à 95 %."
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "What this does not show",
+            "fr": "Ce que cela ne montre pas"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "The slots are synthetic and the speech is synthetic, with one voice and one small language model. There was no human listening test.",
+              "chrF measures how similar the text is on the surface. It does not tell whether a rewrite keeps the meaning, and that was not measured.",
+              "The timing pilot covers one scene, and the voice engine is confounded with the character and the rewrite loop.",
+              "Only short clips were run end to end, not a full episode."
+            ],
+            "fr": [
+              "Les créneaux et la parole sont synthétiques, avec une seule voix et un seul petit modèle de langage. Il n'y a pas eu de test d'écoute humain.",
+              "Le chrF mesure la ressemblance de surface du texte. Il ne dit pas si une réécriture garde le sens, et cela n'a pas été mesuré.",
+              "Le pilote de durée porte sur une scène, et le moteur de voix est confondu avec le personnage et la boucle de réécriture.",
+              "Seuls de courts extraits ont été traités de bout en bout, pas un épisode complet."
+            ]
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "What I would do next",
+            "fr": "Ce que je ferais ensuite"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "Replace the fixed limit by a soft penalty, so that a 10 ms jitter cannot flip a decision.",
+              "Measure whether rewrites keep the meaning, first with a second model, then with human raters.",
+              "Run a listening test to find the speed-up at which a dubbed voice starts to sound unnatural."
+            ],
+            "fr": [
+              "Remplacer la limite fixe par une pénalité progressive, pour qu'une variation de 10 ms ne puisse pas inverser une décision.",
+              "Mesurer si les réécritures gardent le sens, d'abord avec un second modèle, puis avec des évaluateurs humains.",
+              "Faire un test d'écoute pour trouver l'accélération à partir de laquelle une voix doublée sonne de façon peu naturelle."
+            ]
+          }
+        }
+      ],
+      "title": {
+        "en": "Making a translated line fit its time slot: five strategies compared",
+        "fr": "Faire tenir une réplique traduite dans son créneau : cinq stratégies comparées"
+      },
+      "subtitle": {
+        "en": "Three small pilots on a Japanese to French dubbing pipeline, and one result about fragile rules.",
+        "fr": "Trois petits pilotes sur un pipeline de doublage du japonais vers le français, et un résultat sur la fragilité des règles."
+      }
+    }
+  ],
   "experience": [
     {
       "org": "UniTchad SARL",
@@ -1068,8 +2190,8 @@
         "fr": "Responsable technique bénévole"
       },
       "description": {
-        "en": "I scope needs, design digital solutions, coordinate technical tasks and support innovation initiatives. I developed the association's platform, where researchers present their work and follow trainings. About a hundred people are registered, and the number keeps growing.",
-        "fr": "Je cadre les besoins, conçois des solutions numériques, coordonne les tâches techniques et soutiens des initiatives d'innovation. J'ai développé la plateforme de l'association, où des chercheurs présentent leurs travaux et suivent des formations. Environ une centaine de personnes y sont inscrites, et le nombre continue d'augmenter."
+        "en": "I scope needs, design digital solutions and coordinate technical tasks. I promote research in Africa: the platform I developed makes it easier to welcome doctoral students and young researchers, makes the association known, and puts their work forward through the ARCPOD podcast and the ARC Highlight series. About a hundred people are registered on it, and the number keeps growing.",
+        "fr": "Je cadre les besoins, conçois des solutions numériques et coordonne les tâches techniques. Je promeus la recherche en Afrique : la plateforme que j'ai développée facilite l'accueil des doctorants et des jeunes chercheurs, fait connaître l'association et met leur travail en avant à travers le podcast ARCPOD et la série ARC Highlight. Environ une centaine de personnes y sont inscrites, et le nombre continue d'augmenter."
       },
       "place": {
         "en": "",
@@ -1216,18 +2338,38 @@
     },
     {
       "kind": "academic",
+      "year": null,
+      "title": {
+        "en": "Burkinabè State scholarship",
+        "fr": "Bourse de l'État burkinabè"
+      },
+      "event": {
+        "en": "Throughout lycée, Burkina Faso",
+        "fr": "Pendant tout le lycée, Burkina Faso"
+      },
+      "detail": {
+        "en": "",
+        "fr": ""
+      },
+      "rank": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "kind": "academic",
       "year": 2023,
       "title": {
         "en": "Baccalauréat, series C (mathematics and physical sciences)",
         "fr": "Baccalauréat série C (mathématiques et sciences physiques)"
       },
       "event": {
-        "en": "Burkina Faso, with honours (Bien)",
-        "fr": "Burkina Faso, mention Bien"
+        "en": "Burkina Faso, 2023",
+        "fr": "Burkina Faso, 2023"
       },
       "detail": {
-        "en": "",
-        "fr": ""
+        "en": "Average of 15.31/20 (398 out of 520), first session 2023, Lycée scientifique régional de Bobo-Dioulasso. Admitted at the first round.",
+        "fr": "Moyenne de 15,31/20 (398 sur 520), session normale 2023, Lycée scientifique régional de Bobo-Dioulasso. Admis au premier tour."
       },
       "rank": {
         "en": "",

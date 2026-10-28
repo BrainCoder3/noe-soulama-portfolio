@@ -1,5 +1,5 @@
 import snapshotData from "@/data/snapshot.json";
-import type { Achievement, Experience, Profile, Project, SkillGroup } from "./types";
+import type { Achievement, Article, Experience, Profile, Project, SkillGroup } from "./types";
 
 /**
  * Two ways to get the content, same shape either way:
@@ -22,6 +22,7 @@ export class ApiError extends Error {
 type Snapshot = {
   profile: Profile;
   projects: Project[];
+  articles: Article[];
   experience: Experience[];
   achievements: Achievement[];
   skills: SkillGroup[];
@@ -54,6 +55,8 @@ export const api = SERVER_API
       profile: () => get<Profile>("/profile/"),
       projects: (query = "") => get<Project[]>(`/projects/${query}`),
       project: (slug: string) => get<Project>(`/projects/${slug}/`),
+      articles: () => get<Article[]>("/articles/"),
+      article: (slug: string) => get<Article>(`/articles/${slug}/`),
       experience: () => get<Experience[]>("/experience/"),
       achievements: () => get<Achievement[]>("/achievements/"),
       skills: () => get<SkillGroup[]>("/skills/"),
@@ -64,6 +67,12 @@ export const api = SERVER_API
       project: async (slug: string) => {
         const found = snapshot.projects.find((p) => p.slug === slug);
         if (!found) throw new ApiError(404, `No project ${slug}`);
+        return found;
+      },
+      articles: async () => snapshot.articles,
+      article: async (slug: string) => {
+        const found = snapshot.articles.find((a) => a.slug === slug);
+        if (!found) throw new ApiError(404, `No article ${slug}`);
         return found;
       },
       experience: async () => snapshot.experience,
