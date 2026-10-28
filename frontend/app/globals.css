@@ -1658,3 +1658,74 @@ html[data-intro="1"] .scope {
   box-shadow: 0 0 24px -10px var(--signal);
   animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d) both;
 }
+
+/* ------------------------------------------------------------------
+   Real images: screenshots of the live sites and the repositories' own result figures.
+   ------------------------------------------------------------------ */
+.card-media {
+  position: relative;
+  margin: -1.25rem -1.25rem 1.1rem;
+  aspect-ratio: 16 / 9;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.card:hover .card-media img {
+  transform: scale(1.03);
+}
+
+.card-lead {
+  overflow: hidden;
+}
+
+.card-lead .card-media {
+  grid-column: 1 / -1;
+  margin: calc(-1 * clamp(1.25rem, 3vw, 2rem)) calc(-1 * clamp(1.25rem, 3vw, 2rem)) 0;
+  aspect-ratio: 21 / 9;
+}
+
+/* the lead card shows a whole figure: never crop its axes */
+.card-lead .card-media img {
+  object-fit: contain !important;
+}
+
+.project-media {
+  margin: 0 0 2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+  aspect-ratio: 16 / 9;
+  max-width: 56rem;
+}
+
+.project-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-media img {
+    transition: none;
+  }
+  .card:hover .card-media img {
+    transform: none;
+  }
+}
+
+/* the opening's skip button must be easy to find */
+.intro-skip {
+  font-size: 1rem;
+  padding: 0.6rem 1.3rem;
+  border-color: var(--muted);
+  background: var(--panel);
+}

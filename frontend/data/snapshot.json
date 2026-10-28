@@ -2,42 +2,53 @@
   "profile": {
     "name": "Noé Soulama",
     "full_name": "SOULAMA Doubie Judicael Noé",
-    "location": "Tétouan, Morocco",
-    "origin": "Burkina Faso",
     "email": "soulama0758@gmail.com",
     "github": "https://github.com/BrainCoder3",
-    "linkedin": "https://www.linkedin.com/in/no%C3%A9-soulma-32b1663b4/",
+    "linkedin": "https://www.linkedin.com/in/no%C3%A9-soulama-32b1663b4/",
+    "cv_url": "",
     "stats": [
       {
-        "value": "1st / 49",
         "tone": "gold",
         "label": {
           "en": "ENSA Tétouan, 2025-2026",
           "fr": "ENSA Tétouan, 2025-2026"
+        },
+        "value": {
+          "en": "1st / 49",
+          "fr": "1er / 49"
         }
       },
       {
-        "value": "16.935",
         "tone": "gold",
         "label": {
           "en": "annual average out of 20",
           "fr": "moyenne annuelle sur 20"
+        },
+        "value": {
+          "en": "16.935",
+          "fr": "16.935"
         }
       },
       {
-        "value": "3 podiums",
         "tone": "gold",
         "label": {
           "en": "two 1st places, one 2nd, in 2026",
           "fr": "deux 1res places, une 2e, en 2026"
+        },
+        "value": {
+          "en": "3 podiums",
+          "fr": "3 podiums"
         }
       },
       {
-        "value": "~100",
         "tone": "blue",
         "label": {
           "en": "registered users on the ARC platform I built",
           "fr": "inscrits sur la plateforme d'ARC que j'ai construite"
+        },
+        "value": {
+          "en": "~100",
+          "fr": "~100"
         }
       }
     ],
@@ -93,8 +104,16 @@
       "fr": "Élève ingénieur en Big Data et IA, classé 1er sur 49. Je mène de petites expériences honnêtes sur la façon dont les modèles échouent, et je construis les logiciels qui les entourent."
     },
     "bio": {
-      "en": "I come from Burkina Faso and study at ENSA Tétouan in Morocco, where I ranked 1st of 49 in 2025-2026 with an annual average of 16.935/20.\n\nMy guiding question is simple: how do you build AI systems that stay reliable when data becomes noisy, scarce or different from what they trained on? I look for answers with small experiments on speech, vision and multimodal models, and I report what they do not show as clearly as what they do.\n\nBeside the lab work I build software for real users: a platform used by about a hundred registered people, applications for clients, and a company I co-founded. Building them taught me where my limits are. A demo is easy; a service that is secure, solid and actually used is the hard part. That is what I want to learn next, in the Informatics and Networks engineering degree at INSA Toulouse, to build the infrastructure that AI needs.",
-      "fr": "Je viens du Burkina Faso et j'étudie à l'ENSA de Tétouan, au Maroc, où j'ai été classé 1er sur 49 en 2025-2026 avec une moyenne annuelle de 16,935/20.\n\nMa question directrice est simple : comment construire des systèmes d'IA qui restent fiables quand les données deviennent bruitées, rares ou différentes de celles de l'entraînement ? Je cherche des réponses par de petites expériences sur la parole, la vision et les modèles multimodaux, et je dis ce qu'elles ne montrent pas aussi clairement que ce qu'elles montrent.\n\nEn parallèle du travail de laboratoire, je construis des logiciels pour de vrais utilisateurs : une plateforme utilisée par une centaine de personnes inscrites, des applications pour des clients, et une entreprise que j'ai cofondée. Les construire m'a appris où sont mes limites. Une démo est facile ; un service sûr, solide et réellement utilisé est la partie difficile. C'est ce que je veux apprendre ensuite, dans le diplôme d'ingénieur Informatique et Réseaux de l'INSA Toulouse, pour bâtir l'infrastructure dont l'IA a besoin."
+      "en": "I come from Burkina Faso and study at ENSA Tétouan in Morocco, where I ranked 1st of 49 in 2025-2026 with an annual average of 16.935/20.\n\nMy guiding question is simple: how do you build AI systems that stay reliable when data becomes noisy, scarce or different from what they trained on? I look for answers with small experiments on speech, vision and multimodal models, and I report what they do not show as clearly as what they do.\n\nBeside the lab work I build software for real users: a platform used by about a hundred registered people, applications for clients, and a company I co-founded. Building them taught me where my limits are. A demo is easy; a service that is secure, solid and actually used is the hard part. That is what I want to learn next, in an engineering programme in informatics and networks, to build the infrastructure that AI needs.",
+      "fr": "Je viens du Burkina Faso et j'étudie à l'ENSA de Tétouan, au Maroc, où j'ai été classé 1er sur 49 en 2025-2026 avec une moyenne annuelle de 16,935/20.\n\nMa question directrice est simple : comment construire des systèmes d'IA qui restent fiables quand les données deviennent bruitées, rares ou différentes de celles de l'entraînement ? Je cherche des réponses par de petites expériences sur la parole, la vision et les modèles multimodaux, et je dis ce qu'elles ne montrent pas aussi clairement que ce qu'elles montrent.\n\nEn parallèle du travail de laboratoire, je construis des logiciels pour de vrais utilisateurs : une plateforme utilisée par une centaine de personnes inscrites, des applications pour des clients, et une entreprise que j'ai cofondée. Les construire m'a appris où sont mes limites. Une démo est facile ; un service sûr, solide et réellement utilisé est la partie difficile. C'est ce que je veux apprendre ensuite, dans une formation d'ingénieur en informatique et réseaux, pour bâtir l'infrastructure dont l'IA a besoin."
+    },
+    "location": {
+      "en": "Tétouan, Morocco",
+      "fr": "Tétouan, Maroc"
+    },
+    "origin": {
+      "en": "Burkina Faso",
+      "fr": "du Burkina Faso"
     }
   },
   "projects": [
@@ -152,6 +171,8 @@
           }
         }
       ],
+      "image": "/projects/robustclip-lite.webp",
+      "image_fit": "cover",
       "repo_url": "https://github.com/BrainCoder3/robustclip-lite",
       "demo_url": "",
       "code_is_private": false,
@@ -170,6 +191,10 @@
       "role": {
         "en": "Personal research project, designed, coded and evaluated by me",
         "fr": "Projet de recherche personnel, conçu, codé et évalué par moi"
+      },
+      "image_alt": {
+        "en": "Chart of recall@10 against test noise for standard and noise-aware training, mean and standard deviation over seeds.",
+        "fr": "Graphique du rappel@10 selon le bruit de test pour l'entraînement standard et robuste au bruit, moyenne et écart type sur plusieurs essais."
       }
     },
     {
@@ -220,6 +245,8 @@
           ]
         }
       ],
+      "image": "/projects/whisper-robustness.webp",
+      "image_fit": "cover",
       "repo_url": "https://github.com/BrainCoder3/Whisper-Robustness-to-Synthetic-Noise",
       "demo_url": "",
       "code_is_private": false,
@@ -228,8 +255,8 @@
         "fr": "Un pipeline reproductible qui ajoute un bruit gaussien contrôlé (fixé par le rapport signal sur bruit) à des enregistrements en français et mesure comment Whisper-small les transcrit, avec les taux d'erreur de mots et de caractères, la normalisation du texte et l'analyse des échecs de décodage."
       },
       "result": {
-        "en": "Word error rate is 12.9 % without noise, 13.9 % at 20 dB and 53.6 % at 10 dB. At strong noise the model sometimes repeats or invents words.",
-        "fr": "Le taux d'erreur de mots est de 12,9 % sans bruit, 13,9 % à 20 dB et 53,6 % à 10 dB. Sous fort bruit, le modèle répète ou invente parfois des mots."
+        "en": "Word error rate is 12.9 % without noise, 13.9 % at 20 dB and 53.6 % at 10 dB. At strong noise the model sometimes repeats or invents words. The repository's chart goes further down: at 0 dB, invented and repeated words push the error rate above 100 %.",
+        "fr": "Le taux d'erreur de mots est de 12,9 % sans bruit, 13,9 % à 20 dB et 53,6 % à 10 dB. Sous fort bruit, le modèle répète ou invente parfois des mots. Le graphique du dépôt va plus bas : à 0 dB, les mots inventés ou répétés poussent le taux d'erreur au-delà de 100 %."
       },
       "limit": {
         "en": "Five recordings from a single speaker. It points at a question worth testing properly; it does not settle it. It is also the starting point of my plan to measure speech recognition on Dioula.",
@@ -238,6 +265,10 @@
       "role": {
         "en": "Personal research project",
         "fr": "Projet de recherche personnel"
+      },
+      "image_alt": {
+        "en": "Chart of Whisper-small mean word error rate (as a ratio) against signal-to-noise ratio, rising sharply below 10 dB.",
+        "fr": "Graphique du taux d'erreur de mots moyen de Whisper-small (en ratio) selon le rapport signal sur bruit, en forte hausse sous 10 dB."
       }
     },
     {
@@ -246,7 +277,7 @@
       "kind": "research",
       "status": "study",
       "priority": 3,
-      "featured": true,
+      "featured": false,
       "year": 2026,
       "stack": [
         "Python",
@@ -275,6 +306,8 @@
           }
         }
       ],
+      "image": "/projects/action-recognition-3dcnn.webp",
+      "image_fit": "cover",
       "repo_url": "https://github.com/BrainCoder3/human-action-recognition-3dcnn",
       "demo_url": "",
       "code_is_private": false,
@@ -293,6 +326,10 @@
       "role": {
         "en": "Personal research project",
         "fr": "Projet de recherche personnel"
+      },
+      "image_alt": {
+        "en": "Bar chart of test accuracy: 70.5 % for the RGB 3D CNN, 84.7 % with motion features.",
+        "fr": "Diagramme de la précision de test : 70,5 % pour le CNN 3D RGB, 84,7 % avec l'information de mouvement."
       }
     },
     {
@@ -311,6 +348,8 @@
         "ffmpeg"
       ],
       "metrics": [],
+      "image": "/projects/japanese-french-dubbing.webp",
+      "image_fit": "cover",
       "repo_url": "https://github.com/BrainCoder3/anime-translator-ai",
       "demo_url": "",
       "code_is_private": false,
@@ -329,6 +368,10 @@
       "role": {
         "en": "Pipeline and evaluation",
         "fr": "Pipeline et évaluation"
+      },
+      "image_alt": {
+        "en": "Chart of the share of lines fitting their time slot within 200 ms for five strategies and three slot lengths.",
+        "fr": "Graphique de la part des répliques qui tiennent dans leur créneau à 200 ms près, pour cinq stratégies et trois longueurs de créneau."
       }
     },
     {
@@ -344,6 +387,8 @@
         "Vercel"
       ],
       "metrics": [],
+      "image": "/projects/arc-platform.webp",
+      "image_fit": "cover",
       "repo_url": "",
       "demo_url": "https://www.africa-arc.com/en",
       "code_is_private": false,
@@ -362,6 +407,10 @@
       "role": {
         "en": "Developer of the platform; volunteer technical lead of the association",
         "fr": "Développeur de la plateforme ; responsable technique bénévole de l'association"
+      },
+      "image_alt": {
+        "en": "Home page of the Africa Research Center website.",
+        "fr": "Page d'accueil du site de l'Africa Research Center."
       }
     },
     {
@@ -377,6 +426,8 @@
         "Django"
       ],
       "metrics": [],
+      "image": "/projects/schoolgo.webp",
+      "image_fit": "cover",
       "repo_url": "",
       "demo_url": "https://schoolgo.unitchad.com/",
       "code_is_private": false,
@@ -385,16 +436,20 @@
         "fr": "Une plateforme de gestion scolaire (SaaS) pour les directeurs, les enseignants et les parents : dossiers numériques des élèves avec notes et présences, un portail enseignant pour les notes et les emplois du temps, des notifications SMS automatiques aux parents, des accès selon les rôles, le suivi des frais de scolarité et de la paie, et une analyse assistée par IA pour repérer tôt les élèves en difficulté. Construite avec mes associés d'UniTchad, et j'ai travaillé sur la plateforme."
       },
       "result": {
-        "en": "The product site is live, with sign-up and login, at schoolgo.unitchad.com.",
-        "fr": "Le site du produit est en ligne, avec inscription et connexion, à schoolgo.unitchad.com."
+        "en": "The product site is live in French and English, with sign-up and login, at schoolgo.unitchad.com.",
+        "fr": "Le site du produit est en ligne en français et en anglais, avec inscription et connexion, à schoolgo.unitchad.com."
       },
       "limit": {
-        "en": "I do not claim a number of schools or users: the needs are still being discussed with schools in the field. The site is in French only.",
-        "fr": "Je n'affirme pas de nombre d'écoles ou d'utilisateurs : les besoins sont encore discutés avec des établissements sur le terrain. Le site est uniquement en français."
+        "en": "I do not claim a number of schools or users: the needs are still being discussed with schools in the field. The dashboard figures on the landing page are illustrations.",
+        "fr": "Je n'affirme pas de nombre d'écoles ou d'utilisateurs : les besoins sont encore discutés avec des établissements sur le terrain. Les chiffres du tableau de bord sur la page d'accueil sont des illustrations."
       },
       "role": {
         "en": "Worked on the platform with the UniTchad team",
         "fr": "J'ai travaillé sur la plateforme avec l'équipe d'UniTchad"
+      },
+      "image_alt": {
+        "en": "Home page of the SchoolGo website.",
+        "fr": "Page d'accueil du site SchoolGo."
       }
     },
     {
@@ -414,6 +469,8 @@
         "Web Speech API"
       ],
       "metrics": [],
+      "image": "",
+      "image_fit": "cover",
       "repo_url": "https://github.com/BrainCoder3/speakup-ai-english-coach",
       "demo_url": "",
       "code_is_private": false,
@@ -432,6 +489,10 @@
       "role": {
         "en": "Designed and built alone",
         "fr": "Conçu et construit seul"
+      },
+      "image_alt": {
+        "en": "",
+        "fr": ""
       }
     },
     {
@@ -452,6 +513,8 @@
         "PostgreSQL"
       ],
       "metrics": [],
+      "image": "",
+      "image_fit": "cover",
       "repo_url": "",
       "demo_url": "",
       "code_is_private": true,
@@ -470,6 +533,10 @@
       "role": {
         "en": "Developer",
         "fr": "Développeur"
+      },
+      "image_alt": {
+        "en": "",
+        "fr": ""
       }
     },
     {
@@ -486,6 +553,8 @@
         "REST API"
       ],
       "metrics": [],
+      "image": "",
+      "image_fit": "cover",
       "repo_url": "",
       "demo_url": "",
       "code_is_private": false,
@@ -504,6 +573,10 @@
       "role": {
         "en": "Developer",
         "fr": "Développeur"
+      },
+      "image_alt": {
+        "en": "",
+        "fr": ""
       }
     },
     {
@@ -522,6 +595,8 @@
         "Flutter"
       ],
       "metrics": [],
+      "image": "",
+      "image_fit": "cover",
       "repo_url": "",
       "demo_url": "",
       "code_is_private": false,
@@ -540,6 +615,10 @@
       "role": {
         "en": "Developer",
         "fr": "Développeur"
+      },
+      "image_alt": {
+        "en": "",
+        "fr": ""
       }
     },
     {
@@ -555,6 +634,8 @@
         "Dart"
       ],
       "metrics": [],
+      "image": "",
+      "image_fit": "cover",
       "repo_url": "",
       "demo_url": "",
       "code_is_private": true,
@@ -573,6 +654,10 @@
       "role": {
         "en": "Full-stack developer at Axiane Agency",
         "fr": "Développeur full-stack chez Axiane Agency"
+      },
+      "image_alt": {
+        "en": "",
+        "fr": ""
       }
     },
     {
@@ -590,6 +675,8 @@
         "SimpleJWT"
       ],
       "metrics": [],
+      "image": "",
+      "image_fit": "cover",
       "repo_url": "https://github.com/BrainCoder3/TaxiGo",
       "demo_url": "",
       "code_is_private": false,
@@ -608,6 +695,10 @@
       "role": {
         "en": "Designed and built alone",
         "fr": "Conçu et construit seul"
+      },
+      "image_alt": {
+        "en": "",
+        "fr": ""
       }
     },
     {
@@ -624,6 +715,8 @@
         "Jupyter"
       ],
       "metrics": [],
+      "image": "",
+      "image_fit": "cover",
       "repo_url": "https://github.com/BrainCoder3/tinygpt-from-scratch",
       "demo_url": "",
       "code_is_private": false,
@@ -642,6 +735,10 @@
       "role": {
         "en": "Personal learning project",
         "fr": "Projet d'apprentissage personnel"
+      },
+      "image_alt": {
+        "en": "",
+        "fr": ""
       }
     },
     {
@@ -659,6 +756,8 @@
         "Firebase"
       ],
       "metrics": [],
+      "image": "",
+      "image_fit": "cover",
       "repo_url": "https://github.com/BrainCoder3/learn_craft",
       "demo_url": "",
       "code_is_private": false,
@@ -677,6 +776,10 @@
       "role": {
         "en": "Developer",
         "fr": "Développeur"
+      },
+      "image_alt": {
+        "en": "",
+        "fr": ""
       }
     },
     {
@@ -693,6 +796,8 @@
         "Vercel"
       ],
       "metrics": [],
+      "image": "",
+      "image_fit": "cover",
       "repo_url": "https://github.com/BrainCoder3/campus-prof",
       "demo_url": "https://campus-ai-sigma.vercel.app",
       "code_is_private": false,
@@ -711,6 +816,10 @@
       "role": {
         "en": "Developer",
         "fr": "Développeur"
+      },
+      "image_alt": {
+        "en": "",
+        "fr": ""
       }
     },
     {
@@ -727,6 +836,8 @@
         "Docker"
       ],
       "metrics": [],
+      "image": "",
+      "image_fit": "cover",
       "repo_url": "https://github.com/BrainCoder3/projet-siem-bigdata",
       "demo_url": "",
       "code_is_private": false,
@@ -745,6 +856,10 @@
       "role": {
         "en": "Course project",
         "fr": "Projet de cours"
+      },
+      "image_alt": {
+        "en": "",
+        "fr": ""
       }
     },
     {
@@ -761,6 +876,8 @@
         "Jupyter"
       ],
       "metrics": [],
+      "image": "",
+      "image_fit": "cover",
       "repo_url": "https://github.com/BrainCoder3/Vizualisation-Global-AI-Job-Market-Trends-Salary-Insights",
       "demo_url": "",
       "code_is_private": false,
@@ -779,6 +896,10 @@
       "role": {
         "en": "Personal project",
         "fr": "Projet personnel"
+      },
+      "image_alt": {
+        "en": "",
+        "fr": ""
       }
     },
     {
@@ -793,6 +914,8 @@
         "Python"
       ],
       "metrics": [],
+      "image": "",
+      "image_fit": "cover",
       "repo_url": "https://github.com/BrainCoder3/DeepLearning-apprentissage",
       "demo_url": "",
       "code_is_private": false,
@@ -811,6 +934,10 @@
       "role": {
         "en": "Personal learning project",
         "fr": "Projet d'apprentissage personnel"
+      },
+      "image_alt": {
+        "en": "",
+        "fr": ""
       }
     },
     {
@@ -828,6 +955,8 @@
         "LightGBM"
       ],
       "metrics": [],
+      "image": "",
+      "image_fit": "cover",
       "repo_url": "https://github.com/BrainCoder3/kaggle_competition",
       "demo_url": "",
       "code_is_private": false,
@@ -846,6 +975,10 @@
       "role": {
         "en": "Personal projects",
         "fr": "Projets personnels"
+      },
+      "image_alt": {
+        "en": "",
+        "fr": ""
       }
     },
     {
@@ -861,6 +994,8 @@
         "Vercel"
       ],
       "metrics": [],
+      "image": "",
+      "image_fit": "cover",
       "repo_url": "",
       "demo_url": "https://new-boss-form.vercel.app",
       "code_is_private": true,
@@ -879,6 +1014,10 @@
       "role": {
         "en": "Developer",
         "fr": "Développeur"
+      },
+      "image_alt": {
+        "en": "",
+        "fr": ""
       }
     }
   ],
@@ -886,7 +1025,6 @@
     {
       "org": "UniTchad SARL",
       "kind": "company",
-      "place": "Chad",
       "start": "2026",
       "end": "",
       "role": {
@@ -896,12 +1034,15 @@
       "description": {
         "en": "A company incorporated in Chad in 2026 with my associates, building digital solutions: web and mobile software, AI, cybersecurity and digital transformation. I take part in technical choices and in development. The ambition is to extend to the rest of Africa, including Burkina Faso.",
         "fr": "Une société constituée au Tchad en 2026 avec mes associés, qui conçoit des solutions numériques : logiciels web et mobile, IA, cybersécurité et transformation digitale. Je participe aux choix techniques et au développement. L'ambition est de s'étendre au reste de l'Afrique, dont le Burkina Faso."
+      },
+      "place": {
+        "en": "Chad",
+        "fr": "Tchad"
       }
     },
     {
       "org": "Axiane Agency",
       "kind": "company",
-      "place": "Burkina Faso",
       "start": "2026",
       "end": "",
       "role": {
@@ -911,13 +1052,16 @@
       "description": {
         "en": "I helped set up Dehere, a platform that lets students find supervisors in several fields: interfaces, APIs, database and product features, in Flutter/Dart. Dehere is not launched yet because its security has to be reviewed first.",
         "fr": "J'ai aidé à mettre en place Dehere, une plateforme qui permet à des élèves de trouver des encadrants dans plusieurs domaines : interfaces, APIs, base de données et fonctionnalités produit, en Flutter/Dart. Dehere n'est pas encore lancée : sa sécurité doit d'abord être revue."
+      },
+      "place": {
+        "en": "Burkina Faso",
+        "fr": "Burkina Faso"
       }
     },
     {
       "org": "Africa Research Center",
       "kind": "community",
-      "place": "",
-      "start": "Sept 2025",
+      "start": "09/2025",
       "end": "",
       "role": {
         "en": "Volunteer technical lead",
@@ -926,12 +1070,15 @@
       "description": {
         "en": "I scope needs, design digital solutions, coordinate technical tasks and support innovation initiatives. I developed the association's platform, where researchers present their work and follow trainings. About a hundred people are registered, and the number keeps growing.",
         "fr": "Je cadre les besoins, conçois des solutions numériques, coordonne les tâches techniques et soutiens des initiatives d'innovation. J'ai développé la plateforme de l'association, où des chercheurs présentent leurs travaux et suivent des formations. Environ une centaine de personnes y sont inscrites, et le nombre continue d'augmenter."
+      },
+      "place": {
+        "en": "",
+        "fr": ""
       }
     },
     {
       "org": "Club des Étudiants Étrangers, ENSA Tétouan",
       "kind": "leadership",
-      "place": "Tétouan, Morocco",
       "start": "2026",
       "end": "",
       "role": {
@@ -941,13 +1088,16 @@
       "description": {
         "en": "I help foreign students meet each other and find opportunities, and I organise events that make settling in easier. Being a foreign student myself in Morocco is why this matters to me.",
         "fr": "J'aide les étudiants étrangers à se rencontrer et à trouver des opportunités, et j'organise des événements qui facilitent l'intégration. Être moi-même étudiant étranger au Maroc explique pourquoi cela compte pour moi."
+      },
+      "place": {
+        "en": "Tétouan, Morocco",
+        "fr": "Tétouan, Maroc"
       }
     },
     {
       "org": "ASEET",
       "kind": "leadership",
-      "place": "Tétouan, Morocco",
-      "start": "Apr 2026",
+      "start": "04/2026",
       "end": "",
       "role": {
         "en": "Member of the control commission",
@@ -956,13 +1106,16 @@
       "description": {
         "en": "A student association role. Before that, secretary general of its sports commission (2025-2026).",
         "fr": "Un rôle au sein d'une association d'étudiants. Auparavant, secrétaire général de sa commission sportive (2025-2026)."
+      },
+      "place": {
+        "en": "Tétouan, Morocco",
+        "fr": "Tétouan, Maroc"
       }
     }
   ],
   "achievements": [
     {
       "kind": "academic",
-      "rank": "1st",
       "year": 2026,
       "title": {
         "en": "Ranked 1st of 49 students",
@@ -975,11 +1128,14 @@
       "detail": {
         "en": "Annual average of 16.935/20, after 15.2 and 15.424 in the two preparatory years. Certified by a ranking attestation from the school.",
         "fr": "Moyenne annuelle de 16,935/20, après 15,2 et 15,424 pendant les deux années préparatoires. Attesté par une attestation de classement de l'école."
+      },
+      "rank": {
+        "en": "1st",
+        "fr": "1re"
       }
     },
     {
       "kind": "award",
-      "rank": "1st",
       "year": 2026,
       "title": {
         "en": "Coding and AI Challenge",
@@ -992,11 +1148,14 @@
       "detail": {
         "en": "",
         "fr": ""
+      },
+      "rank": {
+        "en": "1st",
+        "fr": "1re"
       }
     },
     {
       "kind": "award",
-      "rank": "1st",
       "year": 2026,
       "title": {
         "en": "Project contest",
@@ -1009,11 +1168,14 @@
       "detail": {
         "en": "",
         "fr": ""
+      },
+      "rank": {
+        "en": "1st",
+        "fr": "1re"
       }
     },
     {
       "kind": "award",
-      "rank": "2nd",
       "year": 2026,
       "title": {
         "en": "Hackathon",
@@ -1026,11 +1188,14 @@
       "detail": {
         "en": "",
         "fr": ""
+      },
+      "rank": {
+        "en": "2nd",
+        "fr": "2e"
       }
     },
     {
       "kind": "academic",
-      "rank": "",
       "year": 2026,
       "title": {
         "en": "Top course results",
@@ -1043,11 +1208,14 @@
       "detail": {
         "en": "Machine Learning 18.75/20, Numerical linear algebra 18/20, Databases 17.84/20, Big Data 17.5/20, Advanced algorithmics 17.39/20.",
         "fr": "Machine Learning 18,75/20, Algèbre linéaire numérique 18/20, Bases de données 17,84/20, Big Data 17,5/20, Algorithmique avancée 17,39/20."
+      },
+      "rank": {
+        "en": "",
+        "fr": ""
       }
     },
     {
       "kind": "academic",
-      "rank": "",
       "year": 2023,
       "title": {
         "en": "Baccalauréat, series C (mathematics and physical sciences)",
@@ -1060,11 +1228,14 @@
       "detail": {
         "en": "",
         "fr": ""
+      },
+      "rank": {
+        "en": "",
+        "fr": ""
       }
     },
     {
       "kind": "certificate",
-      "rank": "",
       "year": 2025,
       "title": {
         "en": "Saber's English Training, intensive course",
@@ -1075,6 +1246,10 @@
         "fr": "Certificat de langue anglaise"
       },
       "detail": {
+        "en": "",
+        "fr": ""
+      },
+      "rank": {
         "en": "",
         "fr": ""
       }

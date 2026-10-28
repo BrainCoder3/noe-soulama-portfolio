@@ -20,7 +20,7 @@ export function HomeView({
 }) {
   const { t, ui } = useLang();
   const [lead, ...rest] = featured;
-  const ranked = achievements.filter((a) => a.rank).slice(0, 4);
+  const ranked = achievements.filter((a) => a.rank.en).slice(0, 4);
 
   return (
     <>
@@ -36,9 +36,14 @@ export function HomeView({
               <Link href="/contact" className="btn btn-ghost">
                 {ui("hero.cta_contact")}
               </Link>
+              {profile.cv_url && (
+                <a href={profile.cv_url} className="btn btn-ghost" download>
+                  {ui("hero.cta_cv")}
+                </a>
+              )}
             </div>
             <p className="byline">
-              {profile.name}, {profile.location}
+              {profile.name}, {t(profile.location)}
             </p>
           </div>
           <NoiseTrace />

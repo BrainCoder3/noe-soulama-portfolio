@@ -13,12 +13,16 @@ class Profile(models.Model):
     tagline_fr = models.TextField()
     bio_en = models.TextField()
     bio_fr = models.TextField()
-    location = models.CharField(max_length=120)
-    origin = models.CharField(max_length=120)
+    location_en = models.CharField(max_length=120)
+    location_fr = models.CharField(max_length=120, blank=True)
+    origin_en = models.CharField(max_length=120)
+    origin_fr = models.CharField(max_length=120, blank=True)
     email = models.EmailField()
     github = models.URLField()
     linkedin = models.URLField(blank=True)
-    # [{"value": "1/49", "label_en": "...", "label_fr": "...", "tone": "gold"}]
+    # Path of a CV PDF under frontend/public, e.g. /cv-noe-soulama.pdf. Empty hides the download button.
+    cv_url = models.CharField(max_length=200, blank=True)
+    # [{"value_en": "1st / 49", "value_fr": "1er / 49", "label_en": "...", "label_fr": "...", "tone": "gold"}]
     stats = models.JSONField(default=list, blank=True)
     # [{"en": "...", "fr": "..."}]
     interests = models.JSONField(default=list, blank=True)
@@ -60,6 +64,11 @@ class Project(models.Model):
     # [{"type": "pair", "label_en", "label_fr", "before", "after", "unit", "max"}]
     # [{"type": "series", "label_en", "label_fr", "unit", "max", "points": [{"x", "y"}]}]
     metrics = models.JSONField(default=list, blank=True)
+    # Path under frontend/public (a real screenshot or one of the repository's own result figures)
+    image = models.CharField(max_length=200, blank=True)
+    image_fit = models.CharField(max_length=8, default="cover", help_text="cover for screenshots, contain for figures")
+    image_alt_en = models.CharField(max_length=300, blank=True)
+    image_alt_fr = models.CharField(max_length=300, blank=True)
     repo_url = models.URLField(blank=True, help_text="Only public repositories")
     demo_url = models.URLField(blank=True)
     code_is_private = models.BooleanField(default=False)
@@ -81,7 +90,8 @@ class Experience(models.Model):
     kind = models.CharField(max_length=16, choices=Kind.choices)
     role_en = models.CharField(max_length=200)
     role_fr = models.CharField(max_length=200)
-    place = models.CharField(max_length=120, blank=True)
+    place_en = models.CharField(max_length=120, blank=True)
+    place_fr = models.CharField(max_length=120, blank=True)
     start = models.CharField(max_length=20, help_text="Free text, e.g. 2026 or Sept 2025")
     end = models.CharField(max_length=20, blank=True, help_text="Empty = ongoing")
     description_en = models.TextField()
@@ -104,7 +114,8 @@ class Achievement(models.Model):
     kind = models.CharField(max_length=16, choices=Kind.choices)
     title_en = models.CharField(max_length=200)
     title_fr = models.CharField(max_length=200)
-    rank = models.CharField(max_length=40, blank=True, help_text="e.g. 1st, 2nd")
+    rank_en = models.CharField(max_length=40, blank=True, help_text="e.g. 1st, 2nd")
+    rank_fr = models.CharField(max_length=40, blank=True, help_text="e.g. 1re, 2e")
     event_en = models.CharField(max_length=240, blank=True)
     event_fr = models.CharField(max_length=240, blank=True)
     year = models.PositiveSmallIntegerField(null=True, blank=True)

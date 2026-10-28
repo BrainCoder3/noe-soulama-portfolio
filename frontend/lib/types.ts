@@ -1,7 +1,7 @@
 export type Lang = "en" | "fr";
 export type Bi = { en: string; fr: string };
 
-export type Stat = { value: string; tone: "gold" | "blue"; label: Bi };
+export type Stat = { value: Bi; tone: "gold" | "blue"; label: Bi };
 
 export type Profile = {
   name: string;
@@ -9,8 +9,9 @@ export type Profile = {
   headline: Bi;
   tagline: Bi;
   bio: Bi;
-  location: string;
-  origin: string;
+  location: Bi;
+  origin: Bi;
+  cv_url: string;
   email: string;
   github: string;
   linkedin: string;
@@ -55,6 +56,9 @@ export type Project = {
   result: Bi;
   limit: Bi;
   role: Bi;
+  image: string;
+  image_fit: "cover" | "contain";
+  image_alt: Bi;
   stack: string[];
   metrics: Metric[];
   repo_url: string;
@@ -66,7 +70,7 @@ export type Experience = {
   org: string;
   kind: "company" | "community" | "leadership";
   role: Bi;
-  place: string;
+  place: Bi;
   start: string;
   end: string;
   description: Bi;
@@ -75,7 +79,7 @@ export type Experience = {
 export type Achievement = {
   kind: "award" | "academic" | "certificate";
   title: Bi;
-  rank: string;
+  rank: Bi;
   event: Bi;
   year: number | null;
   detail: Bi;

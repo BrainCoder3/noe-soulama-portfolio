@@ -31,7 +31,7 @@ def _fold_label(item: dict) -> dict:
 
 
 class ProfileSerializer(BilingualSerializer):
-    bilingual = ("headline", "tagline", "bio")
+    bilingual = ("headline", "tagline", "bio", "location", "origin")
 
     class Meta:
         model = models.Profile
@@ -44,7 +44,7 @@ class ProfileSerializer(BilingualSerializer):
 
 
 class ProjectSerializer(BilingualSerializer):
-    bilingual = ("summary", "result", "limit", "role")
+    bilingual = ("summary", "result", "limit", "role", "image_alt")
 
     class Meta:
         model = models.Project
@@ -57,7 +57,7 @@ class ProjectSerializer(BilingualSerializer):
 
 
 class ExperienceSerializer(BilingualSerializer):
-    bilingual = ("role", "description")
+    bilingual = ("role", "description", "place")
 
     class Meta:
         model = models.Experience
@@ -65,7 +65,7 @@ class ExperienceSerializer(BilingualSerializer):
 
 
 class AchievementSerializer(BilingualSerializer):
-    bilingual = ("title", "event", "detail")
+    bilingual = ("title", "event", "detail", "rank")
 
     class Meta:
         model = models.Achievement
