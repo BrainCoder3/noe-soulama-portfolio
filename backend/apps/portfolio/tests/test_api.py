@@ -153,4 +153,52 @@ class SnapshotTests(SeededTestCase):
         api_projects = self.client.get(f"{API}/projects/").json()
         self.assertEqual(snapshot["projects"], api_projects)
         self.assertEqual(snapshot["profile"], self.client.get(f"{API}/profile/").json())
-        self.assertEqual(set(snapshot), {"profile", "projects", "experience", "achievements", "skills"})
+        self.assertEqual(set(snapshot), {"profile", "projects", "articles", "experience", "achievements", "skills"})
+        self.assertEqual(snapshot["articles"], self.client.get(f"{API}/articles/").json())
+
+
+class ArticleTests(SeededTestCase):
+    def test_articles_are_listed_and_bilingual(self):
+        data = self.client.get(f"{API}/articles/").json()
+        self.assertEqual(len(data), 4)
+        for article in data:
+            self.assertTrue(article["title"]["en"] and article["title"]["fr"])
+            self.assertTrue(article["blocks"], article["slug"])
+
+    def test_every_text_block_exists_in_both_languages(self):
+        for article in self.client.get(f"{API}/articles/").json():
+            for block in article["blocks"]:
+                for key, value in block.items():
+                    if isinstance(value, dict) and set(value) == {"en", "fr"}:
+                        self.assertEqual(bool(value["en"]), bool(value["fr"]), f"{article['slug']}: {key}")
+                        if isinstance(value["en"], list):
+                            self.assertEqual(len(value["en"]), len(value["fr"]), f"{article['slug']}: {key}")
+
+    def test_every_article_states_its_limits(self):
+        for article in self.client.get(f"{API}/articles/").json():
+            headings = [b["text"]["en"] for b in article["blocks"] if b["type"] == "h2"]
+            self.assertIn("What this does not show", headings, article["slug"])
+
+    def test_article_figures_exist(self):
+        from pathlib import Path
+
+        from django.conf import settings
+
+        public = Path(settings.BASE_DIR).parent / "frontend" / "public"
+        for article in self.client.get(f"{API}/articles/").json():
+            for block in article["blocks"]:
+                if block["type"] == "figure":
+                    self.assertTrue((public / block["src"].lstrip("/")).is_file(), block["src"])
+                    self.assertTrue(block["alt"]["en"] and block["alt"]["fr"])
+
+    def test_articles_link_to_real_projects(self):
+        slugs = set(models.Project.objects.values_list("slug", flat=True))
+        for article in self.client.get(f"{API}/articles/").json():
+            self.assertIn(article["project_slug"], slugs)
+
+    def test_key_numbers_match_the_repositories(self):
+        article = self.client.get(f"{API}/articles/robustclip-noise-robustness/").json()
+        text = str(article["blocks"])
+        for number in ("3.9", "8.9", "6.0", "10.2", "16.5"):
+            self.assertIn(number, text)
+        self.assertEqual(self.client.get(f"{API}/articles/nope/").status_code, 404)

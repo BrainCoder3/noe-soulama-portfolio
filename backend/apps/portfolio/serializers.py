@@ -56,6 +56,19 @@ class ProjectSerializer(BilingualSerializer):
         return data
 
 
+class ArticleSerializer(BilingualSerializer):
+    bilingual = ("title", "subtitle")
+
+    class Meta:
+        model = models.Article
+        exclude = ["id"]
+
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+        data["blocks"] = [_fold_label(b) for b in instance.blocks]
+        return data
+
+
 class ExperienceSerializer(BilingualSerializer):
     bilingual = ("role", "description", "place")
 

@@ -51,6 +51,14 @@ class Command(BaseCommand):
             models.Project.objects.update_or_create(slug=slug, defaults=record)
         models.Project.objects.exclude(slug__in=slugs).delete()
 
+        article_slugs = []
+        for record in load(directory, "articles.json"):
+            record = flatten(record)
+            slug = record.pop("slug")
+            article_slugs.append(slug)
+            models.Article.objects.update_or_create(slug=slug, defaults=record)
+        models.Article.objects.exclude(slug__in=article_slugs).delete()
+
         models.Experience.objects.all().delete()
         for order, record in enumerate(load(directory, "experience.json"), start=1):
             models.Experience.objects.create(order=order, **flatten(record))

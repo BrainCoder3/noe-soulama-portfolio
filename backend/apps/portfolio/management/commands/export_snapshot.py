@@ -30,6 +30,7 @@ class Command(BaseCommand):
         snapshot = {
             "profile": serializers.ProfileSerializer(profile).data,
             "projects": serializers.ProjectSerializer(models.Project.objects.all(), many=True).data,
+            "articles": serializers.ArticleSerializer(models.Article.objects.all(), many=True).data,
             "experience": serializers.ExperienceSerializer(models.Experience.objects.all(), many=True).data,
             "achievements": serializers.AchievementSerializer(models.Achievement.objects.all(), many=True).data,
             "skills": serializers.SkillGroupSerializer(models.SkillGroup.objects.all(), many=True).data,

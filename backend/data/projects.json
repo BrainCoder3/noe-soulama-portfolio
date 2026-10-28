@@ -201,8 +201,8 @@
       "fr": "Un pipeline de doublage (reconnaissance vocale, traduction, ajustement de durée, synthèse, mixage) et les outils pour le mesurer. L'étude compare cinq façons de faire tenir une réplique traduite dans son créneau : aucune, accélération, étirement illimité, réécriture, et réécriture plus accélération."
     },
     "result": {
-      "en": "Rewriting plus a small speed-up (under 10 %) fits 90 to 100 % of the lines within 200 ms, at the cost of changing about half of the text (chrF about 0.5). Unlimited speed-up fits everything but needs +33 % to +67 %.",
-      "fr": "Réécrire puis accélérer un peu (moins de 10 %) fait tenir 90 à 100 % des répliques à 200 ms près, au prix de la modification d'environ la moitié du texte (chrF d'environ 0,5). L'accélération illimitée fait tout tenir mais demande +33 % à +67 %."
+      "en": "Rewriting plus a small speed-up (3 to 11 % on average) fits 90 to 100 % of the lines within 200 ms, at the cost of changing about half of the text (chrF about 0.5). Unlimited stretching fits everything but needs +11 % to +67 %.",
+      "fr": "Réécrire puis accélérer un peu (3 à 11 % en moyenne) fait tenir 90 à 100 % des répliques à 200 ms près, au prix de la modification d'environ la moitié du texte (chrF d'environ 0,5). L'étirement sans plafond fait tout tenir mais demande de +11 % à +67 %."
     },
     "limit": {
       "en": "Small pilots: 20 sentences, synthetic time slots and synthetic speech, no human listening test. Whether the rewrites keep the meaning was not measured.",

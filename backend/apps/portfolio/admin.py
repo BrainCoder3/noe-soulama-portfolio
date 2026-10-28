@@ -4,6 +4,7 @@ from . import models
 
 admin.site.register(models.Profile)
 admin.site.register(models.Experience)
+admin.site.register(models.Article)
 admin.site.register(models.Achievement)
 admin.site.register(models.SkillGroup)
 

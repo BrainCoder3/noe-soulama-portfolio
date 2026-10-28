@@ -41,6 +41,18 @@ class ProjectDetailView(generics.RetrieveAPIView):
     lookup_field = "slug"
 
 
+class ArticleListView(generics.ListAPIView):
+    queryset = models.Article.objects.all()
+    serializer_class = serializers.ArticleSerializer
+    pagination_class = None
+
+
+class ArticleDetailView(generics.RetrieveAPIView):
+    queryset = models.Article.objects.all()
+    serializer_class = serializers.ArticleSerializer
+    lookup_field = "slug"
+
+
 class ExperienceListView(generics.ListAPIView):
     queryset = models.Experience.objects.all()
     serializer_class = serializers.ExperienceSerializer

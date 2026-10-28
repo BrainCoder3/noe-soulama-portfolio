@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { useLang } from "@/lib/i18n";
-import type { Project } from "@/lib/types";
+import type { Article, Project } from "@/lib/types";
 import { MetricBars } from "../MetricBars";
 import { StatusBadge } from "../StatusBadge";
 
-export function ProjectView({ project, prev, next }: { project: Project; prev: Project | null; next: Project | null }) {
+export function ProjectView({ project, article, prev, next }: { project: Project; article: Article | null; prev: Project | null; next: Project | null }) {
   const { t, ui } = useLang();
   const hasLinks = Boolean(project.repo_url || project.demo_url);
 
@@ -64,6 +64,14 @@ export function ProjectView({ project, prev, next }: { project: Project; prev: P
               ))}
             </ul>
           </section>
+          {article && (
+            <section>
+              <h2>{ui("article.report")}</h2>
+              <p>
+                <Link href={`/articles/${article.slug}`}>{ui("article.read")}</Link>
+              </p>
+            </section>
+          )}
           {(hasLinks || project.code_is_private) && (
             <section>
               <h2>{ui("project.links")}</h2>

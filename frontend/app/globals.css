@@ -1729,3 +1729,181 @@ html[data-intro="1"] .scope {
   border-color: var(--muted);
   background: var(--panel);
 }
+
+
+/* ------------------------------------------------------------------
+   Articles: a reading layout, narrow and calm, with the data kept readable.
+   ------------------------------------------------------------------ */
+.article-index {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+  max-width: 50rem;
+}
+
+.article-row {
+  display: grid;
+  grid-template-columns: 3.2rem 1fr;
+  gap: 0.5rem 1rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.article-no {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--gold);
+  line-height: 1.2;
+}
+
+.article-row h2 {
+  font-size: clamp(1.25rem, 2.6vw, 1.6rem);
+  margin: 0 0 0.4rem;
+}
+
+.article-row h2 a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.article-row h2 a:hover {
+  color: var(--signal);
+  text-decoration: underline;
+}
+
+.article-meta {
+  color: var(--muted);
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 0.88rem;
+  margin: 0.4rem 0 0;
+}
+
+.article {
+  max-width: 50rem;
+}
+
+.article-head h1 {
+  font-size: clamp(2rem, 4.6vw, 3.1rem);
+}
+
+.article-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 500;
+  margin: 1.25rem 0 0;
+}
+
+.prose-article {
+  margin-top: 2.5rem;
+}
+
+.prose-article p,
+.prose-article .article-list li {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 68ch;
+}
+
+.prose-article h2 {
+  font-size: 1.5rem;
+  margin: 2.75rem 0 0.75rem;
+}
+
+.article-list {
+  padding-left: 1.2rem;
+  margin: 0 0 1.25rem;
+}
+
+.article-list li {
+  margin-bottom: 0.6rem;
+}
+
+.callout {
+  margin: 1.75rem 0;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 1.08rem;
+  line-height: 1.5;
+}
+
+.callout::before {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 3px;
+  margin-bottom: 0.75rem;
+  background: var(--gold);
+}
+
+.data-table {
+  margin: 1.5rem 0;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.data-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.96rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.55rem 0.9rem;
+  text-align: right;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+.data-table th:first-child,
+.data-table td:first-child {
+  text-align: left;
+}
+
+.data-table th {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--muted);
+  background: var(--panel);
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.data-table figcaption,
+.article-figure figcaption {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.article-figure {
+  margin: 1.75rem 0;
+}
+
+.article-figure img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 34rem;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.5rem;
+}

@@ -17,10 +17,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ProjectPage({ params }: Props) {
   const data = await load(async () => {
-    const [project, all] = await Promise.all([api.project(params.slug), api.projects()]);
+    const [project, all, articles] = await Promise.all([api.project(params.slug), api.projects(), api.articles()]);
     const index = all.findIndex((p) => p.slug === project.slug);
     return {
       project,
+      article: articles.find((a) => a.project_slug === project.slug) ?? null,
       prev: index > 0 ? all[index - 1] : null,
       next: index >= 0 && index < all.length - 1 ? all[index + 1] : null,
     };
