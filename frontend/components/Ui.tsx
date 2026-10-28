@@ -37,9 +37,9 @@ export function StatsStrip({ stats }: { stats: Stat[] }) {
   return (
     <dl className="stats">
       {stats.map((stat) => (
-        <div key={stat.value} className={`stat stat-${stat.tone}`}>
+        <div key={stat.value.en} className={`stat stat-${stat.tone}`}>
           <dt className="stat-label">{t(stat.label)}</dt>
-          <dd className="stat-value">{stat.value}</dd>
+          <dd className="stat-value">{t(stat.value)}</dd>
         </div>
       ))}
     </dl>
@@ -58,7 +58,7 @@ export function Timeline({ items }: { items: Experience[] }) {
           <h3 className="tl-role">{t(item.role)}</h3>
           <p className="tl-org">
             {item.org}
-            {item.place && <span>, {item.place}</span>}
+            {t(item.place) && <span>, {t(item.place)}</span>}
           </p>
           <p className="tl-text">{t(item.description)}</p>
         </li>
@@ -72,9 +72,9 @@ export function AchievementList({ items }: { items: Achievement[] }) {
   return (
     <ul className="ach">
       {items.map((item) => (
-        <li key={item.title.en + item.event.en} className={`ach-item${item.rank ? " ach-ranked" : ""}`}>
-          <span className="ach-rank" aria-label={item.rank || undefined}>
-            {item.rank || "·"}
+        <li key={item.title.en + item.event.en} className={`ach-item${item.rank.en ? " ach-ranked" : ""}`}>
+          <span className="ach-rank" aria-label={t(item.rank) || undefined}>
+            {t(item.rank) || "·"}
           </span>
           <div>
             <h3 className="ach-title">{t(item.title)}</h3>

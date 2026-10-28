@@ -2,8 +2,14 @@
   {
     "org": "UniTchad SARL",
     "kind": "company",
-    "role": {"en": "Co-founder and software / AI developer", "fr": "Cofondateur et développeur logiciel / IA"},
-    "place": "Chad",
+    "role": {
+      "en": "Co-founder and software / AI developer",
+      "fr": "Cofondateur et développeur logiciel / IA"
+    },
+    "place": {
+      "en": "Chad",
+      "fr": "Tchad"
+    },
     "start": "2026",
     "end": "",
     "description": {
@@ -14,8 +20,14 @@
   {
     "org": "Axiane Agency",
     "kind": "company",
-    "role": {"en": "Full-stack developer", "fr": "Développeur full-stack"},
-    "place": "Burkina Faso",
+    "role": {
+      "en": "Full-stack developer",
+      "fr": "Développeur full-stack"
+    },
+    "place": {
+      "en": "Burkina Faso",
+      "fr": "Burkina Faso"
+    },
     "start": "2026",
     "end": "",
     "description": {
@@ -26,9 +38,15 @@
   {
     "org": "Africa Research Center",
     "kind": "community",
-    "role": {"en": "Volunteer technical lead", "fr": "Responsable technique bénévole"},
-    "place": "",
-    "start": "Sept 2025",
+    "role": {
+      "en": "Volunteer technical lead",
+      "fr": "Responsable technique bénévole"
+    },
+    "place": {
+      "en": "",
+      "fr": ""
+    },
+    "start": "09/2025",
     "end": "",
     "description": {
       "en": "I scope needs, design digital solutions, coordinate technical tasks and support innovation initiatives. I developed the association's platform, where researchers present their work and follow trainings. About a hundred people are registered, and the number keeps growing.",
@@ -38,8 +56,14 @@
   {
     "org": "Club des Étudiants Étrangers, ENSA Tétouan",
     "kind": "leadership",
-    "role": {"en": "Events officer", "fr": "Chargé événementiel"},
-    "place": "Tétouan, Morocco",
+    "role": {
+      "en": "Events officer",
+      "fr": "Chargé événementiel"
+    },
+    "place": {
+      "en": "Tétouan, Morocco",
+      "fr": "Tétouan, Maroc"
+    },
     "start": "2026",
     "end": "",
     "description": {
@@ -50,9 +74,15 @@
   {
     "org": "ASEET",
     "kind": "leadership",
-    "role": {"en": "Member of the control commission", "fr": "Membre de la Commission de contrôle"},
-    "place": "Tétouan, Morocco",
-    "start": "Apr 2026",
+    "role": {
+      "en": "Member of the control commission",
+      "fr": "Membre de la Commission de contrôle"
+    },
+    "place": {
+      "en": "Tétouan, Morocco",
+      "fr": "Tétouan, Maroc"
+    },
+    "start": "04/2026",
     "end": "",
     "description": {
       "en": "A student association role. Before that, secretary general of its sports commission (2025-2026).",

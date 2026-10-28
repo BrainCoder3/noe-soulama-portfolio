@@ -29,6 +29,7 @@ const en = {
   "hero.kicker": "Engineering student, Big Data and AI",
   "hero.cta_projects": "See the projects",
   "hero.cta_contact": "Get in touch",
+  "hero.cta_cv": "Download CV",
   "trace.title": "A live look at the question I work on",
   "trace.legend": "Noise added to a recording",
   "trace.clean": "No noise",
@@ -54,6 +55,7 @@ const en = {
   "status.built": "Built",
   "status.not_launched": "Not launched yet",
 
+  "kind.featured": "Selected",
   "kind.all": "All",
   "kind.research": "Research",
   "kind.system": "Systems",
@@ -103,7 +105,7 @@ const en = {
   "about.languages": "Languages",
   "about.next.title": "What comes next",
   "about.next.1":
-    "Join the Informatics and Networks engineering degree at INSA Toulouse, to learn to build the secure, solid infrastructure that AI needs.",
+    "Complete my engineering training in informatics and networks, to learn to build the secure, solid infrastructure that AI needs.",
   "about.next.2":
     "Plan: measure how existing speech recognisers handle Dioula, with the consent of Burkinabè students, and publish the results with their limits.",
   "about.from": "From",
@@ -164,6 +166,7 @@ const fr: Record<UiKey, string> = {
   "hero.kicker": "Élève ingénieur, Big Data et IA",
   "hero.cta_projects": "Voir les projets",
   "hero.cta_contact": "Me contacter",
+  "hero.cta_cv": "Télécharger mon CV",
   "trace.title": "Un aperçu de la question sur laquelle je travaille",
   "trace.legend": "Bruit ajouté à un enregistrement",
   "trace.clean": "Sans bruit",
@@ -189,6 +192,7 @@ const fr: Record<UiKey, string> = {
   "status.built": "Réalisé",
   "status.not_launched": "Pas encore lancé",
 
+  "kind.featured": "Sélection",
   "kind.all": "Tous",
   "kind.research": "Recherche",
   "kind.system": "Systèmes",
@@ -238,10 +242,10 @@ const fr: Record<UiKey, string> = {
   "about.languages": "Langues",
   "about.next.title": "La suite",
   "about.next.1":
-    "Rejoindre le diplôme d'ingénieur Informatique et Réseaux de l'INSA Toulouse, pour apprendre à bâtir l'infrastructure sûre et solide dont l'IA a besoin.",
+    "Compléter ma formation d'ingénieur en informatique et réseaux, pour apprendre à bâtir l'infrastructure sûre et solide dont l'IA a besoin.",
   "about.next.2":
     "Projet : mesurer comment les logiciels de reconnaissance de la parole existants traitent le dioula, avec le consentement d'étudiants burkinabè, et publier les résultats avec leurs limites.",
-  "about.from": "Originaire de",
+  "about.from": "Originaire",
   "about.based": "Études à",
 
   "contact.title": "Contact",

@@ -59,7 +59,13 @@
     ],
     "repo_url": "https://github.com/BrainCoder3/robustclip-lite",
     "demo_url": "",
-    "code_is_private": false
+    "code_is_private": false,
+    "image": "/projects/robustclip-lite.webp",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "Chart of recall@10 against test noise for standard and noise-aware training, mean and standard deviation over seeds.",
+      "fr": "Graphique du rappel@10 selon le bruit de test pour l'entraînement standard et robuste au bruit, moyenne et écart type sur plusieurs essais."
+    }
   },
   {
     "slug": "whisper-robustness",
@@ -74,8 +80,8 @@
       "fr": "Un pipeline reproductible qui ajoute un bruit gaussien contrôlé (fixé par le rapport signal sur bruit) à des enregistrements en français et mesure comment Whisper-small les transcrit, avec les taux d'erreur de mots et de caractères, la normalisation du texte et l'analyse des échecs de décodage."
     },
     "result": {
-      "en": "Word error rate is 12.9 % without noise, 13.9 % at 20 dB and 53.6 % at 10 dB. At strong noise the model sometimes repeats or invents words.",
-      "fr": "Le taux d'erreur de mots est de 12,9 % sans bruit, 13,9 % à 20 dB et 53,6 % à 10 dB. Sous fort bruit, le modèle répète ou invente parfois des mots."
+      "en": "Word error rate is 12.9 % without noise, 13.9 % at 20 dB and 53.6 % at 10 dB. At strong noise the model sometimes repeats or invents words. The repository's chart goes further down: at 0 dB, invented and repeated words push the error rate above 100 %.",
+      "fr": "Le taux d'erreur de mots est de 12,9 % sans bruit, 13,9 % à 20 dB et 53,6 % à 10 dB. Sous fort bruit, le modèle répète ou invente parfois des mots. Le graphique du dépôt va plus bas : à 0 dB, les mots inventés ou répétés poussent le taux d'erreur au-delà de 100 %."
     },
     "limit": {
       "en": "Five recordings from a single speaker. It points at a question worth testing properly; it does not settle it. It is also the starting point of my plan to measure speech recognition on Dioula.",
@@ -119,7 +125,13 @@
     ],
     "repo_url": "https://github.com/BrainCoder3/Whisper-Robustness-to-Synthetic-Noise",
     "demo_url": "",
-    "code_is_private": false
+    "code_is_private": false,
+    "image": "/projects/whisper-robustness.webp",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "Chart of Whisper-small mean word error rate (as a ratio) against signal-to-noise ratio, rising sharply below 10 dB.",
+      "fr": "Graphique du taux d'erreur de mots moyen de Whisper-small (en ratio) selon le rapport signal sur bruit, en forte hausse sous 10 dB."
+    }
   },
   {
     "slug": "action-recognition-3dcnn",
@@ -127,7 +139,7 @@
     "kind": "research",
     "status": "study",
     "priority": 3,
-    "featured": true,
+    "featured": false,
     "year": 2026,
     "summary": {
       "en": "A 3D convolutional network trained from scratch on three classes of the KTH dataset (walking, running, boxing), with subjects strictly separated between training and test. The question: does giving the network explicit motion information help it generalise to people it has never seen?",
@@ -168,7 +180,13 @@
     ],
     "repo_url": "https://github.com/BrainCoder3/human-action-recognition-3dcnn",
     "demo_url": "",
-    "code_is_private": false
+    "code_is_private": false,
+    "image": "/projects/action-recognition-3dcnn.webp",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "Bar chart of test accuracy: 70.5 % for the RGB 3D CNN, 84.7 % with motion features.",
+      "fr": "Diagramme de la précision de test : 70,5 % pour le CNN 3D RGB, 84,7 % avec l'information de mouvement."
+    }
   },
   {
     "slug": "japanese-french-dubbing",
@@ -204,7 +222,13 @@
     "metrics": [],
     "repo_url": "https://github.com/BrainCoder3/anime-translator-ai",
     "demo_url": "",
-    "code_is_private": false
+    "code_is_private": false,
+    "image": "/projects/japanese-french-dubbing.webp",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "Chart of the share of lines fitting their time slot within 200 ms for five strategies and three slot lengths.",
+      "fr": "Graphique de la part des répliques qui tiennent dans leur créneau à 200 ms près, pour cinq stratégies et trois longueurs de créneau."
+    }
   },
   {
     "slug": "arc-platform",
@@ -237,7 +261,13 @@
     "metrics": [],
     "repo_url": "",
     "demo_url": "https://www.africa-arc.com/en",
-    "code_is_private": false
+    "code_is_private": false,
+    "image": "/projects/arc-platform.webp",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "Home page of the Africa Research Center website.",
+      "fr": "Page d'accueil du site de l'Africa Research Center."
+    }
   },
   {
     "slug": "schoolgo",
@@ -252,12 +282,12 @@
       "fr": "Une plateforme de gestion scolaire (SaaS) pour les directeurs, les enseignants et les parents : dossiers numériques des élèves avec notes et présences, un portail enseignant pour les notes et les emplois du temps, des notifications SMS automatiques aux parents, des accès selon les rôles, le suivi des frais de scolarité et de la paie, et une analyse assistée par IA pour repérer tôt les élèves en difficulté. Construite avec mes associés d'UniTchad, et j'ai travaillé sur la plateforme."
     },
     "result": {
-      "en": "The product site is live, with sign-up and login, at schoolgo.unitchad.com.",
-      "fr": "Le site du produit est en ligne, avec inscription et connexion, à schoolgo.unitchad.com."
+      "en": "The product site is live in French and English, with sign-up and login, at schoolgo.unitchad.com.",
+      "fr": "Le site du produit est en ligne en français et en anglais, avec inscription et connexion, à schoolgo.unitchad.com."
     },
     "limit": {
-      "en": "I do not claim a number of schools or users: the needs are still being discussed with schools in the field. The site is in French only.",
-      "fr": "Je n'affirme pas de nombre d'écoles ou d'utilisateurs : les besoins sont encore discutés avec des établissements sur le terrain. Le site est uniquement en français."
+      "en": "I do not claim a number of schools or users: the needs are still being discussed with schools in the field. The dashboard figures on the landing page are illustrations.",
+      "fr": "Je n'affirme pas de nombre d'écoles ou d'utilisateurs : les besoins sont encore discutés avec des établissements sur le terrain. Les chiffres du tableau de bord sur la page d'accueil sont des illustrations."
     },
     "role": {
       "en": "Worked on the platform with the UniTchad team",
@@ -270,7 +300,13 @@
     "metrics": [],
     "repo_url": "",
     "demo_url": "https://schoolgo.unitchad.com/",
-    "code_is_private": false
+    "code_is_private": false,
+    "image": "/projects/schoolgo.webp",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "Home page of the SchoolGo website.",
+      "fr": "Page d'accueil du site SchoolGo."
+    }
   },
   {
     "slug": "speakup",
@@ -307,7 +343,13 @@
     "metrics": [],
     "repo_url": "https://github.com/BrainCoder3/speakup-ai-english-coach",
     "demo_url": "",
-    "code_is_private": false
+    "code_is_private": false,
+    "image": "",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "",
+      "fr": ""
+    }
   },
   {
     "slug": "rhimena",
@@ -345,7 +387,13 @@
     "metrics": [],
     "repo_url": "",
     "demo_url": "",
-    "code_is_private": true
+    "code_is_private": true,
+    "image": "",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "",
+      "fr": ""
+    }
   },
   {
     "slug": "chadpay",
@@ -379,7 +427,13 @@
     "metrics": [],
     "repo_url": "",
     "demo_url": "",
-    "code_is_private": false
+    "code_is_private": false,
+    "image": "",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "",
+      "fr": ""
+    }
   },
   {
     "slug": "hasil",
@@ -415,7 +469,13 @@
     "metrics": [],
     "repo_url": "",
     "demo_url": "",
-    "code_is_private": false
+    "code_is_private": false,
+    "image": "",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "",
+      "fr": ""
+    }
   },
   {
     "slug": "dehere",
@@ -448,7 +508,13 @@
     "metrics": [],
     "repo_url": "",
     "demo_url": "",
-    "code_is_private": true
+    "code_is_private": true,
+    "image": "",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "",
+      "fr": ""
+    }
   },
   {
     "slug": "taxigo-api",
@@ -483,7 +549,13 @@
     "metrics": [],
     "repo_url": "https://github.com/BrainCoder3/TaxiGo",
     "demo_url": "",
-    "code_is_private": false
+    "code_is_private": false,
+    "image": "",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "",
+      "fr": ""
+    }
   },
   {
     "slug": "tinygpt",
@@ -517,7 +589,13 @@
     "metrics": [],
     "repo_url": "https://github.com/BrainCoder3/tinygpt-from-scratch",
     "demo_url": "",
-    "code_is_private": false
+    "code_is_private": false,
+    "image": "",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "",
+      "fr": ""
+    }
   },
   {
     "slug": "learncraft",
@@ -552,7 +630,13 @@
     "metrics": [],
     "repo_url": "https://github.com/BrainCoder3/learn_craft",
     "demo_url": "",
-    "code_is_private": false
+    "code_is_private": false,
+    "image": "",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "",
+      "fr": ""
+    }
   },
   {
     "slug": "campus-ai",
@@ -586,7 +670,13 @@
     "metrics": [],
     "repo_url": "https://github.com/BrainCoder3/campus-prof",
     "demo_url": "https://campus-ai-sigma.vercel.app",
-    "code_is_private": false
+    "code_is_private": false,
+    "image": "",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "",
+      "fr": ""
+    }
   },
   {
     "slug": "siem-pipeline",
@@ -620,7 +710,13 @@
     "metrics": [],
     "repo_url": "https://github.com/BrainCoder3/projet-siem-bigdata",
     "demo_url": "",
-    "code_is_private": false
+    "code_is_private": false,
+    "image": "",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "",
+      "fr": ""
+    }
   },
   {
     "slug": "ai-job-market",
@@ -654,7 +750,13 @@
     "metrics": [],
     "repo_url": "https://github.com/BrainCoder3/Vizualisation-Global-AI-Job-Market-Trends-Salary-Insights",
     "demo_url": "",
-    "code_is_private": false
+    "code_is_private": false,
+    "image": "",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "",
+      "fr": ""
+    }
   },
   {
     "slug": "deep-learning-basics",
@@ -686,7 +788,13 @@
     "metrics": [],
     "repo_url": "https://github.com/BrainCoder3/DeepLearning-apprentissage",
     "demo_url": "",
-    "code_is_private": false
+    "code_is_private": false,
+    "image": "",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "",
+      "fr": ""
+    }
   },
   {
     "slug": "kaggle-notebooks",
@@ -721,7 +829,13 @@
     "metrics": [],
     "repo_url": "https://github.com/BrainCoder3/kaggle_competition",
     "demo_url": "",
-    "code_is_private": false
+    "code_is_private": false,
+    "image": "",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "",
+      "fr": ""
+    }
   },
   {
     "slug": "new-boss-form",
@@ -754,6 +868,12 @@
     "metrics": [],
     "repo_url": "",
     "demo_url": "https://new-boss-form.vercel.app",
-    "code_is_private": true
+    "code_is_private": true,
+    "image": "",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "",
+      "fr": ""
+    }
   }
 ]

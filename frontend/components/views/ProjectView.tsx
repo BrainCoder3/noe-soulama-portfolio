@@ -25,6 +25,13 @@ export function ProjectView({ project, prev, next }: { project: Project; prev: P
         <p className="lede">{t(project.summary)}</p>
       </header>
 
+      {project.image && (
+        <figure className="project-media">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={project.image} alt={t(project.image_alt)} style={{ objectFit: project.image_fit }} />
+        </figure>
+      )}
+
       <div className="project-body">
         <div className="project-main">
           {t(project.result) && (

@@ -17,7 +17,7 @@ export function AboutView({ profile, skills }: { profile: Profile; skills: Skill
             <p key={i}>{paragraph}</p>
           ))}
           <p className="muted">
-            {ui("about.from")} {profile.origin}. {ui("about.based")} {profile.location}.
+            {ui("about.from")} {t(profile.origin)}. {ui("about.based")} {t(profile.location)}.
           </p>
         </div>
         <aside className="about-side">

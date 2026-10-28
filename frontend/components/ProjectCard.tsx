@@ -18,6 +18,12 @@ export function ProjectCard({ project, lead = false }: { project: Project; lead?
   const { t, ui } = useLang();
   return (
     <article className={`card${lead ? " card-lead" : ""}`} onPointerMove={trackPointer}>
+      {project.image && (
+        <div className="card-media">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={project.image} alt={t(project.image_alt)} loading="lazy" decoding="async" style={{ objectFit: project.image_fit }} />
+        </div>
+      )}
       <div className="card-body">
         <div className="card-top">
           <StatusBadge status={project.status} />

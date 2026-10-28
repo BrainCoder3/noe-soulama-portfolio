@@ -36,6 +36,22 @@ class SeedTests(SeededTestCase):
             if project.repo_url:
                 self.assertTrue(project.repo_url.startswith("https://github.com/BrainCoder3/"))
 
+    def test_images_exist_and_have_alt_text(self):
+        from pathlib import Path
+
+        from django.conf import settings
+
+        public = Path(settings.BASE_DIR).parent / "frontend" / "public"
+        for project in models.Project.objects.exclude(image=""):
+            self.assertTrue((public / project.image.lstrip("/")).is_file(), f"{project.slug}: missing {project.image}")
+            self.assertTrue(project.image_alt_en and project.image_alt_fr, f"{project.slug}: image needs alt text")
+
+    def test_french_has_no_english_leftovers(self):
+        achievement = models.Achievement.objects.get(rank_en="1st", title_en="Hackathon".replace("Hackathon", "Project contest"))
+        self.assertEqual(achievement.rank_fr, "1re")
+        for experience in models.Experience.objects.exclude(place_en=""):
+            self.assertTrue(experience.place_fr, experience.org)
+
     def test_priorities_are_unique(self):
         priorities = list(models.Project.objects.values_list("priority", flat=True))
         self.assertEqual(len(priorities), len(set(priorities)))
@@ -50,7 +66,8 @@ class ReadEndpointTests(SeededTestCase):
         self.assertEqual(data["name"], "Noé Soulama")
         self.assertIn("en", data["headline"])
         self.assertIn("fr", data["bio"])
-        self.assertEqual(data["stats"][0]["value"], "1st / 49")
+        self.assertEqual(data["stats"][0]["value"], {"en": "1st / 49", "fr": "1er / 49"})
+        self.assertEqual(data["location"]["fr"], "Tétouan, Maroc")
         self.assertEqual(set(data["stats"][0]["label"]), {"en", "fr"})
 
     def test_projects_are_ordered_by_priority(self):
