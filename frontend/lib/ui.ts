@@ -69,6 +69,7 @@ const en = {
   "project.limit": "What it does not show",
   "project.role": "My role",
   "project.stack": "Built with",
+  "achievements.proof": "View the certificate",
   "project.code": "Source code",
   "project.live": "Open live site",
   "project.private": "Source code is private, so it is not linked.",
@@ -114,9 +115,9 @@ const en = {
   "about.languages": "Languages",
   "about.next.title": "What comes next",
   "about.next.1":
-    "Complete my engineering training in informatics and networks, to learn to build the secure, solid infrastructure that AI needs.",
+    "Complete my engineering training in informatics and networks in France, to understand systems, networks, their security and their deployment, then work about three years as a research and development engineer on robust AI systems, before returning to Burkina Faso and West Africa.",
   "about.next.2":
-    "Plan: measure how existing speech recognisers handle Dioula, with the consent of Burkinabè students, and publish the results with their limits.",
+    "In preparation: a collection of Dioula recordings with volunteer students, to measure how existing speech recognisers handle a language I speak, and publish the results with their limits.",
   "about.from": "From",
   "about.based": "Studying in",
 
@@ -215,6 +216,7 @@ const fr: Record<UiKey, string> = {
   "project.limit": "Ce que cela ne montre pas",
   "project.role": "Mon rôle",
   "project.stack": "Construit avec",
+  "achievements.proof": "Voir le certificat",
   "project.code": "Code source",
   "project.live": "Ouvrir le site en ligne",
   "project.private": "Le code source est privé, donc non lié.",
@@ -260,9 +262,9 @@ const fr: Record<UiKey, string> = {
   "about.languages": "Langues",
   "about.next.title": "La suite",
   "about.next.1":
-    "Compléter ma formation d'ingénieur en informatique et réseaux, pour apprendre à bâtir l'infrastructure sûre et solide dont l'IA a besoin.",
+    "Compléter ma formation d'ingénieur en informatique et réseaux en France, pour comprendre les systèmes, les réseaux, leur sécurité et leur déploiement, puis travailler environ trois ans comme ingénieur de recherche et développement sur des systèmes d'IA robustes, avant de retourner au Burkina Faso et en Afrique de l'Ouest.",
   "about.next.2":
-    "Projet : mesurer comment les logiciels de reconnaissance de la parole existants traitent le dioula, avec le consentement d'étudiants burkinabè, et publier les résultats avec leurs limites.",
+    "En préparation : un recueil d'enregistrements en dioula avec des étudiants volontaires, pour mesurer comment les logiciels de reconnaissance vocale existants comprennent une langue que je parle, et publier les résultats avec leurs limites.",
   "about.from": "Originaire",
   "about.based": "Études à",
 

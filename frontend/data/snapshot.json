@@ -85,7 +85,7 @@
         "level_fr": "langue maternelle"
       },
       {
-        "name": "Bambara",
+        "name": "Dioula",
         "level_en": "fluent",
         "level_fr": "courant"
       },
@@ -104,8 +104,8 @@
       "fr": "Élève ingénieur en Big Data et IA, classé 1er sur 49. Je mène de petites expériences honnêtes sur la façon dont les modèles échouent, et je construis les logiciels qui les entourent."
     },
     "bio": {
-      "en": "I come from Burkina Faso and study at ENSA Tétouan in Morocco, where I ranked 1st of 49 in 2025-2026 with an annual average of 16.935/20.\n\nMy guiding question is simple: how do you build AI systems that stay reliable when data becomes noisy, scarce or different from what they trained on? I look for answers with small experiments on speech, vision and multimodal models, and I report what they do not show as clearly as what they do.\n\nBeside the lab work I build software for real users: a platform used by about a hundred registered people, applications for clients, and a company I co-founded. Building them taught me where my limits are. A demo is easy; a service that is secure, solid and actually used is the hard part. That is what I want to learn next, in an engineering programme in informatics and networks, to build the infrastructure that AI needs.",
-      "fr": "Je viens du Burkina Faso et j'étudie à l'ENSA de Tétouan, au Maroc, où j'ai été classé 1er sur 49 en 2025-2026 avec une moyenne annuelle de 16,935/20.\n\nMa question directrice est simple : comment construire des systèmes d'IA qui restent fiables quand les données deviennent bruitées, rares ou différentes de celles de l'entraînement ? Je cherche des réponses par de petites expériences sur la parole, la vision et les modèles multimodaux, et je dis ce qu'elles ne montrent pas aussi clairement que ce qu'elles montrent.\n\nEn parallèle du travail de laboratoire, je construis des logiciels pour de vrais utilisateurs : une plateforme utilisée par une centaine de personnes inscrites, des applications pour des clients, et une entreprise que j'ai cofondée. Les construire m'a appris où sont mes limites. Une démo est facile ; un service sûr, solide et réellement utilisé est la partie difficile. C'est ce que je veux apprendre ensuite, dans une formation d'ingénieur en informatique et réseaux, pour bâtir l'infrastructure dont l'IA a besoin."
+      "en": "I come from Burkina Faso and study at ENSA Tétouan in Morocco. I finished 15th of 355 and then 5th of 313 in the two preparatory years, and 1st of 49 in my first engineering year, 2025-2026, with an annual average of 16.935/20. Losing my father when I was in the first year of upper secondary school, and his last words, \"go and study\", still guide me.\n\nMy guiding question is simple: how do you know that a system that includes AI will stay safe and reliable when its environment changes? I look for answers with small experiments on speech, vision and multimodal models, and I report what they do not show as clearly as what they do.\n\nBeside the lab work I build software for real users: the platform of the Africa Research Center, where I am the volunteer technical lead in a team of four, and UniTchad, a company in Chad that I co-founded with four collaborators, whose first platform is SchoolGo. Building them taught me that a clever solution is not enough, it must also rest on a secure and reliable system. A demo is easy; a service that is secure, solid and actually used is the hard part.\n\nThat is why I am applying to a French engineering programme in informatics and networks, to understand systems, networks, their security and their deployment. After my diploma I would like to work about three years in France as a research and development engineer on robust AI systems deployed in real conditions, then return to Burkina Faso and West Africa to help build lighter, more robust AI for local languages, education and access to information.",
+      "fr": "Je viens du Burkina Faso et j'étudie à l'ENSA de Tétouan, au Maroc. J'ai terminé 15e sur 355 puis 5e sur 313 pendant les deux années préparatoires, et 1er sur 49 en première année du cycle ingénieur, en 2025-2026, avec une moyenne annuelle de 16,935/20. La perte de mon père quand j'étais en classe de première, et ses derniers mots, « Va et étudie », me guident encore.\n\nMa question directrice est simple : comment savoir qu'un système intégrant de l'IA restera sûr et fiable si son environnement change ? Je cherche des réponses par de petites expériences sur la parole, la vision et les modèles multimodaux, et je dis ce qu'elles ne montrent pas aussi clairement que ce qu'elles montrent.\n\nEn parallèle du travail de laboratoire, je construis des logiciels pour de vrais utilisateurs : la plateforme de l'Africa Research Center, dont je suis le responsable technique bénévole dans une équipe de quatre personnes, et UniTchad, une entreprise installée au Tchad que j'ai cofondée avec quatre collaborateurs, dont la première plateforme est SchoolGo. Les construire m'a appris qu'une solution intelligente ne suffit pas, et qu'elle doit aussi reposer sur un système sûr et fiable. Une démo est facile ; un service sûr, solide et réellement utilisé est la partie difficile.\n\nC'est pourquoi je candidate à une formation d'ingénieur française en informatique et réseaux, pour comprendre les systèmes, les réseaux, leur sécurité et leur déploiement. Après mon diplôme, je souhaite travailler environ trois ans en France comme ingénieur de recherche et développement sur des systèmes d'IA robustes et déployés en conditions réelles, puis retourner au Burkina Faso et en Afrique de l'Ouest pour contribuer à une IA plus légère et plus robuste, utile pour les langues locales, l'éducation et l'accès à l'information."
     },
     "location": {
       "en": "Tétouan, Morocco",
@@ -435,8 +435,8 @@
       "demo_url": "https://www.africa-arc.com/en",
       "code_is_private": false,
       "summary": {
-        "en": "The official platform of the Africa Research Center, a pan-African community for applied research, education and innovation, with its summer and winter schools, ARC'athon and ARC Nexus programmes. Researchers present their work and follow trainings on it. It also helped the association present its activities and trainings to EPFL.",
-        "fr": "La plateforme officielle de l'Africa Research Center, une communauté panafricaine pour la recherche appliquée, l'éducation et l'innovation, avec ses écoles d'été et d'hiver, ARC'athon et ARC Nexus. Des chercheurs y présentent leurs travaux et suivent des formations. Elle a aussi aidé l'association à présenter ses activités et ses formations à l'EPFL."
+        "en": "The official platform of the Africa Research Center, a pan-African community for applied research, education and innovation, with its summer and winter schools, ARC'athon and ARC Nexus programmes. Researchers present their work and follow trainings on it.",
+        "fr": "La plateforme officielle de l'Africa Research Center, une communauté panafricaine pour la recherche appliquée, l'éducation et l'innovation, avec ses écoles d'été et d'hiver, ARC'athon et ARC Nexus. Des chercheurs y présentent leurs travaux et suivent des formations."
       },
       "result": {
         "en": "In use: about a hundred registered users, and the number keeps growing.",
@@ -682,8 +682,8 @@
       "demo_url": "",
       "code_is_private": true,
       "summary": {
-        "en": "A platform that lets students find supervisors easily, in several fields. Built at Axiane Agency in Flutter and Dart: interfaces, APIs, database and product features.",
-        "fr": "Une plateforme qui permet à des élèves de trouver facilement des encadrants, dans plusieurs domaines. Développée chez Axiane Agency en Flutter et Dart : interfaces, APIs, base de données et fonctionnalités produit."
+        "en": "A platform that lets students find supervisors easily, in several fields. With an AI-based recommendation system. Built at Axiane Agency in Flutter and Dart: interfaces, APIs, database and product features.",
+        "fr": "Une plateforme qui permet à des élèves de trouver facilement des encadrants, dans plusieurs domaines. Avec un système de recommandation fondé sur l'IA. Développée chez Axiane Agency en Flutter et Dart : interfaces, APIs, base de données et fonctionnalités produit."
       },
       "result": {
         "en": "",
@@ -2830,8 +2830,8 @@
         "fr": "Cofondateur et développeur logiciel / IA"
       },
       "description": {
-        "en": "A company incorporated in Chad in 2026 with my associates, building digital solutions: web and mobile software, AI, cybersecurity and digital transformation. I take part in technical choices and in development. The ambition is to extend to the rest of Africa, including Burkina Faso.",
-        "fr": "Une société constituée au Tchad en 2026 avec mes associés, qui conçoit des solutions numériques : logiciels web et mobile, IA, cybersécurité et transformation digitale. Je participe aux choix techniques et au développement. L'ambition est de s'étendre au reste de l'Afrique, dont le Burkina Faso."
+        "en": "A company incorporated in Chad in 2026, co-founded with four collaborators, that builds digital solutions: web and mobile software, AI, cybersecurity and digital transformation. Our first platform is SchoolGo, a school follow-up platform. I take part in technical choices and in development. The ambition is to extend to the rest of Africa, including Burkina Faso.",
+        "fr": "Une société constituée au Tchad en 2026, cofondée avec quatre collaborateurs, qui conçoit des solutions numériques : logiciels web et mobile, IA, cybersécurité et transformation digitale. Notre première plateforme est SchoolGo, un outil de suivi scolaire. Je participe aux choix techniques et au développement. L'ambition est de s'étendre au reste de l'Afrique, dont le Burkina Faso."
       },
       "place": {
         "en": "Chad",
@@ -2848,8 +2848,8 @@
         "fr": "Développeur full-stack"
       },
       "description": {
-        "en": "I helped set up Dehere, a platform that lets students find supervisors in several fields: interfaces, APIs, database and product features, in Flutter/Dart. Dehere is not launched yet because its security has to be reviewed first.",
-        "fr": "J'ai aidé à mettre en place Dehere, une plateforme qui permet à des élèves de trouver des encadrants dans plusieurs domaines : interfaces, APIs, base de données et fonctionnalités produit, en Flutter/Dart. Dehere n'est pas encore lancée : sa sécurité doit d'abord être revue."
+        "en": "I helped set up Dehere, a platform that lets students find supervisors in several fields, with an AI-based recommendation system: interfaces, APIs, database and product features, in Flutter/Dart. Dehere is not launched yet because its security has to be reviewed first.",
+        "fr": "J'ai aidé à mettre en place Dehere, une plateforme qui permet à des élèves de trouver des encadrants dans plusieurs domaines, avec un système de recommandation fondé sur l'IA : interfaces, APIs, base de données et fonctionnalités produit, en Flutter/Dart. Dehere n'est pas encore lancée : sa sécurité doit d'abord être revue."
       },
       "place": {
         "en": "Burkina Faso",
@@ -2862,12 +2862,12 @@
       "start": "09/2025",
       "end": "",
       "role": {
-        "en": "Volunteer technical lead",
-        "fr": "Responsable technique bénévole"
+        "en": "Volunteer technical lead, in a team of four",
+        "fr": "Responsable technique bénévole, dans une équipe de quatre personnes"
       },
       "description": {
-        "en": "ARC's mission is to promote research in Africa. I scope needs, design digital solutions and coordinate technical tasks. The platform I developed makes it easier to welcome doctoral students and young researchers, makes the association known, and puts their work forward through the ARCPOD podcast and the ARC Highlight series. About a hundred people are registered on it, and the number keeps growing.",
-        "fr": "La mission de l'ARC est de promouvoir la recherche en Afrique. Je cadre les besoins, conçois des solutions numériques et coordonne les tâches techniques. La plateforme que j'ai développée facilite l'accueil des doctorants et des jeunes chercheurs, fait connaître l'association et met leur travail en avant à travers le podcast ARCPOD et la série ARC Highlight. Environ une centaine de personnes y sont inscrites, et le nombre continue d'augmenter."
+        "en": "ARC's mission is to promote research in Africa, and its network counts more than 3,000 members from 37 nationalities. I scope needs, design digital solutions and coordinate technical tasks. The platform I developed makes it easier to welcome doctoral students and young researchers, makes the association known, and puts their work forward through the ARCPOD podcast and the ARC Highlight series. About a hundred people are registered on it, and the number keeps growing.",
+        "fr": "La mission de l'ARC est de promouvoir la recherche en Afrique, et son réseau compte plus de 3 000 membres de 37 nationalités. Je cadre les besoins, conçois des solutions numériques et coordonne les tâches techniques. La plateforme que j'ai développée facilite l'accueil des doctorants et des jeunes chercheurs, fait connaître l'association et met leur travail en avant à travers le podcast ARCPOD et la série ARC Highlight. Environ une centaine de personnes y sont inscrites, et le nombre continue d'augmenter."
       },
       "place": {
         "en": "",
@@ -2915,6 +2915,7 @@
     {
       "kind": "academic",
       "year": 2026,
+      "proof_url": "",
       "title": {
         "en": "Ranked 1st of 49 students",
         "fr": "Classé 1er sur 49 étudiants"
@@ -2935,6 +2936,7 @@
     {
       "kind": "award",
       "year": 2026,
+      "proof_url": "",
       "title": {
         "en": "Coding and AI Challenge",
         "fr": "Challenge Codage et IA"
@@ -2955,6 +2957,7 @@
     {
       "kind": "award",
       "year": 2026,
+      "proof_url": "/certificates/concours-projet-1re-place.pdf",
       "title": {
         "en": "Project contest",
         "fr": "Concours de projet"
@@ -2975,6 +2978,7 @@
     {
       "kind": "award",
       "year": 2026,
+      "proof_url": "/certificates/hackathon-2e-place.pdf",
       "title": {
         "en": "Hackathon",
         "fr": "Hackathon"
@@ -2995,6 +2999,7 @@
     {
       "kind": "academic",
       "year": 2026,
+      "proof_url": "",
       "title": {
         "en": "Top course results",
         "fr": "Meilleurs résultats par matière"
@@ -3015,6 +3020,7 @@
     {
       "kind": "academic",
       "year": null,
+      "proof_url": "",
       "title": {
         "en": "Burkinabè State scholarship",
         "fr": "Bourse de l'État burkinabè"
@@ -3034,7 +3040,50 @@
     },
     {
       "kind": "academic",
+      "year": null,
+      "proof_url": "",
+      "title": {
+        "en": "Moroccan AMCI scholarship",
+        "fr": "Bourse de l'AMCI"
+      },
+      "event": {
+        "en": "Agence Marocaine de Coopération Internationale, Morocco",
+        "fr": "Agence Marocaine de Coopération Internationale, Maroc"
+      },
+      "detail": {
+        "en": "",
+        "fr": ""
+      },
+      "rank": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "kind": "academic",
+      "year": null,
+      "proof_url": "",
+      "title": {
+        "en": "Orange scholarship",
+        "fr": "Bourse Orange"
+      },
+      "event": {
+        "en": "",
+        "fr": ""
+      },
+      "detail": {
+        "en": "",
+        "fr": ""
+      },
+      "rank": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "kind": "academic",
       "year": 2023,
+      "proof_url": "",
       "title": {
         "en": "Baccalauréat, series C (mathematics and physical sciences)",
         "fr": "Baccalauréat série C (mathématiques et sciences physiques)"
@@ -3055,6 +3104,7 @@
     {
       "kind": "certificate",
       "year": 2025,
+      "proof_url": "/certificates/saber-english-training.pdf",
       "title": {
         "en": "Saber's English Training, intensive course",
         "fr": "Saber's English Training, formation intensive"
@@ -3066,6 +3116,153 @@
       "detail": {
         "en": "",
         "fr": ""
+      },
+      "rank": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "kind": "certificate",
+      "year": 2026,
+      "proof_url": "https://coursera.org/verify/IVQVBNMGMMU2",
+      "title": {
+        "en": "Data Persistence and Firebase Integration",
+        "fr": "Data Persistence and Firebase Integration"
+      },
+      "event": {
+        "en": "Packt, via Coursera",
+        "fr": "Packt, via Coursera"
+      },
+      "detail": {
+        "en": "Issued March 2026.",
+        "fr": "Délivré en mars 2026."
+      },
+      "rank": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "kind": "certificate",
+      "year": 2026,
+      "proof_url": "https://coursera.org/verify/7QPAE31OJTC5",
+      "title": {
+        "en": "Advanced Flutter UI and State Management",
+        "fr": "Advanced Flutter UI and State Management"
+      },
+      "event": {
+        "en": "Packt, via Coursera",
+        "fr": "Packt, via Coursera"
+      },
+      "detail": {
+        "en": "Issued March 2026.",
+        "fr": "Délivré en mars 2026."
+      },
+      "rank": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "kind": "certificate",
+      "year": 2026,
+      "proof_url": "https://coursera.org/verify/Q8SLKI5P500I",
+      "title": {
+        "en": "Getting Started with Flutter & Dart",
+        "fr": "Getting Started with Flutter & Dart"
+      },
+      "event": {
+        "en": "Packt, via Coursera",
+        "fr": "Packt, via Coursera"
+      },
+      "detail": {
+        "en": "Issued March 2026.",
+        "fr": "Délivré en mars 2026."
+      },
+      "rank": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "kind": "certificate",
+      "year": null,
+      "proof_url": "https://coursera.org/verify/FEYU6EKPN3RI",
+      "title": {
+        "en": "Flutter & Dart - Complete App Development Course",
+        "fr": "Flutter & Dart - Complete App Development Course"
+      },
+      "event": {
+        "en": "Packt, via Coursera",
+        "fr": "Packt, via Coursera"
+      },
+      "detail": {
+        "en": "",
+        "fr": ""
+      },
+      "rank": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "kind": "certificate",
+      "year": 2026,
+      "proof_url": "https://coursera.org/verify/G8BI5RXJTNTH",
+      "title": {
+        "en": "Developing Back-End Apps with Node.js and Express",
+        "fr": "Developing Back-End Apps with Node.js and Express"
+      },
+      "event": {
+        "en": "IBM, via Coursera",
+        "fr": "IBM, via Coursera"
+      },
+      "detail": {
+        "en": "Issued April 2026.",
+        "fr": "Délivré en avril 2026."
+      },
+      "rank": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "kind": "certificate",
+      "year": 2026,
+      "proof_url": "https://coursera.org/verify/0RXL9HSJQ065",
+      "title": {
+        "en": "Database Design and Basic SQL in PostgreSQL",
+        "fr": "Database Design and Basic SQL in PostgreSQL"
+      },
+      "event": {
+        "en": "University of Michigan, via Coursera",
+        "fr": "University of Michigan, via Coursera"
+      },
+      "detail": {
+        "en": "Issued April 2026.",
+        "fr": "Délivré en avril 2026."
+      },
+      "rank": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "kind": "certificate",
+      "year": 2026,
+      "proof_url": "/certificates/java-fundamentals-board-infinity.pdf",
+      "title": {
+        "en": "Fundamentals of Java Programming",
+        "fr": "Fundamentals of Java Programming"
+      },
+      "event": {
+        "en": "Board Infinity, via Coursera",
+        "fr": "Board Infinity, via Coursera"
+      },
+      "detail": {
+        "en": "Issued 17 June 2026.",
+        "fr": "Délivré le 17 juin 2026."
       },
       "rank": {
         "en": "",

@@ -144,6 +144,7 @@ class Achievement(models.Model):
     year = models.PositiveSmallIntegerField(null=True, blank=True)
     detail_en = models.TextField(blank=True)
     detail_fr = models.TextField(blank=True)
+    proof_url = models.CharField(max_length=300, blank=True, help_text="Link or /certificates/... file that proves it")
     order = models.PositiveSmallIntegerField(default=100)
 
     class Meta:

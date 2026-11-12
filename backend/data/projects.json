@@ -281,8 +281,8 @@
     "featured": true,
     "year": 2026,
     "summary": {
-      "en": "The official platform of the Africa Research Center, a pan-African community for applied research, education and innovation, with its summer and winter schools, ARC'athon and ARC Nexus programmes. Researchers present their work and follow trainings on it. It also helped the association present its activities and trainings to EPFL.",
-      "fr": "La plateforme officielle de l'Africa Research Center, une communauté panafricaine pour la recherche appliquée, l'éducation et l'innovation, avec ses écoles d'été et d'hiver, ARC'athon et ARC Nexus. Des chercheurs y présentent leurs travaux et suivent des formations. Elle a aussi aidé l'association à présenter ses activités et ses formations à l'EPFL."
+      "en": "The official platform of the Africa Research Center, a pan-African community for applied research, education and innovation, with its summer and winter schools, ARC'athon and ARC Nexus programmes. Researchers present their work and follow trainings on it.",
+      "fr": "La plateforme officielle de l'Africa Research Center, une communauté panafricaine pour la recherche appliquée, l'éducation et l'innovation, avec ses écoles d'été et d'hiver, ARC'athon et ARC Nexus. Des chercheurs y présentent leurs travaux et suivent des formations."
     },
     "result": {
       "en": "In use: about a hundred registered users, and the number keeps growing.",
@@ -528,8 +528,8 @@
     "featured": false,
     "year": 2026,
     "summary": {
-      "en": "A platform that lets students find supervisors easily, in several fields. Built at Axiane Agency in Flutter and Dart: interfaces, APIs, database and product features.",
-      "fr": "Une plateforme qui permet à des élèves de trouver facilement des encadrants, dans plusieurs domaines. Développée chez Axiane Agency en Flutter et Dart : interfaces, APIs, base de données et fonctionnalités produit."
+      "en": "A platform that lets students find supervisors easily, in several fields. With an AI-based recommendation system. Built at Axiane Agency in Flutter and Dart: interfaces, APIs, database and product features.",
+      "fr": "Une plateforme qui permet à des élèves de trouver facilement des encadrants, dans plusieurs domaines. Avec un système de recommandation fondé sur l'IA. Développée chez Axiane Agency en Flutter et Dart : interfaces, APIs, base de données et fonctionnalités produit."
     },
     "result": {
       "en": "",

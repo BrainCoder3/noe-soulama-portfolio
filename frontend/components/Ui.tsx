@@ -68,7 +68,7 @@ export function Timeline({ items }: { items: Experience[] }) {
 }
 
 export function AchievementList({ items }: { items: Achievement[] }) {
-  const { t } = useLang();
+  const { t, ui } = useLang();
   return (
     <ul className="ach">
       {items.map((item) => (
@@ -80,9 +80,16 @@ export function AchievementList({ items }: { items: Achievement[] }) {
             <h3 className="ach-title">{t(item.title)}</h3>
             <p className="ach-event">
               {t(item.event)}
-              {item.year ? `, ${item.year}` : ""}
+              {item.year && !t(item.event).includes(String(item.year)) ? `, ${item.year}` : ""}
             </p>
             {t(item.detail) && <p className="ach-detail">{t(item.detail)}</p>}
+            {item.proof_url && (
+              <p className="ach-detail">
+                <a href={item.proof_url} target="_blank" rel="noopener noreferrer">
+                  {ui("achievements.proof")}
+                </a>
+              </p>
+            )}
           </div>
         </li>
       ))}

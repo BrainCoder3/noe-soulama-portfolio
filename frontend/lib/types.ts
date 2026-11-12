@@ -83,6 +83,7 @@ export type Achievement = {
   event: Bi;
   year: number | null;
   detail: Bi;
+  proof_url: string;
 };
 
 export type Block =

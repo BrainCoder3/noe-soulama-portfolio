@@ -57,7 +57,8 @@
     "detail": {
       "en": "",
       "fr": ""
-    }
+    },
+    "proof_url": "/certificates/concours-projet-1re-place.pdf"
   },
   {
     "kind": "award",
@@ -77,7 +78,8 @@
     "detail": {
       "en": "",
       "fr": ""
-    }
+    },
+    "proof_url": "/certificates/hackathon-2e-place.pdf"
   },
   {
     "kind": "academic",
@@ -112,6 +114,46 @@
     "event": {
       "en": "Throughout lycée, Burkina Faso",
       "fr": "Pendant tout le lycée, Burkina Faso"
+    },
+    "year": null,
+    "detail": {
+      "en": "",
+      "fr": ""
+    }
+  },
+  {
+    "kind": "academic",
+    "title": {
+      "en": "Moroccan AMCI scholarship",
+      "fr": "Bourse de l'AMCI"
+    },
+    "rank": {
+      "en": "",
+      "fr": ""
+    },
+    "event": {
+      "en": "Agence Marocaine de Coopération Internationale, Morocco",
+      "fr": "Agence Marocaine de Coopération Internationale, Maroc"
+    },
+    "year": null,
+    "detail": {
+      "en": "",
+      "fr": ""
+    }
+  },
+  {
+    "kind": "academic",
+    "title": {
+      "en": "Orange scholarship",
+      "fr": "Bourse Orange"
+    },
+    "rank": {
+      "en": "",
+      "fr": ""
+    },
+    "event": {
+      "en": "",
+      "fr": ""
     },
     "year": null,
     "detail": {
@@ -157,6 +199,154 @@
     "detail": {
       "en": "",
       "fr": ""
-    }
+    },
+    "proof_url": "/certificates/saber-english-training.pdf"
+  },
+  {
+    "kind": "certificate",
+    "title": {
+      "en": "Data Persistence and Firebase Integration",
+      "fr": "Data Persistence and Firebase Integration"
+    },
+    "rank": {
+      "en": "",
+      "fr": ""
+    },
+    "event": {
+      "en": "Packt, via Coursera",
+      "fr": "Packt, via Coursera"
+    },
+    "year": 2026,
+    "detail": {
+      "en": "Issued March 2026.",
+      "fr": "Délivré en mars 2026."
+    },
+    "proof_url": "https://coursera.org/verify/IVQVBNMGMMU2"
+  },
+  {
+    "kind": "certificate",
+    "title": {
+      "en": "Advanced Flutter UI and State Management",
+      "fr": "Advanced Flutter UI and State Management"
+    },
+    "rank": {
+      "en": "",
+      "fr": ""
+    },
+    "event": {
+      "en": "Packt, via Coursera",
+      "fr": "Packt, via Coursera"
+    },
+    "year": 2026,
+    "detail": {
+      "en": "Issued March 2026.",
+      "fr": "Délivré en mars 2026."
+    },
+    "proof_url": "https://coursera.org/verify/7QPAE31OJTC5"
+  },
+  {
+    "kind": "certificate",
+    "title": {
+      "en": "Getting Started with Flutter & Dart",
+      "fr": "Getting Started with Flutter & Dart"
+    },
+    "rank": {
+      "en": "",
+      "fr": ""
+    },
+    "event": {
+      "en": "Packt, via Coursera",
+      "fr": "Packt, via Coursera"
+    },
+    "year": 2026,
+    "detail": {
+      "en": "Issued March 2026.",
+      "fr": "Délivré en mars 2026."
+    },
+    "proof_url": "https://coursera.org/verify/Q8SLKI5P500I"
+  },
+  {
+    "kind": "certificate",
+    "title": {
+      "en": "Flutter & Dart - Complete App Development Course",
+      "fr": "Flutter & Dart - Complete App Development Course"
+    },
+    "rank": {
+      "en": "",
+      "fr": ""
+    },
+    "event": {
+      "en": "Packt, via Coursera",
+      "fr": "Packt, via Coursera"
+    },
+    "year": null,
+    "detail": {
+      "en": "",
+      "fr": ""
+    },
+    "proof_url": "https://coursera.org/verify/FEYU6EKPN3RI"
+  },
+  {
+    "kind": "certificate",
+    "title": {
+      "en": "Developing Back-End Apps with Node.js and Express",
+      "fr": "Developing Back-End Apps with Node.js and Express"
+    },
+    "rank": {
+      "en": "",
+      "fr": ""
+    },
+    "event": {
+      "en": "IBM, via Coursera",
+      "fr": "IBM, via Coursera"
+    },
+    "year": 2026,
+    "detail": {
+      "en": "Issued April 2026.",
+      "fr": "Délivré en avril 2026."
+    },
+    "proof_url": "https://coursera.org/verify/G8BI5RXJTNTH"
+  },
+  {
+    "kind": "certificate",
+    "title": {
+      "en": "Database Design and Basic SQL in PostgreSQL",
+      "fr": "Database Design and Basic SQL in PostgreSQL"
+    },
+    "rank": {
+      "en": "",
+      "fr": ""
+    },
+    "event": {
+      "en": "University of Michigan, via Coursera",
+      "fr": "University of Michigan, via Coursera"
+    },
+    "year": 2026,
+    "detail": {
+      "en": "Issued April 2026.",
+      "fr": "Délivré en avril 2026."
+    },
+    "proof_url": "https://coursera.org/verify/0RXL9HSJQ065"
+  },
+  {
+    "kind": "certificate",
+    "title": {
+      "en": "Fundamentals of Java Programming",
+      "fr": "Fundamentals of Java Programming"
+    },
+    "rank": {
+      "en": "",
+      "fr": ""
+    },
+    "event": {
+      "en": "Board Infinity, via Coursera",
+      "fr": "Board Infinity, via Coursera"
+    },
+    "year": 2026,
+    "detail": {
+      "en": "Issued 17 June 2026.",
+      "fr": "Délivré le 17 juin 2026."
+    },
+    "proof_url": "/certificates/java-fundamentals-board-infinity.pdf"
   }
 ]
