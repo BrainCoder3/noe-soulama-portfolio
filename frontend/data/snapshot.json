@@ -3273,6 +3273,48 @@
         "en": "",
         "fr": ""
       }
+    },
+    {
+      "kind": "certificate",
+      "year": null,
+      "proof_url": "/certificates/digiscia-ml-ai-bootcamp.pdf",
+      "title": {
+        "en": "DigiScia Summer BootCamp, Machine Learning and AI Engineering",
+        "fr": "DigiScia Summer BootCamp, Machine Learning et ingénierie de l'IA"
+      },
+      "event": {
+        "en": "DigiScia, one-month programme",
+        "fr": "DigiScia, programme d'un mois"
+      },
+      "detail": {
+        "en": "Exploratory data analysis, data cleaning and preprocessing, feature engineering, machine learning modelling, model evaluation and optimisation, IT project management.",
+        "fr": "Analyse exploratoire des données, nettoyage et prétraitement, ingénierie des variables, modélisation, évaluation et optimisation des modèles, gestion de projet informatique."
+      },
+      "rank": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "kind": "certificate",
+      "year": 2026,
+      "proof_url": "/certificates/aebm-cameb-2026-workshop.pdf",
+      "title": {
+        "en": "Workshop: from CV to interview, succeeding at every step of an application",
+        "fr": "Atelier « Du CV à l'entretien : réussir chaque étape de sa candidature »"
+      },
+      "event": {
+        "en": "AEBM, Carrefour Marocain de l'Étudiant Burkinabè (CAMEB 2026), online",
+        "fr": "AEBM, Carrefour Marocain de l'Étudiant Burkinabè (CAMEB 2026), en ligne"
+      },
+      "detail": {
+        "en": "Participation certificate, workshop held on 7 November 2026.",
+        "fr": "Attestation de participation, atelier du 7 novembre 2026."
+      },
+      "rank": {
+        "en": "",
+        "fr": ""
+      }
     }
   ],
   "skills": [
