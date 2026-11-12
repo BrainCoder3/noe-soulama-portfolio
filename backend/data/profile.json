@@ -87,9 +87,14 @@
       "level_fr": "langue maternelle"
     },
     {
+      "name": "Bambara",
+      "level_en": "native",
+      "level_fr": "langue maternelle"
+    },
+    {
       "name": "Dioula",
-      "level_en": "fluent",
-      "level_fr": "courant"
+      "level_en": "spoken",
+      "level_fr": "parlé"
     },
     {
       "name": "English",

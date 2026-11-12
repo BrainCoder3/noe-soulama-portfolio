@@ -30,8 +30,8 @@
       "fr": "1re"
     },
     "event": {
-      "en": "LearnCraft, AEBM x ASEGUIM, Tétouan",
-      "fr": "LearnCraft, AEBM x ASEGUIM, Tétouan"
+      "en": "Scientific day AEBM x ASEGUIM, Tétouan, as a team (LearnCraft)",
+      "fr": "Journée scientifique AEBM x ASEGUIM, Tétouan, en équipe (LearnCraft)"
     },
     "year": 2026,
     "detail": {
@@ -124,21 +124,21 @@
   {
     "kind": "academic",
     "title": {
-      "en": "Moroccan AMCI scholarship",
-      "fr": "Bourse de l'AMCI"
+      "en": "Moroccan government scholarship (AMCI)",
+      "fr": "Bourse du Gouvernement marocain (AMCI)"
     },
     "rank": {
       "en": "",
       "fr": ""
     },
     "event": {
-      "en": "Agence Marocaine de Coopération Internationale, Morocco",
-      "fr": "Agence Marocaine de Coopération Internationale, Maroc"
+      "en": "Agence Marocaine de Coopération Internationale, 2025-2026",
+      "fr": "Agence Marocaine de Coopération Internationale, 2025-2026"
     },
     "year": null,
     "detail": {
-      "en": "",
-      "fr": ""
+      "en": "Certified by an AMCI scholarship attestation for the academic year 2025/2026, issued in Rabat on 31 October 2025.",
+      "fr": "Attesté par une attestation de bourse de l'AMCI pour l'année académique 2025/2026, délivrée à Rabat le 31 octobre 2025."
     }
   },
   {
@@ -164,7 +164,7 @@
   {
     "kind": "academic",
     "title": {
-      "en": "Baccalauréat, series C (mathematics and physical sciences)",
+      "en": "Baccalaureate, series C (mathematics and physical sciences)",
       "fr": "Baccalauréat série C (mathématiques et sciences physiques)"
     },
     "rank": {
@@ -177,9 +177,10 @@
     },
     "year": 2023,
     "detail": {
-      "en": "Average of 15.31/20 (398 out of 520), first session 2023, Lycée scientifique régional de Bobo-Dioulasso. Admitted at the first round.",
-      "fr": "Moyenne de 15,31/20 (398 sur 520), session normale 2023, Lycée scientifique régional de Bobo-Dioulasso. Admis au premier tour."
-    }
+      "en": "With distinction (Bien), average of 15.31/20.",
+      "fr": "Mention Bien, moyenne de 15,31/20."
+    },
+    "proof_url": ""
   },
   {
     "kind": "certificate",

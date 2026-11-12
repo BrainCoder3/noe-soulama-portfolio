@@ -85,9 +85,14 @@
         "level_fr": "langue maternelle"
       },
       {
+        "name": "Bambara",
+        "level_en": "native",
+        "level_fr": "langue maternelle"
+      },
+      {
         "name": "Dioula",
-        "level_en": "fluent",
-        "level_fr": "courant"
+        "level_en": "spoken",
+        "level_fr": "parlé"
       },
       {
         "name": "English",
@@ -2844,8 +2849,8 @@
       "start": "2026",
       "end": "",
       "role": {
-        "en": "Full-stack developer",
-        "fr": "Développeur full-stack"
+        "en": "Software and AI developer",
+        "fr": "Développeur informatique et IA"
       },
       "description": {
         "en": "I helped set up Dehere, a platform that lets students find supervisors in several fields, with an AI-based recommendation system: interfaces, APIs, database and product features, in Flutter/Dart. Dehere is not launched yet because its security has to be reviewed first.",
@@ -2866,8 +2871,8 @@
         "fr": "Responsable technique bénévole, dans une équipe de quatre personnes"
       },
       "description": {
-        "en": "ARC's mission is to promote research in Africa, and its network counts more than 3,000 members from 37 nationalities. I scope needs, design digital solutions and coordinate technical tasks. The platform I developed makes it easier to welcome doctoral students and young researchers, makes the association known, and puts their work forward through the ARCPOD podcast and the ARC Highlight series. About a hundred people are registered on it, and the number keeps growing.",
-        "fr": "La mission de l'ARC est de promouvoir la recherche en Afrique, et son réseau compte plus de 3 000 membres de 37 nationalités. Je cadre les besoins, conçois des solutions numériques et coordonne les tâches techniques. La plateforme que j'ai développée facilite l'accueil des doctorants et des jeunes chercheurs, fait connaître l'association et met leur travail en avant à travers le podcast ARCPOD et la série ARC Highlight. Environ une centaine de personnes y sont inscrites, et le nombre continue d'augmenter."
+        "en": "ARC's mission is to promote research in Africa, and its network counts more than 3,000 members from 37 nationalities, according to its website. I scope needs, design digital solutions and coordinate technical tasks. The platform I developed makes it easier to welcome doctoral students and young researchers, makes the association known, and puts their work forward through the ARCPOD podcast and the ARC Highlight series. About a hundred people are registered on it, and the number keeps growing.",
+        "fr": "La mission de l'ARC est de promouvoir la recherche en Afrique, et son réseau compte plus de 3 000 membres de 37 nationalités, d'après son site. Je cadre les besoins, conçois des solutions numériques et coordonne les tâches techniques. La plateforme que j'ai développée facilite l'accueil des doctorants et des jeunes chercheurs, fait connaître l'association et met leur travail en avant à travers le podcast ARCPOD et la série ARC Highlight. Environ une centaine de personnes y sont inscrites, et le nombre continue d'augmenter."
       },
       "place": {
         "en": "",
@@ -2902,8 +2907,8 @@
         "fr": "Membre de la Commission de contrôle"
       },
       "description": {
-        "en": "A student association role. Before that, secretary general of its sports commission (2025-2026).",
-        "fr": "Un rôle au sein d'une association d'étudiants. Auparavant, secrétaire général de sa commission sportive (2025-2026)."
+        "en": "A student association role: member of the control commission in 2026. Before that, secretary general of its sports commission (2025-2026). Honorary distinction in November 2026.",
+        "fr": "Un rôle au sein d'une association d'étudiants : membre de la commission de contrôle en 2026. Auparavant, secrétaire général de sa commission sportive (2025-2026). Distinction d'honneur en novembre 2026."
       },
       "place": {
         "en": "Tétouan, Morocco",
@@ -2942,8 +2947,8 @@
         "fr": "Challenge Codage et IA"
       },
       "event": {
-        "en": "LearnCraft, AEBM x ASEGUIM, Tétouan",
-        "fr": "LearnCraft, AEBM x ASEGUIM, Tétouan"
+        "en": "Scientific day AEBM x ASEGUIM, Tétouan, as a team (LearnCraft)",
+        "fr": "Journée scientifique AEBM x ASEGUIM, Tétouan, en équipe (LearnCraft)"
       },
       "detail": {
         "en": "",
@@ -3043,16 +3048,16 @@
       "year": null,
       "proof_url": "",
       "title": {
-        "en": "Moroccan AMCI scholarship",
-        "fr": "Bourse de l'AMCI"
+        "en": "Moroccan government scholarship (AMCI)",
+        "fr": "Bourse du Gouvernement marocain (AMCI)"
       },
       "event": {
-        "en": "Agence Marocaine de Coopération Internationale, Morocco",
-        "fr": "Agence Marocaine de Coopération Internationale, Maroc"
+        "en": "Agence Marocaine de Coopération Internationale, 2025-2026",
+        "fr": "Agence Marocaine de Coopération Internationale, 2025-2026"
       },
       "detail": {
-        "en": "",
-        "fr": ""
+        "en": "Certified by an AMCI scholarship attestation for the academic year 2025/2026, issued in Rabat on 31 October 2025.",
+        "fr": "Attesté par une attestation de bourse de l'AMCI pour l'année académique 2025/2026, délivrée à Rabat le 31 octobre 2025."
       },
       "rank": {
         "en": "",
@@ -3085,7 +3090,7 @@
       "year": 2023,
       "proof_url": "",
       "title": {
-        "en": "Baccalauréat, series C (mathematics and physical sciences)",
+        "en": "Baccalaureate, series C (mathematics and physical sciences)",
         "fr": "Baccalauréat série C (mathématiques et sciences physiques)"
       },
       "event": {
@@ -3093,8 +3098,8 @@
         "fr": "Burkina Faso, 2023"
       },
       "detail": {
-        "en": "Average of 15.31/20 (398 out of 520), first session 2023, Lycée scientifique régional de Bobo-Dioulasso. Admitted at the first round.",
-        "fr": "Moyenne de 15,31/20 (398 sur 520), session normale 2023, Lycée scientifique régional de Bobo-Dioulasso. Admis au premier tour."
+        "en": "With distinction (Bien), average of 15.31/20.",
+        "fr": "Mention Bien, moyenne de 15,31/20."
       },
       "rank": {
         "en": "",
@@ -3362,8 +3367,8 @@
         "fr": "Systèmes et sécurité"
       },
       "proof": {
-        "en": "ChadPay, Hasil, Rhimena, the SIEM ingestion pipeline",
-        "fr": "ChadPay, Hasil, Rhimena, le pipeline d'ingestion SIEM"
+        "en": "streaming-robustness-monitor (Kafka and Docker Compose), the SIEM ingestion pipeline, ChadPay, Hasil, Rhimena",
+        "fr": "streaming-robustness-monitor (Kafka et Docker Compose), le pipeline d'ingestion SIEM, ChadPay, Hasil, Rhimena"
       }
     },
     {
