@@ -2920,7 +2920,7 @@
     {
       "kind": "academic",
       "year": 2026,
-      "proof_url": "",
+      "proof_url": "/certificates/attestation-classement-2025-2026.pdf",
       "title": {
         "en": "Ranked 1st of 49 students",
         "fr": "Classé 1er sur 49 étudiants"
@@ -2941,7 +2941,7 @@
     {
       "kind": "award",
       "year": 2026,
-      "proof_url": "",
+      "proof_url": "/certificates/challenge-codage-ia-1re-place.pdf",
       "title": {
         "en": "Coding and AI Challenge",
         "fr": "Challenge Codage et IA"
@@ -3002,6 +3002,27 @@
       }
     },
     {
+      "kind": "award",
+      "year": 2026,
+      "proof_url": "/certificates/aseet-distinction-honneur.pdf",
+      "title": {
+        "en": "Honorary distinction, academic excellence",
+        "fr": "Distinction d'honneur, excellence académique"
+      },
+      "event": {
+        "en": "ASEET, Tétouan, 7 November 2026",
+        "fr": "ASEET, Tétouan, 7 novembre 2026"
+      },
+      "detail": {
+        "en": "Awarded by the Association of Foreign Trainees and Students in Tétouan for an exemplary record and commitment to the student community.",
+        "fr": "Décernée par l'Association des Stagiaires et Étudiants Étrangers à Tétouan pour un parcours et un engagement exemplaires au sein de la communauté étudiante."
+      },
+      "rank": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
       "kind": "academic",
       "year": 2026,
       "proof_url": "",
@@ -3046,7 +3067,7 @@
     {
       "kind": "academic",
       "year": null,
-      "proof_url": "",
+      "proof_url": "/certificates/attestation-bourse-amci-2025-2026.pdf",
       "title": {
         "en": "Moroccan government scholarship (AMCI)",
         "fr": "Bourse du Gouvernement marocain (AMCI)"

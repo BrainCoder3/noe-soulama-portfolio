@@ -85,9 +85,15 @@ export function AchievementList({ items }: { items: Achievement[] }) {
             {t(item.detail) && <p className="ach-detail">{t(item.detail)}</p>}
             {item.proof_url && (
               <p className="ach-detail">
-                <a href={item.proof_url} target="_blank" rel="noopener noreferrer">
-                  {ui("achievements.proof")}
-                </a>
+                {item.proof_url.startsWith("/") ? (
+                  <a href={item.proof_url} download>
+                    {ui("achievements.download")}
+                  </a>
+                ) : (
+                  <a href={item.proof_url} target="_blank" rel="noopener noreferrer">
+                    {ui("achievements.proof")}
+                  </a>
+                )}
               </p>
             )}
           </div>

@@ -17,7 +17,8 @@
     "detail": {
       "en": "Annual average of 16.935/20, after 15.2 and 15.424 in the two preparatory years. Certified by a ranking attestation from the school.",
       "fr": "Moyenne annuelle de 16,935/20, après 15,2 et 15,424 pendant les deux années préparatoires. Attesté par une attestation de classement de l'école."
-    }
+    },
+    "proof_url": "/certificates/attestation-classement-2025-2026.pdf"
   },
   {
     "kind": "award",
@@ -37,7 +38,8 @@
     "detail": {
       "en": "",
       "fr": ""
-    }
+    },
+    "proof_url": "/certificates/challenge-codage-ia-1re-place.pdf"
   },
   {
     "kind": "award",
@@ -80,6 +82,27 @@
       "fr": ""
     },
     "proof_url": "/certificates/hackathon-2e-place.pdf"
+  },
+  {
+    "kind": "award",
+    "title": {
+      "en": "Honorary distinction, academic excellence",
+      "fr": "Distinction d'honneur, excellence académique"
+    },
+    "rank": {
+      "en": "",
+      "fr": ""
+    },
+    "event": {
+      "en": "ASEET, Tétouan, 7 November 2026",
+      "fr": "ASEET, Tétouan, 7 novembre 2026"
+    },
+    "year": 2026,
+    "detail": {
+      "en": "Awarded by the Association of Foreign Trainees and Students in Tétouan for an exemplary record and commitment to the student community.",
+      "fr": "Décernée par l'Association des Stagiaires et Étudiants Étrangers à Tétouan pour un parcours et un engagement exemplaires au sein de la communauté étudiante."
+    },
+    "proof_url": "/certificates/aseet-distinction-honneur.pdf"
   },
   {
     "kind": "academic",
@@ -139,7 +162,8 @@
     "detail": {
       "en": "Certified by an AMCI scholarship attestation for the academic year 2025/2026, issued in Rabat on 31 October 2025.",
       "fr": "Attesté par une attestation de bourse de l'AMCI pour l'année académique 2025/2026, délivrée à Rabat le 31 octobre 2025."
-    }
+    },
+    "proof_url": "/certificates/attestation-bourse-amci-2025-2026.pdf"
   },
   {
     "kind": "academic",
