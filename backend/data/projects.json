@@ -231,11 +231,53 @@
     }
   },
   {
+    "slug": "streaming-robustness-monitor",
+    "title": "Streaming robustness monitor",
+    "kind": "research",
+    "status": "built",
+    "priority": 5,
+    "featured": true,
+    "year": 2026,
+    "summary": {
+      "en": "A Kafka pipeline run with Docker Compose that watches an image classifier while its inputs are degraded by noise, and raises an alert without using the true labels, from the model's own confidence. Three stages (producer, inference, monitor) talk only through Kafka topics. It extends my noise-robustness studies to the question of noticing a failure in operation.",
+      "fr": "Un pipeline Kafka déployé avec Docker Compose qui surveille un classifieur d'images pendant que ses entrées sont dégradées par du bruit, et qui déclenche une alerte sans utiliser les vraies étiquettes, à partir de la confiance du modèle. Trois étages (producteur, inférence, moniteur) ne communiquent que par des topics Kafka. Il prolonge mes études de robustesse au bruit vers la question de repérer une panne en fonctionnement."
+    },
+    "result": {
+      "en": "In the simulation (20 random seeds), no false alarm during the clean phase, and the degradation is detected 100 events after the noise starts, even for mild noise, before the model is clearly wrong. The full stack was also run with Docker Compose on a real Kafka broker (1,600 events through three topics, two alerts), and 20 automated tests cover the logic.",
+      "fr": "En simulation (20 essais aléatoires), aucune fausse alerte pendant la phase propre, et la dégradation est détectée 100 événements après le début du bruit, même pour un bruit léger, avant que le modèle se trompe nettement. L'ensemble a aussi été exécuté avec Docker Compose sur un vrai broker Kafka (1 600 événements sur trois topics, deux alertes), et 20 tests automatiques couvrent la logique."
+    },
+    "limit": {
+      "en": "Small images (scikit-learn digits) with synthetic Gaussian noise, a simple statistical rule instead of a trained drift detector, and a single-node Kafka broker. A controlled setting to study the monitoring layer, not a production system.",
+      "fr": "Petites images (chiffres de scikit-learn) avec un bruit gaussien synthétique, une règle statistique simple plutôt qu'un détecteur entraîné, et un seul nœud Kafka. Un cadre contrôlé pour étudier la couche de surveillance, pas un système de production."
+    },
+    "role": {
+      "en": "Personal project, designed, coded and tested by me",
+      "fr": "Projet personnel, conçu, codé et testé par moi"
+    },
+    "stack": [
+      "Python",
+      "Apache Kafka",
+      "Docker Compose",
+      "scikit-learn",
+      "GitHub Actions"
+    ],
+    "metrics": [],
+    "repo_url": "https://github.com/BrainCoder3/streaming-robustness-monitor",
+    "demo_url": "",
+    "code_is_private": false,
+    "image": "/projects/streaming-robustness-monitor.webp",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "Chart of mean confidence and accuracy over a stream of images, with the noise phases shaded and the degraded and recovered alerts marked.",
+      "fr": "Graphique de la confiance moyenne et de la précision sur un flux d'images, avec les phases de bruit grisées et les alertes de dégradation et de retour à la normale."
+    }
+  },
+  {
     "slug": "arc-platform",
     "title": "Africa Research Center platform",
     "kind": "system",
     "status": "live",
-    "priority": 5,
+    "priority": 6,
     "featured": true,
     "year": 2026,
     "summary": {
@@ -274,12 +316,12 @@
     "title": "SchoolGo",
     "kind": "system",
     "status": "demo",
-    "priority": 6,
+    "priority": 7,
     "featured": true,
     "year": 2026,
     "summary": {
-      "en": "A school management platform (SaaS) for directors, teachers and parents: digital student records with grades and attendance, a teacher portal for grades and timetables, automatic SMS notifications to parents, role-based access, tracking of school fees and payroll, and AI-assisted analysis to spot struggling students early. Built with my associates at UniTchad, and I worked on the platform.",
-      "fr": "Une plateforme de gestion scolaire (SaaS) pour les directeurs, les enseignants et les parents : dossiers numériques des élèves avec notes et présences, un portail enseignant pour les notes et les emplois du temps, des notifications SMS automatiques aux parents, des accès selon les rôles, le suivi des frais de scolarité et de la paie, et une analyse assistée par IA pour repérer tôt les élèves en difficulté. Construite avec mes associés d'UniTchad, et j'ai travaillé sur la plateforme."
+      "en": "A school management platform (SaaS) that makes it much easier for parents and school administrations to follow students, using software, networks and artificial intelligence. It offers digital student records with grades and attendance, a teacher portal for grades and timetables, automatic SMS notifications to parents, role-based access, tracking of school fees and payroll, and AI-assisted analysis to spot struggling students early. Built with my associates at UniTchad, in Chad, and I worked on the platform.",
+      "fr": "Une plateforme de gestion scolaire (SaaS) qui facilite grandement le suivi des élèves par les parents et par l'administration, grâce à l'informatique, au réseau et à l'intelligence artificielle. Elle propose des dossiers numériques des élèves avec notes et présences, un portail enseignant pour les notes et les emplois du temps, des notifications SMS automatiques aux parents, des accès selon les rôles, le suivi des frais de scolarité et de la paie, et une analyse assistée par IA pour repérer tôt les élèves en difficulté. Construite avec mes associés d'UniTchad, au Tchad, et j'ai travaillé sur la plateforme."
     },
     "result": {
       "en": "The product site is live in French and English, with sign-up and login, at schoolgo.unitchad.com.",
@@ -313,7 +355,7 @@
     "title": "SpeakUp",
     "kind": "system",
     "status": "built",
-    "priority": 7,
+    "priority": 8,
     "featured": true,
     "year": 2026,
     "summary": {
@@ -355,8 +397,8 @@
     "slug": "rhimena",
     "title": "Rhimena",
     "kind": "system",
-    "status": "built",
-    "priority": 8,
+    "status": "demo",
+    "priority": 9,
     "featured": false,
     "year": 2026,
     "summary": {
@@ -386,7 +428,7 @@
     ],
     "metrics": [],
     "repo_url": "",
-    "demo_url": "",
+    "demo_url": "https://rhimena-frontend-demo.vercel.app/",
     "code_is_private": true,
     "image": "",
     "image_fit": "cover",
@@ -400,7 +442,7 @@
     "title": "ChadPay",
     "kind": "system",
     "status": "not_launched",
-    "priority": 9,
+    "priority": 10,
     "featured": false,
     "year": 2026,
     "summary": {
@@ -440,7 +482,7 @@
     "title": "Hasil",
     "kind": "system",
     "status": "built",
-    "priority": 10,
+    "priority": 11,
     "featured": false,
     "year": 2026,
     "summary": {
@@ -482,7 +524,7 @@
     "title": "Dehere",
     "kind": "system",
     "status": "not_launched",
-    "priority": 11,
+    "priority": 12,
     "featured": false,
     "year": 2026,
     "summary": {
@@ -521,7 +563,7 @@
     "title": "TaxiGo API",
     "kind": "system",
     "status": "built",
-    "priority": 12,
+    "priority": 13,
     "featured": false,
     "year": 2026,
     "summary": {
@@ -562,7 +604,7 @@
     "title": "TinyGPT from scratch",
     "kind": "learning",
     "status": "study",
-    "priority": 13,
+    "priority": 14,
     "featured": false,
     "year": 2026,
     "summary": {
@@ -602,7 +644,7 @@
     "title": "LearnCraft",
     "kind": "system",
     "status": "built",
-    "priority": 14,
+    "priority": 15,
     "featured": false,
     "year": 2026,
     "summary": {
@@ -643,7 +685,7 @@
     "title": "Campus AI",
     "kind": "system",
     "status": "demo",
-    "priority": 15,
+    "priority": 16,
     "featured": false,
     "year": 2026,
     "summary": {
@@ -683,7 +725,7 @@
     "title": "SIEM big data pipeline",
     "kind": "learning",
     "status": "built",
-    "priority": 16,
+    "priority": 17,
     "featured": false,
     "year": 2026,
     "summary": {
@@ -723,7 +765,7 @@
     "title": "AI job market analysis",
     "kind": "learning",
     "status": "study",
-    "priority": 17,
+    "priority": 18,
     "featured": false,
     "year": 2026,
     "summary": {
@@ -763,7 +805,7 @@
     "title": "Deep learning from a single neuron",
     "kind": "learning",
     "status": "study",
-    "priority": 18,
+    "priority": 19,
     "featured": false,
     "year": 2026,
     "summary": {
@@ -801,7 +843,7 @@
     "title": "Kaggle notebooks",
     "kind": "learning",
     "status": "study",
-    "priority": 19,
+    "priority": 20,
     "featured": false,
     "year": 2026,
     "summary": {
@@ -842,7 +884,7 @@
     "title": "New Boss Form",
     "kind": "system",
     "status": "demo",
-    "priority": 20,
+    "priority": 21,
     "featured": false,
     "year": 2026,
     "summary": {
@@ -868,6 +910,406 @@
     "metrics": [],
     "repo_url": "",
     "demo_url": "https://new-boss-form.vercel.app",
+    "code_is_private": true,
+    "image": "",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "",
+      "fr": ""
+    }
+  },
+  {
+    "slug": "ai-learning-platform",
+    "title": "AI_leaning, a platform to learn AI",
+    "kind": "system",
+    "status": "built",
+    "priority": 22,
+    "featured": false,
+    "year": 2026,
+    "summary": {
+      "en": "A bilingual (French and English) platform that teaches artificial intelligence from a manual I studied, then goes well beyond it. Each lesson goes from a drawing and an interactive simulator, to a prediction, a worked example, a mastery test and a short explanation in my own words that a local model corrects.",
+      "fr": "Une plateforme bilingue (français et anglais) qui enseigne l'intelligence artificielle à partir d'un manuel que j'ai étudié, puis va bien au-delà. Chaque leçon passe d'un dessin et d'un simulateur interactif à une prédiction, un exemple chiffré, un test de maîtrise et une courte explication avec mes propres mots, corrigée par un modèle local."
+    },
+    "result": {
+      "en": "44 lessons, 31 Python exercises checked by running every solution, and an oral mode where a teacher voice explains, listens to the answer and corrects it. Everything runs on the computer, with no account and no cloud.",
+      "fr": "44 leçons, 31 exercices Python dont chaque solution est vérifiée en l'exécutant, et un mode oral où une voix de professeur explique, écoute la réponse et la corrige. Tout tourne sur l'ordinateur, sans compte ni cloud."
+    },
+    "limit": {
+      "en": "A personal learning tool, not a hosted service. The local model needs a reasonably recent computer to answer smoothly.",
+      "fr": "Un outil d'apprentissage personnel, pas un service hébergé. Le modèle local demande un ordinateur assez récent pour répondre sans à-coups."
+    },
+    "role": {
+      "en": "Designed and built alone",
+      "fr": "Conçu et construit seul"
+    },
+    "stack": [
+      "JavaScript",
+      "Node.js",
+      "Ollama",
+      "Python"
+    ],
+    "metrics": [],
+    "repo_url": "",
+    "demo_url": "",
+    "code_is_private": false,
+    "image": "",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "",
+      "fr": ""
+    }
+  },
+  {
+    "slug": "handwritten-digits",
+    "title": "Handwritten digits with classic machine learning",
+    "kind": "learning",
+    "status": "study",
+    "priority": 23,
+    "featured": false,
+    "year": 2026,
+    "summary": {
+      "en": "Recognising the 8×8 handwritten digits of scikit-learn with classic models, done carefully: a baseline that does nothing smart, stratified cross-validation, a model comparison and an error analysis.",
+      "fr": "Reconnaître les chiffres manuscrits 8×8 de scikit-learn avec des modèles classiques, mais en le faisant proprement : une référence sans intelligence, une validation croisée stratifiée, une comparaison de modèles et une analyse des erreurs."
+    },
+    "result": {
+      "en": "Logistic regression reaches 97.2 % on the test set and a random forest 96.1 %, against 10 % for the baseline. The gap between the two models is smaller than the fold-to-fold variation, so I treat them as equivalent.",
+      "fr": "La régression logistique atteint 97,2 % sur le jeu de test et la forêt aléatoire 96,1 %, contre 10 % pour la référence. L'écart entre les deux modèles est plus petit que la variation d'un pli à l'autre, je les considère donc comme équivalents."
+    },
+    "limit": {
+      "en": "Both models were looked at on the test set, so the test numbers are an estimate, not an untouched final measure.",
+      "fr": "Les deux modèles ont été regardés sur le jeu de test, ces chiffres sont donc une estimation, pas une mesure finale vierge."
+    },
+    "role": {
+      "en": "Personal learning project",
+      "fr": "Projet d'apprentissage personnel"
+    },
+    "stack": [
+      "Python",
+      "scikit-learn"
+    ],
+    "metrics": [],
+    "repo_url": "https://github.com/BrainCoder3/handwritten-digits-classification",
+    "demo_url": "",
+    "code_is_private": false,
+    "image": "",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "",
+      "fr": ""
+    }
+  },
+  {
+    "slug": "ml-deep-from-scratch",
+    "title": "Machine and deep learning, built by hand",
+    "kind": "learning",
+    "status": "study",
+    "priority": 24,
+    "featured": false,
+    "year": 2026,
+    "summary": {
+      "en": "My self-study path in machine learning, where each method is first written by hand and then compared with the library: a data audit with pandas, linear regression and gradient descent in NumPy, PCA and clustering, then PyTorch.",
+      "fr": "Mon parcours d'auto-formation en apprentissage automatique, où chaque méthode est d'abord écrite à la main puis comparée à la bibliothèque : audit de données avec pandas, régression linéaire et descente de gradient en NumPy, ACP et clustering, puis PyTorch."
+    },
+    "result": {
+      "en": "Two projects are done, the digits project has its own repository, and the unsupervised learning part is in progress.",
+      "fr": "Deux projets sont terminés, le projet sur les chiffres a son propre dépôt, et la partie apprentissage non supervisé est en cours."
+    },
+    "limit": {
+      "en": "Learning material that is still moving, the PyTorch lab is only planned.",
+      "fr": "Du matériel d'apprentissage encore en mouvement, le laboratoire PyTorch est seulement prévu."
+    },
+    "role": {
+      "en": "Personal learning project",
+      "fr": "Projet d'apprentissage personnel"
+    },
+    "stack": [
+      "Python",
+      "NumPy",
+      "pandas",
+      "PyTorch"
+    ],
+    "metrics": [],
+    "repo_url": "https://github.com/BrainCoder3/ml-deep-from-scratch",
+    "demo_url": "",
+    "code_is_private": false,
+    "image": "",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "",
+      "fr": ""
+    }
+  },
+  {
+    "slug": "unitchad-motion",
+    "title": "UniTchad site rebuilt with motion design",
+    "kind": "system",
+    "status": "demo",
+    "priority": 25,
+    "featured": false,
+    "year": 2026,
+    "summary": {
+      "en": "A rebuild of the UniTchad website with motion design, following a set of prompts I prepared for each section: preloader, hero, storytelling steps, services, team and partners. It works in French, English and Arabic with a right-to-left layout, and in light and dark themes.",
+      "fr": "Une reconstruction du site d'UniTchad avec du motion design, à partir d'un ensemble de consignes que j'ai préparées pour chaque section : préloader, en-tête, étapes de présentation, services, équipe et partenaires. Il fonctionne en français, en anglais et en arabe avec une mise en page de droite à gauche, en thème clair et sombre."
+    },
+    "result": {
+      "en": "Built with Next.js, TypeScript, Tailwind and Motion, with animations limited to transform and opacity and a reduced-motion fallback so it stays smooth on mid-range phones. A presentation video of the result also exists.",
+      "fr": "Construit avec Next.js, TypeScript, Tailwind et Motion, avec des animations limitées à la transformation et à l'opacité et un repli pour le mouvement réduit, afin de rester fluide sur des téléphones d'entrée de gamme. Une vidéo de présentation du résultat existe aussi."
+    },
+    "limit": {
+      "en": "A motion study, not the production website of the company.",
+      "fr": "Une étude de motion design, pas le site de production de l'entreprise."
+    },
+    "role": {
+      "en": "Designed and built by me",
+      "fr": "Conçu et construit par moi"
+    },
+    "stack": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Motion"
+    ],
+    "metrics": [],
+    "repo_url": "",
+    "demo_url": "",
+    "code_is_private": true,
+    "image": "",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "",
+      "fr": ""
+    }
+  },
+  {
+    "slug": "arc-network-admin",
+    "title": "ARC network follow-up tools",
+    "kind": "system",
+    "status": "built",
+    "priority": 26,
+    "featured": false,
+    "year": 2026,
+    "summary": {
+      "en": "Two small web applications around the Africa Research Center network, a form for the network and an administration dashboard that lets the team follow it.",
+      "fr": "Deux petites applications web autour du réseau de l'Africa Research Center, un formulaire pour le réseau et un tableau de bord d'administration qui permet à l'équipe de le suivre."
+    },
+    "result": {
+      "en": "Built in February and March 2026 with Next.js and TypeScript, before the official platform.",
+      "fr": "Construits en février et mars 2026 avec Next.js et TypeScript, avant la plateforme officielle."
+    },
+    "limit": {
+      "en": "Early internal tools. The official platform is the project listed separately.",
+      "fr": "Des outils internes de début de parcours. La plateforme officielle est le projet présenté à part."
+    },
+    "role": {
+      "en": "Developer",
+      "fr": "Développeur"
+    },
+    "stack": [
+      "Next.js",
+      "TypeScript"
+    ],
+    "metrics": [],
+    "repo_url": "",
+    "demo_url": "",
+    "code_is_private": true,
+    "image": "",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "",
+      "fr": ""
+    }
+  },
+  {
+    "slug": "eventflow",
+    "title": "EventFlow, an app to save your events",
+    "kind": "system",
+    "status": "built",
+    "priority": 27,
+    "featured": false,
+    "year": 2026,
+    "summary": {
+      "en": "A Flutter mobile application to save and follow your events, with sign-in and sign-up screens, a home screen, an event creation screen and a profile.",
+      "fr": "Une application mobile Flutter pour enregistrer et suivre ses événements, avec des écrans de connexion et d'inscription, un écran d'accueil, un écran de création d'événement et un profil."
+    },
+    "result": {
+      "en": "The sign-in, home, event creation and profile screens are written.",
+      "fr": "Les écrans de connexion, d'accueil, de création d'événement et de profil sont écrits."
+    },
+    "limit": {
+      "en": "A first version, not published on a store.",
+      "fr": "Une première version, non publiée sur un store."
+    },
+    "role": {
+      "en": "Developer",
+      "fr": "Développeur"
+    },
+    "stack": [
+      "Flutter",
+      "Dart"
+    ],
+    "metrics": [],
+    "repo_url": "https://github.com/BrainCoder3/save_events",
+    "demo_url": "",
+    "code_is_private": false,
+    "image": "",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "",
+      "fr": ""
+    }
+  },
+  {
+    "slug": "beauty-perception",
+    "title": "Beauty perception, data audit",
+    "kind": "learning",
+    "status": "study",
+    "priority": 28,
+    "featured": false,
+    "year": 2026,
+    "summary": {
+      "en": "A data analysis project on how beauty is perceived, with a data audit and an exploratory analysis in notebooks, from raw data to cleaned data.",
+      "fr": "Un projet d'analyse de données sur la perception de la beauté, avec un audit des données et une analyse exploratoire dans des notebooks, des données brutes aux données nettoyées."
+    },
+    "result": {
+      "en": "Two audit notebooks and one exploratory notebook, with raw and processed data kept apart.",
+      "fr": "Deux notebooks d'audit et un notebook d'exploration, avec les données brutes et traitées séparées."
+    },
+    "limit": {
+      "en": "Exploratory work only, no model and no conclusion to claim.",
+      "fr": "Un travail exploratoire seulement, sans modèle ni conclusion à revendiquer."
+    },
+    "role": {
+      "en": "Personal project",
+      "fr": "Projet personnel"
+    },
+    "stack": [
+      "Python",
+      "Jupyter"
+    ],
+    "metrics": [],
+    "repo_url": "",
+    "demo_url": "",
+    "code_is_private": true,
+    "image": "",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "",
+      "fr": ""
+    }
+  },
+  {
+    "slug": "happy-birthday-site",
+    "title": "A birthday website",
+    "kind": "system",
+    "status": "built",
+    "priority": 29,
+    "featured": false,
+    "year": 2026,
+    "summary": {
+      "en": "A small website made to wish someone a happy birthday, with a customised look, a golden book section and a section for best moments.",
+      "fr": "Un petit site créé pour souhaiter un joyeux anniversaire, avec une présentation personnalisée, une section livre d'or et une section des meilleurs moments."
+    },
+    "result": {
+      "en": "A fun Next.js project made in January 2026.",
+      "fr": "Un projet Next.js fait pour le plaisir en janvier 2026."
+    },
+    "limit": {
+      "en": "A personal gift, not a product.",
+      "fr": "Un cadeau personnel, pas un produit."
+    },
+    "role": {
+      "en": "Designed and built alone",
+      "fr": "Conçu et construit seul"
+    },
+    "stack": [
+      "Next.js",
+      "TypeScript"
+    ],
+    "metrics": [],
+    "repo_url": "",
+    "demo_url": "",
+    "code_is_private": true,
+    "image": "",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "",
+      "fr": ""
+    }
+  },
+  {
+    "slug": "express-book-reviews",
+    "title": "Book reviews API (Node.js course)",
+    "kind": "learning",
+    "status": "study",
+    "priority": 30,
+    "featured": false,
+    "year": 2026,
+    "summary": {
+      "en": "The final project of a Node.js and Express course, a book review service with a REST API.",
+      "fr": "Le projet final d'un cours Node.js et Express, un service d'avis sur des livres avec une API REST."
+    },
+    "result": {
+      "en": "Completed as the last module of the course.",
+      "fr": "Terminé comme dernier module du cours."
+    },
+    "limit": {
+      "en": "A course exercise, not an original product.",
+      "fr": "Un exercice de cours, pas un produit original."
+    },
+    "role": {
+      "en": "Course project",
+      "fr": "Projet de cours"
+    },
+    "stack": [
+      "Node.js",
+      "Express"
+    ],
+    "metrics": [],
+    "repo_url": "https://github.com/BrainCoder3/expressBookReview",
+    "demo_url": "",
+    "code_is_private": false,
+    "image": "",
+    "image_fit": "cover",
+    "image_alt": {
+      "en": "",
+      "fr": ""
+    }
+  },
+  {
+    "slug": "jdj-2026",
+    "title": "JDJ 2026, guide of a spiritual retreat",
+    "kind": "system",
+    "status": "built",
+    "priority": 31,
+    "featured": false,
+    "year": 2026,
+    "summary": {
+      "en": "An installable web app that guides the participants of the JDJ 2026 spiritual retreat: the programme day by day, prayers, masses, songs, practical information and contacts. An admin area lets the organisers edit all of it, and prayers, masses and songs can be translated, with a fallback to the original language when a translation is missing.",
+      "fr": "Une application web installable qui guide les participants de la retraite spirituelle JDJ 2026 : le programme jour par jour, les prières, les messes, les chants, les informations pratiques et les contacts. Un espace d'administration permet aux organisateurs de tout modifier, et les prières, messes et chants peuvent être traduits, avec un retour à la langue d'origine quand une traduction manque."
+    },
+    "result": {
+      "en": "Built with Next.js, Prisma and a PostgreSQL database in production, as a progressive web app made to be opened on a phone during the event.",
+      "fr": "Construite avec Next.js, Prisma et une base PostgreSQL en production, sous forme d'application web progressive pensée pour s'ouvrir sur téléphone pendant l'événement."
+    },
+    "limit": {
+      "en": "Made for one event, not a general product.",
+      "fr": "Faite pour un seul événement, pas un produit général."
+    },
+    "role": {
+      "en": "Designed and built alone",
+      "fr": "Conçue et construite seul"
+    },
+    "stack": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "Tailwind CSS"
+    ],
+    "metrics": [],
+    "repo_url": "",
+    "demo_url": "",
     "code_is_private": true,
     "image": "",
     "image_fit": "cover",

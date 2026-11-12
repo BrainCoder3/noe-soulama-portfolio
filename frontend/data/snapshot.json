@@ -375,11 +375,53 @@
       }
     },
     {
+      "slug": "streaming-robustness-monitor",
+      "title": "Streaming robustness monitor",
+      "kind": "research",
+      "status": "built",
+      "priority": 5,
+      "featured": true,
+      "year": 2026,
+      "stack": [
+        "Python",
+        "Apache Kafka",
+        "Docker Compose",
+        "scikit-learn",
+        "GitHub Actions"
+      ],
+      "metrics": [],
+      "image": "/projects/streaming-robustness-monitor.webp",
+      "image_fit": "cover",
+      "repo_url": "https://github.com/BrainCoder3/streaming-robustness-monitor",
+      "demo_url": "",
+      "code_is_private": false,
+      "summary": {
+        "en": "A Kafka pipeline run with Docker Compose that watches an image classifier while its inputs are degraded by noise, and raises an alert without using the true labels, from the model's own confidence. Three stages (producer, inference, monitor) talk only through Kafka topics. It extends my noise-robustness studies to the question of noticing a failure in operation.",
+        "fr": "Un pipeline Kafka déployé avec Docker Compose qui surveille un classifieur d'images pendant que ses entrées sont dégradées par du bruit, et qui déclenche une alerte sans utiliser les vraies étiquettes, à partir de la confiance du modèle. Trois étages (producteur, inférence, moniteur) ne communiquent que par des topics Kafka. Il prolonge mes études de robustesse au bruit vers la question de repérer une panne en fonctionnement."
+      },
+      "result": {
+        "en": "In the simulation (20 random seeds), no false alarm during the clean phase, and the degradation is detected 100 events after the noise starts, even for mild noise, before the model is clearly wrong. The full stack was also run with Docker Compose on a real Kafka broker (1,600 events through three topics, two alerts), and 20 automated tests cover the logic.",
+        "fr": "En simulation (20 essais aléatoires), aucune fausse alerte pendant la phase propre, et la dégradation est détectée 100 événements après le début du bruit, même pour un bruit léger, avant que le modèle se trompe nettement. L'ensemble a aussi été exécuté avec Docker Compose sur un vrai broker Kafka (1 600 événements sur trois topics, deux alertes), et 20 tests automatiques couvrent la logique."
+      },
+      "limit": {
+        "en": "Small images (scikit-learn digits) with synthetic Gaussian noise, a simple statistical rule instead of a trained drift detector, and a single-node Kafka broker. A controlled setting to study the monitoring layer, not a production system.",
+        "fr": "Petites images (chiffres de scikit-learn) avec un bruit gaussien synthétique, une règle statistique simple plutôt qu'un détecteur entraîné, et un seul nœud Kafka. Un cadre contrôlé pour étudier la couche de surveillance, pas un système de production."
+      },
+      "role": {
+        "en": "Personal project, designed, coded and tested by me",
+        "fr": "Projet personnel, conçu, codé et testé par moi"
+      },
+      "image_alt": {
+        "en": "Chart of mean confidence and accuracy over a stream of images, with the noise phases shaded and the degraded and recovered alerts marked.",
+        "fr": "Graphique de la confiance moyenne et de la précision sur un flux d'images, avec les phases de bruit grisées et les alertes de dégradation et de retour à la normale."
+      }
+    },
+    {
       "slug": "arc-platform",
       "title": "Africa Research Center platform",
       "kind": "system",
       "status": "live",
-      "priority": 5,
+      "priority": 6,
       "featured": true,
       "year": 2026,
       "stack": [
@@ -418,7 +460,7 @@
       "title": "SchoolGo",
       "kind": "system",
       "status": "demo",
-      "priority": 6,
+      "priority": 7,
       "featured": true,
       "year": 2026,
       "stack": [
@@ -432,8 +474,8 @@
       "demo_url": "https://schoolgo.unitchad.com/",
       "code_is_private": false,
       "summary": {
-        "en": "A school management platform (SaaS) for directors, teachers and parents: digital student records with grades and attendance, a teacher portal for grades and timetables, automatic SMS notifications to parents, role-based access, tracking of school fees and payroll, and AI-assisted analysis to spot struggling students early. Built with my associates at UniTchad, and I worked on the platform.",
-        "fr": "Une plateforme de gestion scolaire (SaaS) pour les directeurs, les enseignants et les parents : dossiers numériques des élèves avec notes et présences, un portail enseignant pour les notes et les emplois du temps, des notifications SMS automatiques aux parents, des accès selon les rôles, le suivi des frais de scolarité et de la paie, et une analyse assistée par IA pour repérer tôt les élèves en difficulté. Construite avec mes associés d'UniTchad, et j'ai travaillé sur la plateforme."
+        "en": "A school management platform (SaaS) that makes it much easier for parents and school administrations to follow students, using software, networks and artificial intelligence. It offers digital student records with grades and attendance, a teacher portal for grades and timetables, automatic SMS notifications to parents, role-based access, tracking of school fees and payroll, and AI-assisted analysis to spot struggling students early. Built with my associates at UniTchad, in Chad, and I worked on the platform.",
+        "fr": "Une plateforme de gestion scolaire (SaaS) qui facilite grandement le suivi des élèves par les parents et par l'administration, grâce à l'informatique, au réseau et à l'intelligence artificielle. Elle propose des dossiers numériques des élèves avec notes et présences, un portail enseignant pour les notes et les emplois du temps, des notifications SMS automatiques aux parents, des accès selon les rôles, le suivi des frais de scolarité et de la paie, et une analyse assistée par IA pour repérer tôt les élèves en difficulté. Construite avec mes associés d'UniTchad, au Tchad, et j'ai travaillé sur la plateforme."
       },
       "result": {
         "en": "The product site is live in French and English, with sign-up and login, at schoolgo.unitchad.com.",
@@ -457,7 +499,7 @@
       "title": "SpeakUp",
       "kind": "system",
       "status": "built",
-      "priority": 7,
+      "priority": 8,
       "featured": true,
       "year": 2026,
       "stack": [
@@ -499,8 +541,8 @@
       "slug": "rhimena",
       "title": "Rhimena",
       "kind": "system",
-      "status": "built",
-      "priority": 8,
+      "status": "demo",
+      "priority": 9,
       "featured": false,
       "year": 2026,
       "stack": [
@@ -516,7 +558,7 @@
       "image": "",
       "image_fit": "cover",
       "repo_url": "",
-      "demo_url": "",
+      "demo_url": "https://rhimena-frontend-demo.vercel.app/",
       "code_is_private": true,
       "summary": {
         "en": "A bilingual (French and English) platform for an artist-management organisation, built for a client. A Django REST backend and a Next.js frontend cover a content management system, an artist directory, music, events, editorial content, live sessions, a CRM, a dashboard and search, with SEO foundations and request throttling against abuse.",
@@ -544,7 +586,7 @@
       "title": "ChadPay",
       "kind": "system",
       "status": "not_launched",
-      "priority": 9,
+      "priority": 10,
       "featured": false,
       "year": 2026,
       "stack": [
@@ -584,7 +626,7 @@
       "title": "Hasil",
       "kind": "system",
       "status": "built",
-      "priority": 10,
+      "priority": 11,
       "featured": false,
       "year": 2026,
       "stack": [
@@ -626,7 +668,7 @@
       "title": "Dehere",
       "kind": "system",
       "status": "not_launched",
-      "priority": 11,
+      "priority": 12,
       "featured": false,
       "year": 2026,
       "stack": [
@@ -665,7 +707,7 @@
       "title": "TaxiGo API",
       "kind": "system",
       "status": "built",
-      "priority": 12,
+      "priority": 13,
       "featured": false,
       "year": 2026,
       "stack": [
@@ -706,7 +748,7 @@
       "title": "TinyGPT from scratch",
       "kind": "learning",
       "status": "study",
-      "priority": 13,
+      "priority": 14,
       "featured": false,
       "year": 2026,
       "stack": [
@@ -746,7 +788,7 @@
       "title": "LearnCraft",
       "kind": "system",
       "status": "built",
-      "priority": 14,
+      "priority": 15,
       "featured": false,
       "year": 2026,
       "stack": [
@@ -787,7 +829,7 @@
       "title": "Campus AI",
       "kind": "system",
       "status": "demo",
-      "priority": 15,
+      "priority": 16,
       "featured": false,
       "year": 2026,
       "stack": [
@@ -827,7 +869,7 @@
       "title": "SIEM big data pipeline",
       "kind": "learning",
       "status": "built",
-      "priority": 16,
+      "priority": 17,
       "featured": false,
       "year": 2026,
       "stack": [
@@ -867,7 +909,7 @@
       "title": "AI job market analysis",
       "kind": "learning",
       "status": "study",
-      "priority": 17,
+      "priority": 18,
       "featured": false,
       "year": 2026,
       "stack": [
@@ -907,7 +949,7 @@
       "title": "Deep learning from a single neuron",
       "kind": "learning",
       "status": "study",
-      "priority": 18,
+      "priority": 19,
       "featured": false,
       "year": 2026,
       "stack": [
@@ -945,7 +987,7 @@
       "title": "Kaggle notebooks",
       "kind": "learning",
       "status": "study",
-      "priority": 19,
+      "priority": 20,
       "featured": false,
       "year": 2026,
       "stack": [
@@ -986,7 +1028,7 @@
       "title": "New Boss Form",
       "kind": "system",
       "status": "demo",
-      "priority": 20,
+      "priority": 21,
       "featured": false,
       "year": 2026,
       "stack": [
@@ -1019,13 +1061,647 @@
         "en": "",
         "fr": ""
       }
+    },
+    {
+      "slug": "ai-learning-platform",
+      "title": "AI_leaning, a platform to learn AI",
+      "kind": "system",
+      "status": "built",
+      "priority": 22,
+      "featured": false,
+      "year": 2026,
+      "stack": [
+        "JavaScript",
+        "Node.js",
+        "Ollama",
+        "Python"
+      ],
+      "metrics": [],
+      "image": "",
+      "image_fit": "cover",
+      "repo_url": "",
+      "demo_url": "",
+      "code_is_private": false,
+      "summary": {
+        "en": "A bilingual (French and English) platform that teaches artificial intelligence from a manual I studied, then goes well beyond it. Each lesson goes from a drawing and an interactive simulator, to a prediction, a worked example, a mastery test and a short explanation in my own words that a local model corrects.",
+        "fr": "Une plateforme bilingue (français et anglais) qui enseigne l'intelligence artificielle à partir d'un manuel que j'ai étudié, puis va bien au-delà. Chaque leçon passe d'un dessin et d'un simulateur interactif à une prédiction, un exemple chiffré, un test de maîtrise et une courte explication avec mes propres mots, corrigée par un modèle local."
+      },
+      "result": {
+        "en": "44 lessons, 31 Python exercises checked by running every solution, and an oral mode where a teacher voice explains, listens to the answer and corrects it. Everything runs on the computer, with no account and no cloud.",
+        "fr": "44 leçons, 31 exercices Python dont chaque solution est vérifiée en l'exécutant, et un mode oral où une voix de professeur explique, écoute la réponse et la corrige. Tout tourne sur l'ordinateur, sans compte ni cloud."
+      },
+      "limit": {
+        "en": "A personal learning tool, not a hosted service. The local model needs a reasonably recent computer to answer smoothly.",
+        "fr": "Un outil d'apprentissage personnel, pas un service hébergé. Le modèle local demande un ordinateur assez récent pour répondre sans à-coups."
+      },
+      "role": {
+        "en": "Designed and built alone",
+        "fr": "Conçu et construit seul"
+      },
+      "image_alt": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "slug": "handwritten-digits",
+      "title": "Handwritten digits with classic machine learning",
+      "kind": "learning",
+      "status": "study",
+      "priority": 23,
+      "featured": false,
+      "year": 2026,
+      "stack": [
+        "Python",
+        "scikit-learn"
+      ],
+      "metrics": [],
+      "image": "",
+      "image_fit": "cover",
+      "repo_url": "https://github.com/BrainCoder3/handwritten-digits-classification",
+      "demo_url": "",
+      "code_is_private": false,
+      "summary": {
+        "en": "Recognising the 8×8 handwritten digits of scikit-learn with classic models, done carefully: a baseline that does nothing smart, stratified cross-validation, a model comparison and an error analysis.",
+        "fr": "Reconnaître les chiffres manuscrits 8×8 de scikit-learn avec des modèles classiques, mais en le faisant proprement : une référence sans intelligence, une validation croisée stratifiée, une comparaison de modèles et une analyse des erreurs."
+      },
+      "result": {
+        "en": "Logistic regression reaches 97.2 % on the test set and a random forest 96.1 %, against 10 % for the baseline. The gap between the two models is smaller than the fold-to-fold variation, so I treat them as equivalent.",
+        "fr": "La régression logistique atteint 97,2 % sur le jeu de test et la forêt aléatoire 96,1 %, contre 10 % pour la référence. L'écart entre les deux modèles est plus petit que la variation d'un pli à l'autre, je les considère donc comme équivalents."
+      },
+      "limit": {
+        "en": "Both models were looked at on the test set, so the test numbers are an estimate, not an untouched final measure.",
+        "fr": "Les deux modèles ont été regardés sur le jeu de test, ces chiffres sont donc une estimation, pas une mesure finale vierge."
+      },
+      "role": {
+        "en": "Personal learning project",
+        "fr": "Projet d'apprentissage personnel"
+      },
+      "image_alt": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "slug": "ml-deep-from-scratch",
+      "title": "Machine and deep learning, built by hand",
+      "kind": "learning",
+      "status": "study",
+      "priority": 24,
+      "featured": false,
+      "year": 2026,
+      "stack": [
+        "Python",
+        "NumPy",
+        "pandas",
+        "PyTorch"
+      ],
+      "metrics": [],
+      "image": "",
+      "image_fit": "cover",
+      "repo_url": "https://github.com/BrainCoder3/ml-deep-from-scratch",
+      "demo_url": "",
+      "code_is_private": false,
+      "summary": {
+        "en": "My self-study path in machine learning, where each method is first written by hand and then compared with the library: a data audit with pandas, linear regression and gradient descent in NumPy, PCA and clustering, then PyTorch.",
+        "fr": "Mon parcours d'auto-formation en apprentissage automatique, où chaque méthode est d'abord écrite à la main puis comparée à la bibliothèque : audit de données avec pandas, régression linéaire et descente de gradient en NumPy, ACP et clustering, puis PyTorch."
+      },
+      "result": {
+        "en": "Two projects are done, the digits project has its own repository, and the unsupervised learning part is in progress.",
+        "fr": "Deux projets sont terminés, le projet sur les chiffres a son propre dépôt, et la partie apprentissage non supervisé est en cours."
+      },
+      "limit": {
+        "en": "Learning material that is still moving, the PyTorch lab is only planned.",
+        "fr": "Du matériel d'apprentissage encore en mouvement, le laboratoire PyTorch est seulement prévu."
+      },
+      "role": {
+        "en": "Personal learning project",
+        "fr": "Projet d'apprentissage personnel"
+      },
+      "image_alt": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "slug": "unitchad-motion",
+      "title": "UniTchad site rebuilt with motion design",
+      "kind": "system",
+      "status": "demo",
+      "priority": 25,
+      "featured": false,
+      "year": 2026,
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Motion"
+      ],
+      "metrics": [],
+      "image": "",
+      "image_fit": "cover",
+      "repo_url": "",
+      "demo_url": "",
+      "code_is_private": true,
+      "summary": {
+        "en": "A rebuild of the UniTchad website with motion design, following a set of prompts I prepared for each section: preloader, hero, storytelling steps, services, team and partners. It works in French, English and Arabic with a right-to-left layout, and in light and dark themes.",
+        "fr": "Une reconstruction du site d'UniTchad avec du motion design, à partir d'un ensemble de consignes que j'ai préparées pour chaque section : préloader, en-tête, étapes de présentation, services, équipe et partenaires. Il fonctionne en français, en anglais et en arabe avec une mise en page de droite à gauche, en thème clair et sombre."
+      },
+      "result": {
+        "en": "Built with Next.js, TypeScript, Tailwind and Motion, with animations limited to transform and opacity and a reduced-motion fallback so it stays smooth on mid-range phones. A presentation video of the result also exists.",
+        "fr": "Construit avec Next.js, TypeScript, Tailwind et Motion, avec des animations limitées à la transformation et à l'opacité et un repli pour le mouvement réduit, afin de rester fluide sur des téléphones d'entrée de gamme. Une vidéo de présentation du résultat existe aussi."
+      },
+      "limit": {
+        "en": "A motion study, not the production website of the company.",
+        "fr": "Une étude de motion design, pas le site de production de l'entreprise."
+      },
+      "role": {
+        "en": "Designed and built by me",
+        "fr": "Conçu et construit par moi"
+      },
+      "image_alt": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "slug": "arc-network-admin",
+      "title": "ARC network follow-up tools",
+      "kind": "system",
+      "status": "built",
+      "priority": 26,
+      "featured": false,
+      "year": 2026,
+      "stack": [
+        "Next.js",
+        "TypeScript"
+      ],
+      "metrics": [],
+      "image": "",
+      "image_fit": "cover",
+      "repo_url": "",
+      "demo_url": "",
+      "code_is_private": true,
+      "summary": {
+        "en": "Two small web applications around the Africa Research Center network, a form for the network and an administration dashboard that lets the team follow it.",
+        "fr": "Deux petites applications web autour du réseau de l'Africa Research Center, un formulaire pour le réseau et un tableau de bord d'administration qui permet à l'équipe de le suivre."
+      },
+      "result": {
+        "en": "Built in February and March 2026 with Next.js and TypeScript, before the official platform.",
+        "fr": "Construits en février et mars 2026 avec Next.js et TypeScript, avant la plateforme officielle."
+      },
+      "limit": {
+        "en": "Early internal tools. The official platform is the project listed separately.",
+        "fr": "Des outils internes de début de parcours. La plateforme officielle est le projet présenté à part."
+      },
+      "role": {
+        "en": "Developer",
+        "fr": "Développeur"
+      },
+      "image_alt": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "slug": "eventflow",
+      "title": "EventFlow, an app to save your events",
+      "kind": "system",
+      "status": "built",
+      "priority": 27,
+      "featured": false,
+      "year": 2026,
+      "stack": [
+        "Flutter",
+        "Dart"
+      ],
+      "metrics": [],
+      "image": "",
+      "image_fit": "cover",
+      "repo_url": "https://github.com/BrainCoder3/save_events",
+      "demo_url": "",
+      "code_is_private": false,
+      "summary": {
+        "en": "A Flutter mobile application to save and follow your events, with sign-in and sign-up screens, a home screen, an event creation screen and a profile.",
+        "fr": "Une application mobile Flutter pour enregistrer et suivre ses événements, avec des écrans de connexion et d'inscription, un écran d'accueil, un écran de création d'événement et un profil."
+      },
+      "result": {
+        "en": "The sign-in, home, event creation and profile screens are written.",
+        "fr": "Les écrans de connexion, d'accueil, de création d'événement et de profil sont écrits."
+      },
+      "limit": {
+        "en": "A first version, not published on a store.",
+        "fr": "Une première version, non publiée sur un store."
+      },
+      "role": {
+        "en": "Developer",
+        "fr": "Développeur"
+      },
+      "image_alt": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "slug": "beauty-perception",
+      "title": "Beauty perception, data audit",
+      "kind": "learning",
+      "status": "study",
+      "priority": 28,
+      "featured": false,
+      "year": 2026,
+      "stack": [
+        "Python",
+        "Jupyter"
+      ],
+      "metrics": [],
+      "image": "",
+      "image_fit": "cover",
+      "repo_url": "",
+      "demo_url": "",
+      "code_is_private": true,
+      "summary": {
+        "en": "A data analysis project on how beauty is perceived, with a data audit and an exploratory analysis in notebooks, from raw data to cleaned data.",
+        "fr": "Un projet d'analyse de données sur la perception de la beauté, avec un audit des données et une analyse exploratoire dans des notebooks, des données brutes aux données nettoyées."
+      },
+      "result": {
+        "en": "Two audit notebooks and one exploratory notebook, with raw and processed data kept apart.",
+        "fr": "Deux notebooks d'audit et un notebook d'exploration, avec les données brutes et traitées séparées."
+      },
+      "limit": {
+        "en": "Exploratory work only, no model and no conclusion to claim.",
+        "fr": "Un travail exploratoire seulement, sans modèle ni conclusion à revendiquer."
+      },
+      "role": {
+        "en": "Personal project",
+        "fr": "Projet personnel"
+      },
+      "image_alt": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "slug": "happy-birthday-site",
+      "title": "A birthday website",
+      "kind": "system",
+      "status": "built",
+      "priority": 29,
+      "featured": false,
+      "year": 2026,
+      "stack": [
+        "Next.js",
+        "TypeScript"
+      ],
+      "metrics": [],
+      "image": "",
+      "image_fit": "cover",
+      "repo_url": "",
+      "demo_url": "",
+      "code_is_private": true,
+      "summary": {
+        "en": "A small website made to wish someone a happy birthday, with a customised look, a golden book section and a section for best moments.",
+        "fr": "Un petit site créé pour souhaiter un joyeux anniversaire, avec une présentation personnalisée, une section livre d'or et une section des meilleurs moments."
+      },
+      "result": {
+        "en": "A fun Next.js project made in January 2026.",
+        "fr": "Un projet Next.js fait pour le plaisir en janvier 2026."
+      },
+      "limit": {
+        "en": "A personal gift, not a product.",
+        "fr": "Un cadeau personnel, pas un produit."
+      },
+      "role": {
+        "en": "Designed and built alone",
+        "fr": "Conçu et construit seul"
+      },
+      "image_alt": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "slug": "express-book-reviews",
+      "title": "Book reviews API (Node.js course)",
+      "kind": "learning",
+      "status": "study",
+      "priority": 30,
+      "featured": false,
+      "year": 2026,
+      "stack": [
+        "Node.js",
+        "Express"
+      ],
+      "metrics": [],
+      "image": "",
+      "image_fit": "cover",
+      "repo_url": "https://github.com/BrainCoder3/expressBookReview",
+      "demo_url": "",
+      "code_is_private": false,
+      "summary": {
+        "en": "The final project of a Node.js and Express course, a book review service with a REST API.",
+        "fr": "Le projet final d'un cours Node.js et Express, un service d'avis sur des livres avec une API REST."
+      },
+      "result": {
+        "en": "Completed as the last module of the course.",
+        "fr": "Terminé comme dernier module du cours."
+      },
+      "limit": {
+        "en": "A course exercise, not an original product.",
+        "fr": "Un exercice de cours, pas un produit original."
+      },
+      "role": {
+        "en": "Course project",
+        "fr": "Projet de cours"
+      },
+      "image_alt": {
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "slug": "jdj-2026",
+      "title": "JDJ 2026, guide of a spiritual retreat",
+      "kind": "system",
+      "status": "built",
+      "priority": 31,
+      "featured": false,
+      "year": 2026,
+      "stack": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Prisma",
+        "PostgreSQL",
+        "Tailwind CSS"
+      ],
+      "metrics": [],
+      "image": "",
+      "image_fit": "cover",
+      "repo_url": "",
+      "demo_url": "",
+      "code_is_private": true,
+      "summary": {
+        "en": "An installable web app that guides the participants of the JDJ 2026 spiritual retreat: the programme day by day, prayers, masses, songs, practical information and contacts. An admin area lets the organisers edit all of it, and prayers, masses and songs can be translated, with a fallback to the original language when a translation is missing.",
+        "fr": "Une application web installable qui guide les participants de la retraite spirituelle JDJ 2026 : le programme jour par jour, les prières, les messes, les chants, les informations pratiques et les contacts. Un espace d'administration permet aux organisateurs de tout modifier, et les prières, messes et chants peuvent être traduits, avec un retour à la langue d'origine quand une traduction manque."
+      },
+      "result": {
+        "en": "Built with Next.js, Prisma and a PostgreSQL database in production, as a progressive web app made to be opened on a phone during the event.",
+        "fr": "Construite avec Next.js, Prisma et une base PostgreSQL en production, sous forme d'application web progressive pensée pour s'ouvrir sur téléphone pendant l'événement."
+      },
+      "limit": {
+        "en": "Made for one event, not a general product.",
+        "fr": "Faite pour un seul événement, pas un produit général."
+      },
+      "role": {
+        "en": "Designed and built alone",
+        "fr": "Conçue et construite seul"
+      },
+      "image_alt": {
+        "en": "",
+        "fr": ""
+      }
     }
   ],
   "articles": [
     {
+      "slug": "watching-a-model-without-the-answers",
+      "project_slug": "streaming-robustness-monitor",
+      "priority": 1,
+      "date": "2026-11",
+      "reading_minutes": 6,
+      "repo_url": "https://github.com/BrainCoder3/streaming-robustness-monitor",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": {
+            "en": "Where the idea came from",
+            "fr": "D'où vient l'idée"
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "After the Whisper, 3D-CNN and RobustCLIP-Lite experiments, I kept coming back to the same uncomfortable thought. In every one of them I knew when the model was being broken, because I was the one adding the noise. In real life nobody tells the model that the microphone just got worse. So how would you notice?",
+            "fr": "Après les expériences sur Whisper, le CNN 3D et RobustCLIP-Lite, je revenais sans cesse à la même idée gênante. Dans chacune, je savais quand le modèle était mis en difficulté, puisque c'était moi qui ajoutais le bruit. Dans la vraie vie, personne ne prévient le modèle que le micro vient de se dégrader. Alors comment s'en rendre compte ?"
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "There was a second reason, honestly. My CV mentions Docker, Apache Kafka, Git and GitHub, and I wanted every word on it to be something I had really done. So I decided to build one small project that forces me to use all of them for a real purpose.",
+            "fr": "Il y avait aussi une deuxième raison, en toute honnêteté. Mon CV parle de Docker, d'Apache Kafka, de Git et de GitHub, et je voulais que chaque mot corresponde à quelque chose que j'ai vraiment fait. J'ai donc décidé de construire un petit projet qui m'oblige à tout utiliser, pour un vrai besoin."
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "What the pipeline does",
+            "fr": "Ce que fait le pipeline"
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "A producer replays 1 600 small images and degrades them with Gaussian noise in four phases, clean, mild, strong, clean again. A second service reads those images from Kafka, classifies them and writes the prediction and its confidence to another topic. A third service, the monitor, reads the predictions and decides whether something is wrong. The three of them only talk through Kafka, and the whole stack starts with one docker compose command.",
+            "fr": "Un producteur rejoue 1 600 petites images et les dégrade avec du bruit gaussien en quatre phases, propre, léger, fort, puis de nouveau propre. Un deuxième service lit ces images dans Kafka, les classe et écrit la prédiction avec sa confiance dans un autre topic. Un troisième service, le moniteur, lit les prédictions et décide si quelque chose ne va pas. Les trois ne communiquent que par Kafka, et toute la pile démarre avec une seule commande docker compose."
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "The classifier is deliberately modest, a logistic regression on the scikit-learn digits images, with 97.2 % accuracy on clean data. I did not want the model to be the interesting part. The interesting part is the layer that watches it.",
+            "fr": "Le classifieur est volontairement modeste, une régression logistique sur les images « digits » de scikit-learn, avec 97,2 % de précision sur données propres. Je ne voulais pas que le modèle soit la partie intéressante. La partie intéressante, c'est la couche qui le surveille."
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "Noticing a failure without the answers",
+            "fr": "Repérer une panne sans connaître les réponses"
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "The monitor never sees the true labels, because in production you rarely have them in time. It looks at something the model gives for free, its confidence. On clean data the mean confidence has a stable level. When the inputs get noisy the model becomes less sure of itself, and that drop shows up before it is clearly wrong.",
+            "fr": "Le moniteur ne voit jamais les vraies étiquettes, parce qu'en production on les a rarement à temps. Il regarde ce que le modèle donne gratuitement, sa confiance. Sur des données propres, la confiance moyenne a un niveau stable. Quand les entrées deviennent bruitées, le modèle est moins sûr de lui, et cette baisse apparaît avant qu'il se trompe franchement."
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "It works by windows of 50 predictions, and compares the mean confidence of each window to a baseline measured on clean data.",
+              "A window is bad if its mean confidence is below the baseline minus three standard errors, so ordinary fluctuation does not count.",
+              "One bad window is not enough. The alert DEGRADED is raised after two in a row, and RECOVERED after two good ones, so a single unlucky window cannot trigger anything."
+            ],
+            "fr": [
+              "Il travaille par fenêtres de 50 prédictions, et compare la confiance moyenne de chaque fenêtre à une référence mesurée sur des données propres.",
+              "Une fenêtre est mauvaise si sa confiance moyenne passe sous la référence moins trois erreurs standard, pour que les fluctuations normales ne comptent pas.",
+              "Une seule mauvaise fenêtre ne suffit pas. L'alerte DEGRADED part après deux de suite, et RECOVERED après deux bonnes, pour qu'un coup de malchance isolé ne déclenche rien."
+            ]
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "What I measured",
+            "fr": "Ce que j'ai mesuré"
+          }
+        },
+        {
+          "type": "table",
+          "caption": {
+            "en": "Simulation over 20 random seeds. The noise phases change at known events, but the monitor is never told.",
+            "fr": "Simulation sur 20 graines aléatoires. Les phases de bruit changent à des moments connus, mais le moniteur ne les connaît pas."
+          },
+          "headers": {
+            "en": [
+              "Measure",
+              "Result"
+            ],
+            "fr": [
+              "Mesure",
+              "Résultat"
+            ]
+          },
+          "rows": {
+            "en": [
+              [
+                "False alarms in the first clean phase",
+                "0 in 20 runs"
+              ],
+              [
+                "Delay to detect the noise",
+                "100 events, every run"
+              ],
+              [
+                "Delay to detect the recovery",
+                "100 events, every run"
+              ],
+              [
+                "Clean accuracy of the model",
+                "97.2 %"
+              ]
+            ],
+            "fr": [
+              [
+                "Fausses alertes pendant la première phase propre",
+                "0 sur 20 essais"
+              ],
+              [
+                "Délai pour détecter le bruit",
+                "100 événements, à chaque essai"
+              ],
+              [
+                "Délai pour détecter le retour à la normale",
+                "100 événements, à chaque essai"
+              ],
+              [
+                "Précision du modèle sur données propres",
+                "97,2 %"
+              ]
+            ]
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "The delay of 100 events is not a performance result so much as a design consequence. Two windows of 50 events is the minimum the rule needs before it speaks. Shorter windows would react faster, but they would also raise more false alarms. I would rather say that trade-off openly than hide it.",
+            "fr": "Le délai de 100 événements est moins un résultat de performance qu'une conséquence du choix de conception. Deux fenêtres de 50 événements, c'est le minimum dont la règle a besoin avant de parler. Des fenêtres plus courtes réagiraient plus vite, mais déclencheraient plus de fausses alertes. Je préfère dire ce compromis clairement plutôt que le cacher."
+          }
+        },
+        {
+          "type": "figure",
+          "src": "/articles/streaming-monitor-timeline.webp",
+          "alt": {
+            "en": "Timeline of mean confidence and accuracy over the 1 600 events, with the four noise phases and the two alerts.",
+            "fr": "Courbe de la confiance moyenne et de la précision sur les 1 600 événements, avec les quatre phases de bruit et les deux alertes."
+          },
+          "caption": {
+            "en": "Confidence and accuracy over the stream. The alert comes shortly after the noise starts, and the recovery shortly after it stops.",
+            "fr": "Confiance et précision au fil du flux. L'alerte arrive peu après le début du bruit, et le retour à la normale peu après son arrêt."
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "Running it on a real broker",
+            "fr": "Le faire tourner sur un vrai broker"
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "A simulation proves little about Kafka itself, so I ran the full stack with Docker Compose. The topics received 1 600 inputs, 1 600 predictions and 2 alerts. The monitor raised DEGRADED after event 499 and RECOVERED after event 1 299, exactly like the offline demo. That match was the point of one design choice, the three services only know a small message-bus interface, so the same code runs on an in-memory bus for the tests and on Kafka for real.",
+            "fr": "Une simulation prouve peu de choses sur Kafka lui-même, alors j'ai fait tourner toute la pile avec Docker Compose. Les topics ont reçu 1 600 entrées, 1 600 prédictions et 2 alertes. Le moniteur a levé DEGRADED après l'événement 499 et RECOVERED après l'événement 1 299, exactement comme dans la démo hors ligne. Cette concordance venait d'un choix de conception, les trois services ne connaissent qu'une petite interface de bus de messages, donc le même code tourne sur un bus en mémoire pour les tests et sur Kafka pour de vrai."
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "The repository also has a GitHub Actions workflow that runs the tests on two Python versions, builds the image and starts a container as a smoke test.",
+            "fr": "Le dépôt contient aussi un workflow GitHub Actions qui lance les tests sur deux versions de Python, construit l'image et démarre un conteneur comme test de fumée."
+          }
+        },
+        {
+          "type": "callout",
+          "text": {
+            "en": "The useful lesson for me was not the detector, which is simple, but how much easier everything became once the pipeline stages could be tested without a broker.",
+            "fr": "Ce que j'en retiens n'est pas le détecteur, qui est simple, mais à quel point tout devenait plus facile une fois les étapes du pipeline testables sans broker."
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "What this does not show",
+            "fr": "Ce que cela ne montre pas"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "The data is the 8×8 digits set and the noise is synthetic. This is a controlled setting to study the monitoring layer, not a claim about production data.",
+              "The rule is statistical, not a trained drift detector, and a model can be confidently wrong, in which case a confidence signal would miss it.",
+              "Kafka runs as a single node with no replication. That is enough to learn and demonstrate the pipeline, not a resilient deployment."
+            ],
+            "fr": [
+              "Les données sont les images 8×8 de « digits » et le bruit est synthétique. C'est un cadre contrôlé pour étudier la couche de surveillance, pas une affirmation sur des données de production.",
+              "La règle est statistique, ce n'est pas un détecteur de dérive entraîné, et un modèle peut se tromper avec assurance, auquel cas un signal de confiance passerait à côté.",
+              "Kafka tourne sur un seul nœud sans réplication. C'est suffisant pour apprendre et démontrer le pipeline, pas pour un déploiement résistant aux pannes."
+            ]
+          }
+        },
+        {
+          "type": "h2",
+          "text": {
+            "en": "Why it matters to me",
+            "fr": "Pourquoi cela compte pour moi"
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "In Burkina Faso and in Chad, the conditions of use are rarely the ones a model was trained for. Phones are older, networks are unstable, recordings are noisy. A system that can tell you it is starting to struggle, before someone complains, seems to me worth learning to build. This small project is my first step in that direction, and I am glad that every claim in it can be checked in the code.",
+            "fr": "Au Burkina Faso comme au Tchad, les conditions d'usage sont rarement celles pour lesquelles un modèle a été entraîné. Les téléphones sont plus anciens, les réseaux instables, les enregistrements bruités. Un système capable de dire qu'il commence à avoir du mal, avant que quelqu'un se plaigne, me semble valoir la peine d'être appris. Ce petit projet est mon premier pas dans cette direction, et je suis content que chaque affirmation puisse être vérifiée dans le code."
+          }
+        }
+      ],
+      "title": {
+        "en": "How do you notice a model is failing when nobody tells you the right answers?",
+        "fr": "Comment remarquer qu'un modèle déraille quand personne ne donne les bonnes réponses ?"
+      },
+      "subtitle": {
+        "en": "A small Kafka and Docker pipeline that watches a classifier while its inputs get noisy, and raises an alert from the model's own confidence.",
+        "fr": "Un petit pipeline Kafka et Docker qui surveille un classifieur pendant que ses entrées se bruitent, et lève une alerte à partir de la confiance du modèle."
+      }
+    },
+    {
       "slug": "robustclip-noise-robustness",
       "project_slug": "robustclip-lite",
-      "priority": 1,
+      "priority": 2,
       "date": "2026-10",
       "reading_minutes": 4,
       "repo_url": "https://github.com/BrainCoder3/robustclip-lite",
@@ -1347,7 +2023,7 @@
     {
       "slug": "whisper-under-noise",
       "project_slug": "whisper-robustness",
-      "priority": 2,
+      "priority": 3,
       "date": "2026-10",
       "reading_minutes": 3,
       "repo_url": "https://github.com/BrainCoder3/Whisper-Robustness-to-Synthetic-Noise",
@@ -1605,7 +2281,7 @@
     {
       "slug": "action-recognition-motion",
       "project_slug": "action-recognition-3dcnn",
-      "priority": 3,
+      "priority": 4,
       "date": "2026-10",
       "reading_minutes": 3,
       "repo_url": "https://github.com/BrainCoder3/human-action-recognition-3dcnn",
@@ -1869,7 +2545,7 @@
     {
       "slug": "dubbing-duration-fitting",
       "project_slug": "japanese-french-dubbing",
-      "priority": 4,
+      "priority": 5,
       "date": "2026-10",
       "reading_minutes": 4,
       "repo_url": "https://github.com/BrainCoder3/anime-translator-ai",
@@ -2190,8 +2866,8 @@
         "fr": "Responsable technique bénévole"
       },
       "description": {
-        "en": "I scope needs, design digital solutions and coordinate technical tasks. I promote research in Africa: the platform I developed makes it easier to welcome doctoral students and young researchers, makes the association known, and puts their work forward through the ARCPOD podcast and the ARC Highlight series. About a hundred people are registered on it, and the number keeps growing.",
-        "fr": "Je cadre les besoins, conçois des solutions numériques et coordonne les tâches techniques. Je promeus la recherche en Afrique : la plateforme que j'ai développée facilite l'accueil des doctorants et des jeunes chercheurs, fait connaître l'association et met leur travail en avant à travers le podcast ARCPOD et la série ARC Highlight. Environ une centaine de personnes y sont inscrites, et le nombre continue d'augmenter."
+        "en": "ARC's mission is to promote research in Africa. I scope needs, design digital solutions and coordinate technical tasks. The platform I developed makes it easier to welcome doctoral students and young researchers, makes the association known, and puts their work forward through the ARCPOD podcast and the ARC Highlight series. About a hundred people are registered on it, and the number keeps growing.",
+        "fr": "La mission de l'ARC est de promouvoir la recherche en Afrique. Je cadre les besoins, conçois des solutions numériques et coordonne les tâches techniques. La plateforme que j'ai développée facilite l'accueil des doctorants et des jeunes chercheurs, fait connaître l'association et met leur travail en avant à travers le podcast ARCPOD et la série ARC Highlight. Environ une centaine de personnes y sont inscrites, et le nombre continue d'augmenter."
       },
       "place": {
         "en": "",

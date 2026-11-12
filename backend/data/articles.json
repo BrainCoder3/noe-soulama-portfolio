@@ -1,8 +1,194 @@
 [
   {
+    "slug": "watching-a-model-without-the-answers",
+    "project_slug": "streaming-robustness-monitor",
+    "priority": 1,
+    "date": "2026-11",
+    "repo_url": "https://github.com/BrainCoder3/streaming-robustness-monitor",
+    "title": {
+      "en": "How do you notice a model is failing when nobody tells you the right answers?",
+      "fr": "Comment remarquer qu'un modèle déraille quand personne ne donne les bonnes réponses ?"
+    },
+    "subtitle": {
+      "en": "A small Kafka and Docker pipeline that watches a classifier while its inputs get noisy, and raises an alert from the model's own confidence.",
+      "fr": "Un petit pipeline Kafka et Docker qui surveille un classifieur pendant que ses entrées se bruitent, et lève une alerte à partir de la confiance du modèle."
+    },
+    "blocks": [
+      {
+        "type": "h2",
+        "text_en": "Where the idea came from",
+        "text_fr": "D'où vient l'idée"
+      },
+      {
+        "type": "p",
+        "text_en": "After the Whisper, 3D-CNN and RobustCLIP-Lite experiments, I kept coming back to the same uncomfortable thought. In every one of them I knew when the model was being broken, because I was the one adding the noise. In real life nobody tells the model that the microphone just got worse. So how would you notice?",
+        "text_fr": "Après les expériences sur Whisper, le CNN 3D et RobustCLIP-Lite, je revenais sans cesse à la même idée gênante. Dans chacune, je savais quand le modèle était mis en difficulté, puisque c'était moi qui ajoutais le bruit. Dans la vraie vie, personne ne prévient le modèle que le micro vient de se dégrader. Alors comment s'en rendre compte ?"
+      },
+      {
+        "type": "p",
+        "text_en": "There was a second reason, honestly. My CV mentions Docker, Apache Kafka, Git and GitHub, and I wanted every word on it to be something I had really done. So I decided to build one small project that forces me to use all of them for a real purpose.",
+        "text_fr": "Il y avait aussi une deuxième raison, en toute honnêteté. Mon CV parle de Docker, d'Apache Kafka, de Git et de GitHub, et je voulais que chaque mot corresponde à quelque chose que j'ai vraiment fait. J'ai donc décidé de construire un petit projet qui m'oblige à tout utiliser, pour un vrai besoin."
+      },
+      {
+        "type": "h2",
+        "text_en": "What the pipeline does",
+        "text_fr": "Ce que fait le pipeline"
+      },
+      {
+        "type": "p",
+        "text_en": "A producer replays 1 600 small images and degrades them with Gaussian noise in four phases, clean, mild, strong, clean again. A second service reads those images from Kafka, classifies them and writes the prediction and its confidence to another topic. A third service, the monitor, reads the predictions and decides whether something is wrong. The three of them only talk through Kafka, and the whole stack starts with one docker compose command.",
+        "text_fr": "Un producteur rejoue 1 600 petites images et les dégrade avec du bruit gaussien en quatre phases, propre, léger, fort, puis de nouveau propre. Un deuxième service lit ces images dans Kafka, les classe et écrit la prédiction avec sa confiance dans un autre topic. Un troisième service, le moniteur, lit les prédictions et décide si quelque chose ne va pas. Les trois ne communiquent que par Kafka, et toute la pile démarre avec une seule commande docker compose."
+      },
+      {
+        "type": "p",
+        "text_en": "The classifier is deliberately modest, a logistic regression on the scikit-learn digits images, with 97.2 % accuracy on clean data. I did not want the model to be the interesting part. The interesting part is the layer that watches it.",
+        "text_fr": "Le classifieur est volontairement modeste, une régression logistique sur les images « digits » de scikit-learn, avec 97,2 % de précision sur données propres. Je ne voulais pas que le modèle soit la partie intéressante. La partie intéressante, c'est la couche qui le surveille."
+      },
+      {
+        "type": "h2",
+        "text_en": "Noticing a failure without the answers",
+        "text_fr": "Repérer une panne sans connaître les réponses"
+      },
+      {
+        "type": "p",
+        "text_en": "The monitor never sees the true labels, because in production you rarely have them in time. It looks at something the model gives for free, its confidence. On clean data the mean confidence has a stable level. When the inputs get noisy the model becomes less sure of itself, and that drop shows up before it is clearly wrong.",
+        "text_fr": "Le moniteur ne voit jamais les vraies étiquettes, parce qu'en production on les a rarement à temps. Il regarde ce que le modèle donne gratuitement, sa confiance. Sur des données propres, la confiance moyenne a un niveau stable. Quand les entrées deviennent bruitées, le modèle est moins sûr de lui, et cette baisse apparaît avant qu'il se trompe franchement."
+      },
+      {
+        "type": "list",
+        "items_en": [
+          "It works by windows of 50 predictions, and compares the mean confidence of each window to a baseline measured on clean data.",
+          "A window is bad if its mean confidence is below the baseline minus three standard errors, so ordinary fluctuation does not count.",
+          "One bad window is not enough. The alert DEGRADED is raised after two in a row, and RECOVERED after two good ones, so a single unlucky window cannot trigger anything."
+        ],
+        "items_fr": [
+          "Il travaille par fenêtres de 50 prédictions, et compare la confiance moyenne de chaque fenêtre à une référence mesurée sur des données propres.",
+          "Une fenêtre est mauvaise si sa confiance moyenne passe sous la référence moins trois erreurs standard, pour que les fluctuations normales ne comptent pas.",
+          "Une seule mauvaise fenêtre ne suffit pas. L'alerte DEGRADED part après deux de suite, et RECOVERED après deux bonnes, pour qu'un coup de malchance isolé ne déclenche rien."
+        ]
+      },
+      {
+        "type": "h2",
+        "text_en": "What I measured",
+        "text_fr": "Ce que j'ai mesuré"
+      },
+      {
+        "type": "table",
+        "caption_en": "Simulation over 20 random seeds. The noise phases change at known events, but the monitor is never told.",
+        "caption_fr": "Simulation sur 20 graines aléatoires. Les phases de bruit changent à des moments connus, mais le moniteur ne les connaît pas.",
+        "headers_en": [
+          "Measure",
+          "Result"
+        ],
+        "headers_fr": [
+          "Mesure",
+          "Résultat"
+        ],
+        "rows_en": [
+          [
+            "False alarms in the first clean phase",
+            "0 in 20 runs"
+          ],
+          [
+            "Delay to detect the noise",
+            "100 events, every run"
+          ],
+          [
+            "Delay to detect the recovery",
+            "100 events, every run"
+          ],
+          [
+            "Clean accuracy of the model",
+            "97.2 %"
+          ]
+        ],
+        "rows_fr": [
+          [
+            "Fausses alertes pendant la première phase propre",
+            "0 sur 20 essais"
+          ],
+          [
+            "Délai pour détecter le bruit",
+            "100 événements, à chaque essai"
+          ],
+          [
+            "Délai pour détecter le retour à la normale",
+            "100 événements, à chaque essai"
+          ],
+          [
+            "Précision du modèle sur données propres",
+            "97,2 %"
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "text_en": "The delay of 100 events is not a performance result so much as a design consequence. Two windows of 50 events is the minimum the rule needs before it speaks. Shorter windows would react faster, but they would also raise more false alarms. I would rather say that trade-off openly than hide it.",
+        "text_fr": "Le délai de 100 événements est moins un résultat de performance qu'une conséquence du choix de conception. Deux fenêtres de 50 événements, c'est le minimum dont la règle a besoin avant de parler. Des fenêtres plus courtes réagiraient plus vite, mais déclencheraient plus de fausses alertes. Je préfère dire ce compromis clairement plutôt que le cacher."
+      },
+      {
+        "type": "figure",
+        "src": "/articles/streaming-monitor-timeline.webp",
+        "alt_en": "Timeline of mean confidence and accuracy over the 1 600 events, with the four noise phases and the two alerts.",
+        "alt_fr": "Courbe de la confiance moyenne et de la précision sur les 1 600 événements, avec les quatre phases de bruit et les deux alertes.",
+        "caption_en": "Confidence and accuracy over the stream. The alert comes shortly after the noise starts, and the recovery shortly after it stops.",
+        "caption_fr": "Confiance et précision au fil du flux. L'alerte arrive peu après le début du bruit, et le retour à la normale peu après son arrêt."
+      },
+      {
+        "type": "h2",
+        "text_en": "Running it on a real broker",
+        "text_fr": "Le faire tourner sur un vrai broker"
+      },
+      {
+        "type": "p",
+        "text_en": "A simulation proves little about Kafka itself, so I ran the full stack with Docker Compose. The topics received 1 600 inputs, 1 600 predictions and 2 alerts. The monitor raised DEGRADED after event 499 and RECOVERED after event 1 299, exactly like the offline demo. That match was the point of one design choice, the three services only know a small message-bus interface, so the same code runs on an in-memory bus for the tests and on Kafka for real.",
+        "text_fr": "Une simulation prouve peu de choses sur Kafka lui-même, alors j'ai fait tourner toute la pile avec Docker Compose. Les topics ont reçu 1 600 entrées, 1 600 prédictions et 2 alertes. Le moniteur a levé DEGRADED après l'événement 499 et RECOVERED après l'événement 1 299, exactement comme dans la démo hors ligne. Cette concordance venait d'un choix de conception, les trois services ne connaissent qu'une petite interface de bus de messages, donc le même code tourne sur un bus en mémoire pour les tests et sur Kafka pour de vrai."
+      },
+      {
+        "type": "p",
+        "text_en": "The repository also has a GitHub Actions workflow that runs the tests on two Python versions, builds the image and starts a container as a smoke test.",
+        "text_fr": "Le dépôt contient aussi un workflow GitHub Actions qui lance les tests sur deux versions de Python, construit l'image et démarre un conteneur comme test de fumée."
+      },
+      {
+        "type": "callout",
+        "text_en": "The useful lesson for me was not the detector, which is simple, but how much easier everything became once the pipeline stages could be tested without a broker.",
+        "text_fr": "Ce que j'en retiens n'est pas le détecteur, qui est simple, mais à quel point tout devenait plus facile une fois les étapes du pipeline testables sans broker."
+      },
+      {
+        "type": "h2",
+        "text_en": "What this does not show",
+        "text_fr": "Ce que cela ne montre pas"
+      },
+      {
+        "type": "list",
+        "items_en": [
+          "The data is the 8×8 digits set and the noise is synthetic. This is a controlled setting to study the monitoring layer, not a claim about production data.",
+          "The rule is statistical, not a trained drift detector, and a model can be confidently wrong, in which case a confidence signal would miss it.",
+          "Kafka runs as a single node with no replication. That is enough to learn and demonstrate the pipeline, not a resilient deployment."
+        ],
+        "items_fr": [
+          "Les données sont les images 8×8 de « digits » et le bruit est synthétique. C'est un cadre contrôlé pour étudier la couche de surveillance, pas une affirmation sur des données de production.",
+          "La règle est statistique, ce n'est pas un détecteur de dérive entraîné, et un modèle peut se tromper avec assurance, auquel cas un signal de confiance passerait à côté.",
+          "Kafka tourne sur un seul nœud sans réplication. C'est suffisant pour apprendre et démontrer le pipeline, pas pour un déploiement résistant aux pannes."
+        ]
+      },
+      {
+        "type": "h2",
+        "text_en": "Why it matters to me",
+        "text_fr": "Pourquoi cela compte pour moi"
+      },
+      {
+        "type": "p",
+        "text_en": "In Burkina Faso and in Chad, the conditions of use are rarely the ones a model was trained for. Phones are older, networks are unstable, recordings are noisy. A system that can tell you it is starting to struggle, before someone complains, seems to me worth learning to build. This small project is my first step in that direction, and I am glad that every claim in it can be checked in the code.",
+        "text_fr": "Au Burkina Faso comme au Tchad, les conditions d'usage sont rarement celles pour lesquelles un modèle a été entraîné. Les téléphones sont plus anciens, les réseaux instables, les enregistrements bruités. Un système capable de dire qu'il commence à avoir du mal, avant que quelqu'un se plaigne, me semble valoir la peine d'être appris. Ce petit projet est mon premier pas dans cette direction, et je suis content que chaque affirmation puisse être vérifiée dans le code."
+      }
+    ],
+    "reading_minutes": 6
+  },
+  {
     "slug": "robustclip-noise-robustness",
     "project_slug": "robustclip-lite",
-    "priority": 1,
+    "priority": 2,
     "date": "2026-10",
     "repo_url": "https://github.com/BrainCoder3/robustclip-lite",
     "title": {
@@ -276,7 +462,7 @@
   {
     "slug": "whisper-under-noise",
     "project_slug": "whisper-robustness",
-    "priority": 2,
+    "priority": 3,
     "date": "2026-10",
     "repo_url": "https://github.com/BrainCoder3/Whisper-Robustness-to-Synthetic-Noise",
     "title": {
@@ -494,7 +680,7 @@
   {
     "slug": "action-recognition-motion",
     "project_slug": "action-recognition-3dcnn",
-    "priority": 3,
+    "priority": 4,
     "date": "2026-10",
     "repo_url": "https://github.com/BrainCoder3/human-action-recognition-3dcnn",
     "title": {
@@ -706,7 +892,7 @@
   {
     "slug": "dubbing-duration-fitting",
     "project_slug": "japanese-french-dubbing",
-    "priority": 4,
+    "priority": 5,
     "date": "2026-10",
     "repo_url": "https://github.com/BrainCoder3/anime-translator-ai",
     "title": {

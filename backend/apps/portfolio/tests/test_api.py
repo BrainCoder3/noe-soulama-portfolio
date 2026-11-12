@@ -160,7 +160,7 @@ class SnapshotTests(SeededTestCase):
 class ArticleTests(SeededTestCase):
     def test_articles_are_listed_and_bilingual(self):
         data = self.client.get(f"{API}/articles/").json()
-        self.assertEqual(len(data), 4)
+        self.assertEqual(len(data), 5)
         for article in data:
             self.assertTrue(article["title"]["en"] and article["title"]["fr"])
             self.assertTrue(article["blocks"], article["slug"])
