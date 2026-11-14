@@ -1444,7 +1444,7 @@
       "image": "",
       "image_fit": "cover",
       "repo_url": "",
-      "demo_url": "",
+      "demo_url": "https://jdj-2026.vercel.app/",
       "code_is_private": true,
       "summary": {
         "en": "An installable web app that guides the participants of the JDJ 2026 spiritual retreat: the programme day by day, prayers, masses, songs, practical information and contacts. An admin area lets the organisers edit all of it, and prayers, masses and songs can be translated, with a fallback to the original language when a translation is missing.",
