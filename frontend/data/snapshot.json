@@ -1466,6 +1466,47 @@
         "en": "",
         "fr": ""
       }
+    },
+    {
+      "slug": "farafina-ai",
+      "title": "Farafina AI",
+      "kind": "system",
+      "status": "demo",
+      "priority": 32,
+      "featured": true,
+      "year": 2026,
+      "stack": [
+        "Next.js",
+        "Python",
+        "PostgreSQL",
+        "Hugging Face"
+      ],
+      "metrics": [],
+      "image": "",
+      "image_fit": "cover",
+      "repo_url": "https://github.com/BrainCoder3/hackton-locallang",
+      "demo_url": "https://hackton-locallang.vercel.app",
+      "code_is_private": false,
+      "summary": {
+        "en": "An AI for Dioula and Mooré, two languages of Burkina Faso. A person writes or speaks, and the application simplifies the answer, translates it and reads it aloud. A guide also helps people ask for a criminal record extract, with an online demo of the procedure. Available as a web app and as a Telegram bot.",
+        "fr": "Une IA pour le dioula et le mooré, deux langues du Burkina Faso. Une personne écrit ou parle, et l'application simplifie la réponse, la traduit et la lit à voix haute. Un guide aide aussi à demander un extrait de casier judiciaire, avec une démonstration en ligne de la démarche. Disponible en application web et en bot Telegram."
+      },
+      "result": {
+        "en": "2nd place at the Tangier hackathon, 16th African Week (CESAM), July 2026. The web app, the procedure demo, the model services and the usage statistics are online. After the event I proposed an improvement of the repository's documentation, configuration examples and continuous integration (pull request still open).",
+        "fr": "2e place au hackathon de Tanger, 16e Semaine africaine (CESAM), juillet 2026. L'application web, la démonstration de la démarche, les services de modèles et les statistiques d'usage sont en ligne. Après l'événement, j'ai proposé une amélioration de la documentation, des exemples de configuration et de l'intégration continue du dépôt (pull request encore ouverte)."
+      },
+      "limit": {
+        "en": "A team project built during a hackathon: the main repository belongs to a teammate. The model services sleep when idle, so the first call can take from 30 seconds to over a minute. Payment is simulated and WhatsApp is not implemented.",
+        "fr": "Un projet d'équipe construit pendant un hackathon : le dépôt principal appartient à un coéquipier. Les services de modèles s'endorment quand ils ne servent pas, donc le premier appel peut prendre de 30 secondes à plus d'une minute. Le paiement est simulé et WhatsApp n'est pas implémenté."
+      },
+      "role": {
+        "en": "Member of the hackathon team",
+        "fr": "Membre de l'équipe du hackathon"
+      },
+      "image_alt": {
+        "en": "",
+        "fr": ""
+      }
     }
   ],
   "articles": [
@@ -2993,8 +3034,8 @@
         "fr": "16e Semaine africaine, CESAM"
       },
       "detail": {
-        "en": "",
-        "fr": ""
+        "en": "Project presented: Farafina AI, an AI that translates and reads aloud Dioula and Mooré, with a guide to request a criminal record extract. Tangier hackathon, team project.",
+        "fr": "Projet présenté : Farafina AI, une IA qui traduit et lit à voix haute le dioula et le mooré, avec un guide pour demander un extrait de casier judiciaire. Hackathon de Tanger, projet d'équipe."
       },
       "rank": {
         "en": "2nd",
